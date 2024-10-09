@@ -14,7 +14,7 @@ export const Header = () => {
     return (
         <header>
             <div className='logo'>
-                <h1>Hall of Games</h1>
+                <h1>HALL OF GAME</h1>
             </div>
             <div className='search-bar'>
                 <form className='search' onSubmit={handleSearch}>
