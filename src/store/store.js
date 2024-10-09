@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import gamesReducer from "../features/Games/gamesSlice";
-import { igdbApi } from "@/api/igdbApiSlice";
+import { igdbApi } from "../api/igdbApiSlice";
 
 export const store = configureStore({
     reducer: {

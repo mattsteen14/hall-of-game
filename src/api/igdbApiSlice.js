@@ -14,7 +14,7 @@ export const igdbApi = createApi({
             query: () => ({
                 url: 'games',
                 method: 'POST',
-                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites; limit 100; where category = 0;'
+                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites; limit 100; where category = 0; order rating desc;'
             })
         }),
     }),
