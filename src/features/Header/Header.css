@@ -1,0 +1,24 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max(80px, 10vh);
+    z-index: 1000;
+    display: flex;
+    border-bottom: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: max(40px, 3.5vw);
+    padding-right: max(3vw, 30px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    margin: 0;
+    padding: 0;
+}
