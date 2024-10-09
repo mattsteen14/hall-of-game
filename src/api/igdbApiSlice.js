@@ -8,14 +8,20 @@ export const igdbApi = createApi({
         headers.set('Authorization', 'Bearer e4mzfey3p8nb4cpjhhlsice1dhimgb');
 
         return headers;
-    }
+    },
     endpoints: (builder) => ({
         getGames: builder.query({
             query: () => ({
                 url: 'games',
                 method: 'POST',
-                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites; limit 100;'
+                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites; limit 100; where category = 0;'
             })
         }),
     }),
 });
+
+export const {
+    useGetGamesQuery,
+} = igdbApi;
+
+export default igdbApi.reducer;
