@@ -4,8 +4,8 @@ export const igdbApi = createApi({
     reducerPath: 'igdbApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://api.igdb.com/v4/' }),
     prepareHeaders: (headers) => {
-        headers.set('Client-Id', '4dforijzrsuxwrqgk0r9zaowtvt2mv');
-        headers.set('Authorization', 'Bearer e4mzfey3p8nb4cpjhhlsice1dhimgb');
+        headers.set('Client-Id', import.meta.env.VITE_CLIENT_ID);
+        headers.set('Authorization', `Bearer ${import.meta.env.VITE_BEARER_TOKEN}`);
 
         return headers;
     },
