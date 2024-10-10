@@ -11,7 +11,7 @@ function App () {
   return (
     <div>
       <Header />
-      <main>
+      <main className='main-container'>
         <section>
           <Filters />
         </section>

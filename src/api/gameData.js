@@ -8,7 +8,7 @@ export const mockGameData = [
     "platforms": ["NES"],
     "rating": 95,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/30/The_Legend_of_Zelda_boxart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/4/41/Legend_of_zelda_cover_%28with_cartridge%29_gold.png",
     "summary": "Link embarks on a quest to rescue Princess Zelda.",
     "story": "Defeat Ganon and rescue the princess.",
     "similar_games": [2, 3, 4]
@@ -22,7 +22,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 99,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/5/57/The_Legend_of_Zelda_Ocarina_of_Time_box_art.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg",
     "summary": "A groundbreaking 3D adventure with time travel mechanics.",
     "story": "Link must stop Ganondorf from obtaining the Triforce.",
     "similar_games": [1, 3, 5]
@@ -36,7 +36,7 @@ export const mockGameData = [
     "platforms": ["GameCube"],
     "rating": 96,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6a/The_Legend_of_Zelda_The_Wind_Waker.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/7/79/The_Legend_of_Zelda_The_Wind_Waker.jpg",
     "summary": "A vibrant, cel-shaded take on the Zelda universe.",
     "story": "Link sails the seas to rescue his sister.",
     "similar_games": [1, 2, 4]
@@ -50,7 +50,7 @@ export const mockGameData = [
     "platforms": ["Nintendo Switch", "Wii U"],
     "rating": 97,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/2/2b/The_Legend_of_Zelda_Breath_of_the_Wild.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
     "summary": "An open-world adventure in the expansive kingdom of Hyrule.",
     "story": "Link awakens to defeat Calamity Ganon.",
     "similar_games": [1, 2, 3]
@@ -64,7 +64,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 95,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0b/The_Legend_of_Zelda_A_Link_to_the_Past.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/21/The_Legend_of_Zelda_A_Link_to_the_Past_SNES_Game_Cover.jpg",
     "summary": "A classic top-down adventure with parallel worlds.",
     "story": "Link must save the Seven Maidens and defeat Ganon.",
     "similar_games": [1, 2, 4]
@@ -78,7 +78,7 @@ export const mockGameData = [
     "platforms": ["NES"],
     "rating": 95,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/83/Super_Mario_Bros._box.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/03/Super_Mario_Bros._box.png",
     "summary": "Mario's quest to save Princess Peach from Bowser.",
     "story": "Traverse the Mushroom Kingdom to rescue the princess.",
     "similar_games": [7, 8, 9]
@@ -92,7 +92,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 97,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/6/62/Super_Mario_64_boxart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6a/Super_Mario_64_box_cover.jpg",
     "summary": "The first 3D Mario game that set the standard for the genre.",
     "story": "Mario must rescue Princess Peach from Bowser again.",
     "similar_games": [6, 8, 9]
@@ -106,7 +106,7 @@ export const mockGameData = [
     "platforms": ["Wii"],
     "rating": 97,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/9/9d/Super_Mario_Galaxy_boxart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/7/76/SuperMarioGalaxy.jpg",
     "summary": "A space-themed adventure with unique gravity mechanics.",
     "story": "Mario travels across galaxies to save Peach from Bowser.",
     "similar_games": [6, 7, 9]
@@ -120,7 +120,7 @@ export const mockGameData = [
     "platforms": ["Nintendo Switch"],
     "rating": 97,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e3/Super_Mario_Odyssey.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8d/Super_Mario_Odyssey.jpg",
     "summary": "A 3D platformer with open-world elements and new mechanics.",
     "story": "Mario must rescue Princess Peach from Bowser using Cappy.",
     "similar_games": [6, 7, 8]
@@ -131,10 +131,10 @@ export const mockGameData = [
     "release_year": 1981,
     "genres": "Platformer",
     "involved_companies": ["Nintendo", "Pax Softonica"],
-    "platforms": ["Arcade"],
+    "platforms": ["Arcade", "NES", "Game Boy"],
     "rating": 90,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a7/Donkey_Kong_arcade.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/1/14/Donkey_Kong_flier.jpg",
     "summary": "Help Mario rescue his girlfriend from Donkey Kong.",
     "story": "Climb platforms to save Pauline from the giant ape.",
     "similar_games": [11, 12, 13]
@@ -148,7 +148,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 93,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6c/Donkey_Kong_Country.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1a/Donkey_Kong_Country_SNES_cover.png",
     "summary": "A side-scrolling platformer with stunning graphics.",
     "story": "Donkey Kong and Diddy Kong reclaim their stolen bananas.",
     "similar_games": [10, 12, 13]
@@ -162,7 +162,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 85,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0e/Donkey_Kong_64_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/ae/DonkeyKong64CoverArt.jpg",
     "summary": "A 3D platformer featuring multiple playable characters.",
     "story": "Donkey Kong and friends must save their island from King K. Rool.",
     "similar_games": [10, 11, 13]
@@ -176,7 +176,7 @@ export const mockGameData = [
     "platforms": ["Wii"],
     "rating": 89,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/43/Donkey_Kong_Country_Returns_box_art.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1f/Donkeykongcountryreturns.jpg",
     "summary": "A revival of the classic series with new gameplay.",
     "story": "Donkey Kong and Diddy Kong must reclaim their island.",
     "similar_games": [10, 11, 12]
@@ -190,7 +190,7 @@ export const mockGameData = [
     "platforms": ["NES"],
     "rating": 90,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1e/Metroid_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/5d/Metroid_boxart.jpg",
     "summary": "Explore an alien world as bounty hunter Samus Aran.",
     "story": "Samus must defeat the Space Pirates and Ridley.",
     "similar_games": [15, 16, 17]
@@ -204,7 +204,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 96,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0b/Super_Metroid.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e4/Smetroidbox.jpg",
     "summary": "A landmark in the Metroid series with refined gameplay.",
     "story": "Samus returns to Zebes to rescue a baby Metroid.",
     "similar_games": [14, 16, 17]
@@ -218,7 +218,7 @@ export const mockGameData = [
     "platforms": ["GameCube"],
     "rating": 97,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/7/77/Metroid_Prime_Cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/ba/MetroidPrimebox.jpg",
     "summary": "A 3D exploration game that redefined the series.",
     "story": "Samus investigates the mysterious planet Tallon IV.",
     "similar_games": [14, 15, 17]
@@ -232,7 +232,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Advance"],
     "rating": 93,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b3/Metroid_Fusion_cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/4/45/Metroid_Fusion_box.jpg",
     "summary": "A side-scrolling adventure with enhanced mechanics.",
     "story": "Samus must escape from a research station after an incident.",
     "similar_games": [14, 15, 16]
@@ -246,7 +246,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 89,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e8/Star_Fox_box.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/52/Star_Fox_SNES.jpg",
     "summary": "Pilot the Arwing to save the Lylat system.",
     "story": "Fox McCloud and his team battle against Andross.",
     "similar_games": [19, 20, 21]
@@ -260,7 +260,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 94,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c4/Star_Fox_64.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/63/StarFox64_N64_Game_Box.jpg",
     "summary": "A groundbreaking 3D rail shooter with voice acting.",
     "story": "Join Fox and friends on a mission against Andross.",
     "similar_games": [18, 20, 21]
@@ -274,7 +274,7 @@ export const mockGameData = [
     "platforms": ["GameCube"],
     "rating": 80,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/03/Star_Fox_Assault.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c2/Assaultbox.jpg",
     "summary": "Combines on-foot combat with classic Arwing missions.",
     "story": "Fox and crew battle a new threat to the Lylat system.",
     "similar_games": [18, 19, 21]
@@ -288,7 +288,7 @@ export const mockGameData = [
     "platforms": ["Wii U"],
     "rating": 75,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/84/Star_Fox_Zero.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0a/Star_Fox_Zero.jpg",
     "summary": "A return to form with new gameplay mechanics.",
     "story": "Join Fox on a new mission to save the Lylat system.",
     "similar_games": [18, 19, 20]
@@ -302,7 +302,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 90,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8f/F-Zero_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/9b/SNES_F-Zero_boxart.jpg",
     "summary": "A fast-paced futuristic racing game.",
     "story": "Compete in the F-Zero Grand Prix.",
     "similar_games": [23, 24, 25]
@@ -316,7 +316,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 89,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8d/F-Zero_X_Coverart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/21/F-Zero_X_box_art.jpg",
     "summary": "A 3D racing experience with high-speed action.",
     "story": "Race against others in the F-Zero circuit.",
     "similar_games": [22, 24, 25]
@@ -330,7 +330,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Advance"],
     "rating": 85,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/2/21/F-Zero_Maximum_Velocity.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/00/Fzmvpackshot_us.jpg",
     "summary": "A return to the high-speed racing of the F-Zero series.",
     "story": "Compete in a new F-Zero Grand Prix.",
     "similar_games": [22, 23, 25]
@@ -344,7 +344,7 @@ export const mockGameData = [
     "platforms": ["GameCube"],
     "rating": 91,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d3/F-Zero_GX_boxart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/66/F-Zero_GX_box_artwork.png",
     "summary": "The fastest and most challenging entry in the series.",
     "story": "Race against the best in the F-Zero universe.",
     "similar_games": [22, 23, 24]
@@ -358,7 +358,7 @@ export const mockGameData = [
     "platforms": ["Game Boy"],
     "rating": 88,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/2/27/Kirby%27s_Dream_Land_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6a/Kirbys-dream-land-gameboy-boxart.png",
     "summary": "The first game in the beloved Kirby series.",
     "story": "Help Kirby save Dream Land from King Dedede.",
     "similar_games": [27, 28, 29]
@@ -372,7 +372,7 @@ export const mockGameData = [
     "platforms": ["NES"],
     "rating": 92,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/4a/Kirby%27s_Adventure_boxart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/ae/Kirby%27s_Adventure_Coverart.png",
     "summary": "Kirby's first NES adventure with copy abilities.",
     "story": "Help Kirby recover his stolen star rods.",
     "similar_games": [26, 28, 29]
@@ -386,7 +386,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 85,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/05/Kirby_64_Cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c1/Kirby64_box.jpg",
     "summary": "A 3D platformer that allows for copy ability combinations.",
     "story": "Kirby must save Ripple Star from Dark Meta Knight.",
     "similar_games": [26, 27, 29]
@@ -400,7 +400,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Advance"],
     "rating": 88,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/7/7e/Kirby_Nightmare_in_Dream_Land_Cover.jpg",
+    "cover": "https://assets1.ignimgs.com/2020/03/16/kirby-nightmare-in-dreamland---button-1584390982242.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "A remake of the classic Kirby game.",
     "story": "Kirby must save Dream Land from nightmares.",
     "similar_games": [26, 27, 28]
@@ -414,7 +414,7 @@ export const mockGameData = [
     "platforms": ["MSX2", "NES"],
     "rating": 89,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/30/Metal_Gear_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/bd/Metal_Gear_cover.jpg",
     "summary": "Infiltrate enemy territory to stop Metal Gear.",
     "story": "As Solid Snake, defeat the rogue mercenary group.",
     "similar_games": [31, 32, 33]
@@ -428,7 +428,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 96,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b6/Metal_Gear_Solid_cover.jpg",
+    "cover": "https://preview.redd.it/metal-gear-solid-eu-box-art-1-1-aspect-ratio-retroarch-v0-xtc65126nbtc1.png?auto=webp&s=8348e84b98edbca3dbad476193fca48ff90248d8",
     "summary": "A groundbreaking stealth action game with cinematic storytelling.",
     "story": "Stop Liquid Snake from launching a nuclear weapon.",
     "similar_games": [30, 32, 33]
@@ -442,7 +442,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2"],
     "rating": 95,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0f/MGS2_Sons_of_Liberty.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6a/Metalgear2boxart.jpg",
     "summary": "A sequel that expanded on the gameplay and story of its predecessor.",
     "story": "Unravel the mysteries behind the Big Shell incident.",
     "similar_games": [30, 31, 33]
@@ -456,7 +456,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2"],
     "rating": 96,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e1/MGS3SnakeEater_cover.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51inygLTtVL._AC_.jpg",
     "summary": "A prequel that focuses on survival and stealth.",
     "story": "As Naked Snake, stop the Cold War from escalating.",
     "similar_games": [30, 31, 32]
@@ -470,7 +470,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 4"],
     "rating": 85,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c3/Death_Stranding_cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/22/Death_Stranding.jpg",
     "summary": "A unique open-world game that focuses on connection.",
     "story": "Deliver packages in a post-apocalyptic world.",
     "similar_games": [35, 36, 37]
@@ -484,21 +484,21 @@ export const mockGameData = [
     "platforms": ["PlayStation 4", "Xbox One"],
     "rating": 91,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1d/Metal_Gear_Solid_V_The_Phantom_Pain_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8f/Metal_Gear_Solid_V_The_Phantom_Pain_cover.png",
     "summary": "An open-world stealth game with a focus on player choice.",
     "story": "Vengeance is the motivation behind Big Boss's journey.",
     "similar_games": [34, 36, 37]
   },
   {
     "id": 36,
-    "name": "Metal Gear Solid: Ground Zeroes",
+    "name": "Metal Gear Solid V: Ground Zeroes",
     "release_year": 2014,
     "genres": "Action-Adventure",
     "involved_companies": ["Konami"],
     "platforms": ["PlayStation 4", "Xbox One"],
     "rating": 79,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/9/94/MGSGroundZeroes_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/07/MGSV_Ground_Zeroes_boxart.jpg",
     "summary": "A prologue to Metal Gear Solid V with a focus on stealth.",
     "story": "Rescue hostages from a Cuban military base.",
     "similar_games": [34, 35, 37]
@@ -512,7 +512,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2"],
     "rating": 85,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/35/Zone_of_the_Enders_boxart.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/Zone_of_the_Enders_Cover.jpg",
     "summary": "A mech-based action game with fast-paced combat.",
     "story": "Pilot the Jehuty and save the world.",
     "similar_games": [34, 35, 36]
@@ -526,7 +526,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 94,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/2/27/Chrono_Trigger.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a7/Chrono_Trigger.jpg",
     "summary": "A time-traveling RPG with multiple endings.",
     "story": "Save the world from Lavos by traveling through time.",
     "similar_games": [39, 40, 41]
@@ -540,7 +540,7 @@ export const mockGameData = [
     "platforms": ["SNES"],
     "rating": 96,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/80/Final_Fantasy_VI.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/05/Final_Fantasy_VI.jpg",
     "summary": "An epic tale of rebellion against an oppressive empire.",
     "story": "Join the Returners to take down the Empire.",
     "similar_games": [38, 40, 41]
@@ -554,7 +554,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 92,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/5/5e/Ff7box.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c2/Final_Fantasy_VII_Box_Art.jpg",
     "summary": "A revolutionary RPG that popularized the genre.",
     "story": "Cloud Strife joins AVALANCHE to stop Shinra and Sephiroth.",
     "similar_games": [38, 39, 41]
@@ -568,7 +568,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 87,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/35/Final_Fantasy_VIII.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/5d/Final_Fantasy_8_ntsc-front.jpg",
     "summary": "A romantic story set in a world of magic and warfare.",
     "story": "Squall and his friends fight against the sorceress Ultimecia.",
     "similar_games": [38, 39, 40]
@@ -582,7 +582,7 @@ export const mockGameData = [
     "platforms": ["NES"],
     "rating": 90,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e4/Castlevania_box.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/51/Castlevania_1_cover.png",
     "summary": "A gothic action game featuring Dracula and his monsters.",
     "story": "Simon Belmont must defeat Dracula to save the day.",
     "similar_games": [43, 44, 45]
@@ -596,7 +596,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 95,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/6/66/Castlevania_Symphony_of_the_Night.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/cf/Castlevania_SOTN_PAL.jpg",
     "summary": "A landmark title in the Metroidvania genre.",
     "story": "Alucard must defeat Dracula and explore the castle.",
     "similar_games": [42, 44, 45]
@@ -610,7 +610,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Advance"],
     "rating": 90,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e0/Castlevania_Aria_of_Sorrow.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/ab/AriaofSorrowCover.jpg",
     "summary": "A new take on the series with RPG elements.",
     "story": "Soma Cruz must defeat Dracula's forces.",
     "similar_games": [42, 43, 45]
@@ -624,7 +624,7 @@ export const mockGameData = [
     "platforms": ["Nintendo DS"],
     "rating": 89,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b8/Castlevania_Dawn_of_Sorrow_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d5/Castlevania_Dawn_of_Sorrow_NA_Cover.jpg",
     "summary": "A direct sequel to Aria of Sorrow with new mechanics.",
     "story": "Soma must face new threats in Dracula's castle.",
     "similar_games": [42, 43, 44]
@@ -638,7 +638,7 @@ export const mockGameData = [
     "platforms": ["PlayStation", "PC"],
     "rating": 70,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a6/GTA1.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e7/GTA_-_Box_Front.jpg",
     "summary": "The original game that started the franchise.",
     "story": "Complete missions while navigating a criminal underworld.",
     "similar_games": [47, 48, 49]
@@ -652,7 +652,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2", "PC"],
     "rating": 95,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8e/GTAIII.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/be/GTA3boxcover.jpg",
     "summary": "The game that popularized the open-world genre.",
     "story": "Take on the role of a silent protagonist in Liberty City.",
     "similar_games": [46, 48, 49]
@@ -666,7 +666,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2", "PC"],
     "rating": 95,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b3/GTA_Vice_City_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/ce/Vice-city-cover.jpg",
     "summary": "A story of crime and betrayal set in the 1980s.",
     "story": "Climb the criminal ladder in Vice City.",
     "similar_games": [46, 47, 49]
@@ -680,7 +680,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2", "PC"],
     "rating": 95,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/3b/GTA_San_Andreas_boxart.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg",
     "summary": "An expansive world and story of gang life.",
     "story": "CJ returns to Los Santos to restore his family's former glory.",
     "similar_games": [46, 47, 48]
@@ -694,7 +694,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 82,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/5/56/Tekken_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0e/Tekken_1_game_cover.jpg",
     "summary": "The first game in the iconic fighting franchise.",
     "story": "Compete in the King of Iron Fist Tournament.",
     "similar_games": [51, 52, 53]
@@ -708,7 +708,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 96,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6c/Tekken_3_cover.png",
+    "cover": "https://sm.ign.com/t/ign_nordic/cover/t/tekken-3/tekken-3_bz7d.600.jpg",
     "summary": "One of the best fighting games of its time.",
     "story": "Enter the King of Iron Fist Tournament 3.",
     "similar_games": [50, 52, 53]
@@ -722,7 +722,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2"],
     "rating": 92,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/38/Tekken_5_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/ad/Tekken5Cover.jpg",
     "summary": "Revitalized the series with new mechanics and characters.",
     "story": "Fight to become the best fighter in the world.",
     "similar_games": [50, 51, 53]
@@ -736,7 +736,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 4", "Xbox One"],
     "rating": 86,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/1/10/Tekken_7_box.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/1/17/Official_Tekken_7_Logo.jpg",
     "summary": "The latest in the series with an expanded roster.",
     "story": "Conclude the long-standing feud between the Mishima family.",
     "similar_games": [50, 51, 52]
@@ -750,7 +750,7 @@ export const mockGameData = [
     "platforms": ["PC"],
     "rating": 85,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/ef/Fallout_cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/Fallout.jpg",
     "summary": "A post-apocalyptic RPG with open-world elements.",
     "story": "Survive in a nuclear wasteland while seeking the water chip.",
     "similar_games": [55, 56, 57]
@@ -764,7 +764,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 3", "Xbox 360"],
     "rating": 91,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d8/Fallout_3_cover.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51HW6HrUolL._AC_.jpg",
     "summary": "Revitalized the series with a first-person perspective.",
     "story": "Search for your father in a post-apocalyptic D.C.",
     "similar_games": [54, 56, 57]
@@ -778,7 +778,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 3", "Xbox 360"],
     "rating": 89,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/5/53/Fallout_New_Vegas_cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/34/Fallout_New_Vegas.jpg",
     "summary": "An open-world RPG set in a rich, branching narrative.",
     "story": "Determine the fate of the Mojave wasteland.",
     "similar_games": [54, 55, 57]
@@ -792,7 +792,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "rating": 87,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a0/Fallout_4_cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/7/70/Fallout_4_cover_art.jpg",
     "summary": "A vast open world filled with quests and exploration.",
     "story": "Search for your kidnapped son in the Commonwealth.",
     "similar_games": [54, 55, 56]
@@ -806,7 +806,7 @@ export const mockGameData = [
     "platforms": ["PC"],
     "rating": 86,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c2/The_Witcher_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b0/The_Witcher_EU_box.jpg",
     "summary": "A narrative-driven RPG with rich lore and choices.",
     "story": "Play as Geralt of Rivia, a monster hunter.",
     "similar_games": [59, 60, 61]
@@ -820,7 +820,7 @@ export const mockGameData = [
     "platforms": ["PC", "Xbox 360"],
     "rating": 88,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/7/7f/The_Witcher_2_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/4/40/Witcher_2_cover.jpg",
     "summary": "A sequel that deepens the combat and story.",
     "story": "Geralt investigates a conspiracy surrounding a king's murder.",
     "similar_games": [58, 60, 61]
@@ -834,7 +834,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "rating": 93,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d6/The_Witcher_3_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg",
     "summary": "An expansive RPG with a richly detailed world.",
     "story": "Find your missing adopted daughter in a war-torn world.",
     "similar_games": [58, 59, 61]
@@ -848,7 +848,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "rating": 85,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/81/Gwent_Cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/fd/Gwent_cover_art.png",
     "summary": "A strategic card game set in The Witcher universe.",
     "story": "Battle opponents in a card game based on tactics.",
     "similar_games": [58, 59, 60]
@@ -862,7 +862,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 89,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/81/Resident_Evil_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a6/Resident_Evil_1_cover.png",
     "summary": "A survival horror game set in a haunted mansion.",
     "story": "Uncover the mysteries of the Spencer Mansion.",
     "similar_games": [63, 64, 65]
@@ -876,7 +876,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 89,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/2/27/Resident_Evil_2_cover.jpg",
+    "cover": "https://m.media-amazon.com/images/I/71uKwThrbhL._AC_SL1476_.jpg",
     "summary": "A sequel that set the standard for survival horror.",
     "story": "Survive in Raccoon City amidst a zombie outbreak.",
     "similar_games": [62, 64, 65]
@@ -890,7 +890,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 85,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1b/Resident_Evil_3_Nemesis.jpg",
+    "cover": "https://m.media-amazon.com/images/I/81U-jUTcBHL._AC_SL1420_.jpg",
     "summary": "Escape Raccoon City while being hunted by Nemesis.",
     "story": "Jill Valentine fights for survival against a relentless foe.",
     "similar_games": [62, 63, 65]
@@ -904,7 +904,7 @@ export const mockGameData = [
     "platforms": ["GameCube", "PlayStation 2"],
     "rating": 96,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1a/Resident_Evil_4_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d9/Resi4-gc-cover.jpg",
     "summary": "A revolutionary take on survival horror gameplay.",
     "story": "Leon Kennedy must rescue the president's daughter.",
     "similar_games": [62, 63, 64]
@@ -918,7 +918,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 88,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/4a/Tomb_Raider_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/69/Tomb_Raider_%281996%29.png",
     "summary": "Join Lara Croft on her archaeological adventures.",
     "story": "Explore tombs and discover ancient artifacts.",
     "similar_games": [67, 68, 69]
@@ -932,7 +932,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 3", "Xbox 360"],
     "rating": 85,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/d/db/Tomb_Raider_Legend_Cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/7/7b/Tomb_Raider_-_Legend.png",
     "summary": "An acclaimed entry that revitalized the franchise.",
     "story": "Lara searches for the truth about her mother's disappearance.",
     "similar_games": [66, 68, 69]
@@ -946,7 +946,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 3", "Xbox 360"],
     "rating": 84,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/5/51/Tomb_Raider_Underworld_Cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/56/Tomb_Raider_-_Underworld.png",
     "summary": "A direct sequel that continued Lara's journey.",
     "story": "Lara seeks to uncover her past and her mother.",
     "similar_games": [66, 67, 69]
@@ -960,7 +960,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 3", "Xbox 360"],
     "rating": 86,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/bb/Tomb_Raider_2013_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/f1/TombRaider2013.jpg",
     "summary": "A reboot that reinvigorated the series.",
     "story": "Survive on a mysterious island and uncover its secrets.",
     "similar_games": [66, 67, 68]
@@ -974,7 +974,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 96,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a9/GoldenEye_007_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/36/GoldenEye007box.jpg",
     "summary": "A revolutionary FPS based on the James Bond film.",
     "story": "Take on the role of James Bond in various missions.",
     "similar_games": [71, 72, 73]
@@ -988,7 +988,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 97,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/3c/Perfect_Dark_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/32/Perfect_dark_box.jpg",
     "summary": "A spiritual successor to GoldenEye with advanced gameplay.",
     "story": "Joanna Dark must uncover a conspiracy.",
     "similar_games": [70, 72, 73]
@@ -1002,7 +1002,7 @@ export const mockGameData = [
     "platforms": ["Wii", "Xbox 360"],
     "rating": 80,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1f/GoldenEye_007_%282010%29_cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/f/f1/GoldenEye_007_2010_remake_box_art.png",
     "summary": "A remake of the classic with updated visuals.",
     "story": "Experience the world of James Bond in a modern setting.",
     "similar_games": [70, 71, 73]
@@ -1016,7 +1016,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2", "Xbox", "GameCube"],
     "rating": 89,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0b/TimeSplitters_2_box_art.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6b/Timesplitters2.JPG",
     "summary": "A fun and fast-paced shooter with a time-travel theme.",
     "story": "Fight through various eras to stop a time-traveling threat.",
     "similar_games": [70, 71, 72]
@@ -1030,7 +1030,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 92,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d9/Conker%27s_Bad_Fur_Day_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/99/Conkersbfdbox.jpg",
     "summary": "A unique platformer with mature humor.",
     "story": "Join Conker on his wild and comedic adventures.",
     "similar_games": [75, 76, 77]
@@ -1044,7 +1044,7 @@ export const mockGameData = [
     "platforms": ["Xbox"],
     "rating": 85,
     "age_rating": "M",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/82/Conker%27s_Live_%26_Reloaded_box_art.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/3f/Conker_-_Live_%26_Reloaded_Coverart.png",
     "summary": "An enhanced remake of the original game.",
     "story": "Experience Conker's antics in high-definition.",
     "similar_games": [74, 76, 77]
@@ -1058,7 +1058,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "rating": 74,
     "age_rating": "E10+",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e1/Yooka-Laylee.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/a/ac/Yooka-Laylee_cover_art.jpg",
     "summary": "A spiritual successor to classic platformers.",
     "story": "Embark on a colorful adventure with Yooka and Laylee.",
     "similar_games": [74, 75, 77]
@@ -1072,7 +1072,7 @@ export const mockGameData = [
     "platforms": ["PC", "PlayStation 4", "Xbox One"],
     "rating": 75,
     "age_rating": "E10+",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/4c/Super_Lucky%27s_Tale.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b1/Super_Lucky%27s_Tale.jpg",
     "summary": "A family-friendly platformer filled with adventure.",
     "story": "Help Lucky save the day in a vibrant world.",
     "similar_games": [74, 75, 76]
@@ -1086,7 +1086,7 @@ export const mockGameData = [
     "platforms": ["Game Boy"],
     "rating": 87,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e3/Pokémon_Red_and_Blue_box_art.png",
+    "cover": "https://www.pokemon.com/static-assets/content-assets/cms2/img/video-games/video-games/pokemon_red_blue/pokemon_red_blue_main_169.jpg",
     "summary": "The original games that started the Pokemon craze.",
     "story": "Become a Pokemon Trainer and catch them all.",
     "similar_games": [79, 80, 81]
@@ -1100,7 +1100,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Color"],
     "rating": 89,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/80/Pokemon_Gold_and_Silver_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Pokémon_box_art_-_Gold_Version.png/440px-Pokémon_box_art_-_Gold_Version.png",
     "summary": "A direct sequel that expanded the Pokemon universe.",
     "story": "Continue your adventure in the Johto region.",
     "similar_games": [78, 80, 81]
@@ -1114,7 +1114,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Advance"],
     "rating": 84,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6f/Pokémon_Ruby_and_Sapphire_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/PokemonRubySapphireBox.jpg/440px-PokemonRubySapphireBox.jpg",
     "summary": "Introduces double battles and new mechanics.",
     "story": "Explore the Hoenn region and battle new Pokemon.",
     "similar_games": [78, 79, 81]
@@ -1128,7 +1128,7 @@ export const mockGameData = [
     "platforms": ["Nintendo DS"],
     "rating": 87,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b5/Pokémon_Diamond_and_Pearl_box_art.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/PokemonDiamondPearlBoxArt.jpg/440px-PokemonDiamondPearlBoxArt.jpg",
     "summary": "Introduces online trading and battles.",
     "story": "Journey through the Sinnoh region and capture new Pokemon.",
     "similar_games": [78, 79, 80]
@@ -1142,7 +1142,7 @@ export const mockGameData = [
     "platforms": ["Dreamcast", "Arcade"],
     "rating": 93,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a7/Soulcalibur_cover.jpg",
+    "cover": "https://assets-prd.ignimgs.com/2021/12/14/soulcalibur-1639521545469.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "A weapons-based fighting game that redefined the genre.",
     "story": "Fight for the legendary sword Soul Edge.",
     "similar_games": [83, 84, 85]
@@ -1156,7 +1156,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2", "GameCube", "Xbox"],
     "rating": 92,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/7/77/Soulcalibur_ii_cover.jpg",
+    "cover": "https://assets-prd.ignimgs.com/2022/09/07/soulcali2-1662570739107.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "A highly praised sequel with new characters.",
     "story": "Continue the fight for the Soul Edge.",
     "similar_games": [82, 84, 85]
@@ -1170,7 +1170,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2"],
     "rating": 84,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b7/Soulcalibur3.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/5/51/ScIIIbox.jpg",
     "summary": "Introduces new gameplay mechanics and characters.",
     "story": "A new chapter in the battle for Soul Edge.",
     "similar_games": [82, 83, 85]
@@ -1184,7 +1184,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 3", "Xbox 360"],
     "rating": 85,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/85/SoulcaliburIV.jpg",
+    "cover": "https://assets-prd.ignimgs.com/2022/04/17/sc41-1650238999509.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "Features online play and characters from Star Wars.",
     "story": "The battle for Soul Edge continues.",
     "similar_games": [82, 83, 84]
@@ -1198,7 +1198,7 @@ export const mockGameData = [
     "platforms": ["PlayStation", "Arcade"],
     "rating": 80,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a8/Soulblade_box_art.jpg",
+    "cover": "https://assets-prd.ignimgs.com/2022/08/17/soulblade-1660767542766.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "The predecessor to SoulCalibur with unique characters.",
     "story": "Fight to become the ultimate warrior.",
     "similar_games": [82, 83, 84]
@@ -1212,7 +1212,7 @@ export const mockGameData = [
     "platforms": ["PC Engine"],
     "rating": 88,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e8/Fire_Pro_Wrestling_Cover.jpg",
+    "cover": "http://www.pcengine.co.uk/Images-Coverthumbs/TC-Fire_Pro_Wrestling.jpg",
     "summary": "A wrestling game that started the series.",
     "story": "Compete in wrestling matches with a diverse roster.",
     "similar_games": [88, 89, 90]
@@ -1226,7 +1226,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2"],
     "rating": 89,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/d/d5/Fire_Pro_Wrestling_Returns_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/7/70/Fire_Pro_Wrestling_Returns.jpg",
     "summary": "An enhanced version of the classic wrestling series.",
     "story": "Create and manage your wrestling promotion.",
     "similar_games": [87, 89, 90]
@@ -1240,7 +1240,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 4", "PC"],
     "rating": 85,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c4/Fire_Pro_Wrestling_World_cover.jpg",
+    "cover": "https://www.spike-chunsoft.com/wp-content/uploads/FireProWrestlingWorld_FullGame_MasterArt.png",
     "summary": "The latest entry in the long-running series.",
     "story": "Build your wrestling federation and compete worldwide.",
     "similar_games": [87, 88, 90]
@@ -1254,7 +1254,7 @@ export const mockGameData = [
     "platforms": ["Game Boy Advance"],
     "rating": 83,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/2/25/Fire_Pro_Wrestling_Climax_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c6/Fire_Pro_Wrestling_cover.jpg",
     "summary": "A portable entry that retains the series' charm.",
     "story": "Experience wrestling action on the go.",
     "similar_games": [87, 88, 89]
@@ -1268,7 +1268,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 92,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/47/WWE_No_Mercy.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/9/90/NoMercyGameBox.jpg",
     "summary": "A beloved wrestling game known for its depth.",
     "story": "Compete in the ring with your favorite WWE stars.",
     "similar_games": [92, 93, 94]
@@ -1282,7 +1282,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 91,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b7/WCW_nWo_Revenge.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/1/1d/WCWnWoRevengebox.jpg",
     "summary": "A classic wrestling game featuring WCW stars.",
     "story": "Join the nWo and battle in the ring.",
     "similar_games": [91, 93, 94]
@@ -1296,7 +1296,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 88,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/48/WrestleMania_2000_box_art.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/69/Wwfwrestlemania2000n64.jpg",
     "summary": "An innovative wrestling game with various modes.",
     "story": "Experience the biggest matches in wrestling history.",
     "similar_games": [91, 92, 94]
@@ -1310,7 +1310,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 87,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/5/51/Virtual_Pro_Wrestling_64_Cover.jpg",
+    "cover": "https://assets-prd.ignimgs.com/2023/03/09/virtualpro64-1678392747997.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "A wrestling game that paved the way for future titles.",
     "story": "Step into the ring and compete with wrestlers.",
     "similar_games": [91, 92, 93]
@@ -1324,7 +1324,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 89,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/8/82/Virtual_Pro_Wrestling_2_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/7/75/Virtualprowrestling2.jpg",
     "summary": "A sequel that built upon its predecessor's success.",
     "story": "Continue your wrestling journey with more characters.",
     "similar_games": [91, 92, 93]
@@ -1338,7 +1338,7 @@ export const mockGameData = [
     "platforms": ["Nintendo 64"],
     "rating": 90,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b6/WCW_World_Tour_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c4/WCW_vs._nWo_-_World_Tour_Coverart.png",
     "summary": "A wrestling game that became a staple of its era.",
     "story": "Compete with your favorite wrestlers in various modes.",
     "similar_games": [91, 92, 93]
@@ -1352,7 +1352,7 @@ export const mockGameData = [
     "platforms": ["PlayStation"],
     "rating": 87,
     "age_rating": "E",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/a/a1/WCW_vs_The_World_cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6e/WCW_vs._the_World.jpg",
     "summary": "A wrestling game that featured an international roster.",
     "story": "Battle against wrestlers from around the world.",
     "similar_games": [91, 92, 93]
@@ -1366,7 +1366,7 @@ export const mockGameData = [
     "platforms": ["PlayStation", "Dreamcast", "Arcade"],
     "rating": 92,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c5/Marvel_vs_Capcom_Clash_of_Super_Heroes_Cover.png",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/b/b7/MvC_Cover_Art.png",
     "summary": "A crossover fighting game featuring Marvel characters.",
     "story": "Team up and battle iconic characters.",
     "similar_games": [99, 100, 101]
@@ -1380,7 +1380,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 2", "Dreamcast", "Arcade"],
     "rating": 93,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/4/49/Marvel_vs_Capcom_2_cover.jpg",
+    "cover": "https://assets-prd.ignimgs.com/2022/02/05/mvc2dc-sq-1644036776773.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2",
     "summary": "An acclaimed sequel with an expansive roster.",
     "story": "Engage in epic battles with Marvel and Capcom characters.",
     "similar_games": [98, 100, 101]
@@ -1394,7 +1394,7 @@ export const mockGameData = [
     "platforms": ["PlayStation 3", "Xbox 360"],
     "rating": 88,
     "age_rating": "T",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/0/0b/Ultimate_Marvel_vs_Capcom_3_Cover.jpg",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/6/6d/UMvC3_Cover.jpg",
     "summary": "The ultimate crossover fighting game.",
     "story": "Fight against powerful heroes and villains.",
     "similar_games": [98, 99, 101]
