@@ -1,10 +1,23 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-  padding-top: max(60px, 10vh);
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(max(60px, 10vh) + max(60px, 10vh) + 30px); /* Accounts for Header + Filters */
+  height: 100vh; /* Full viewport height */
+}
+
+section.game-view {
+  flex-grow: 1; /* This makes the GameView take up the remaining space */
+  overflow-y: auto; /*Allows scrolling if the content overflows */
+  background-color: #f0f0f0; /* Example background */
+  /* padding: 20px;  Some padding around the content */
+  width: 100vw;
+  margin-top: 10px;
+  padding-top: 20px;
 }

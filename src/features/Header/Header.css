@@ -3,8 +3,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: max(80px, 10vh);
-    z-index: 1000;
+    height: max(60px, 10vh);
+    z-index: 1100;
     display: flex;
     border-bottom: 1px solid black;
     justify-content: space-around;

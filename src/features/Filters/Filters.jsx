@@ -1,9 +1,11 @@
-import React from 'react'
+import './Filters.css'
 
 export const Filters = () => {
     return (
-        <div>
-
+        <div className='filters'>
+            <p>Platforms</p>
+            <p>Genres</p>
+            <p>Years</p>
         </div>
     )
 }

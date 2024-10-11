@@ -1,0 +1,21 @@
+.filters {
+    position: fixed;
+    top: calc(max(60px, 10vh));
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    background-color: white;
+    line-height: 0.2;
+    max-height: fit-content;
+    padding: 10px;
+    text-align: center;
+    /* margin: 10px; */
+};
+
+.filters > p {
+    margin: 0;
+    padding: 0;
+}

@@ -11,11 +11,11 @@ function App () {
   return (
     <div>
       <Header />
-      <main className='main-container'>
+      <main>
         <section>
           <Filters />
         </section>
-        <section>
+        <section className='game-view'>
           {selectedGame ? <GameDetails game={selectedGame} /> : <GamesList />}
         </section>
       </main>
