@@ -8,16 +8,16 @@
 main {
   display: flex;
   flex-direction: column;
-  padding-top: calc(max(60px, 10vh) + max(60px, 10vh)); /* Accounts for Header + Filters */
-  height: 100vh; /* Full viewport height */
+  padding-top: calc(max(60px, 10vh) + max(68px, 10vh)); /* Accounts for Header + Filters */
 }
 
 section.game-view {
   flex-grow: 1; /* This makes the GameView take up the remaining space */
   overflow-y: auto; /*Allows scrolling if the content overflows */
-  /* padding: 20px;  Some padding around the content */
-  width: 100vw;
-  /* margin-top: 10px; */
-  padding-top: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  main {
+    padding-top: calc(max(60px, 10vh) + max(68px, 10vh) - 10px);
+  }
+}

@@ -37,3 +37,14 @@ header {
     margin: 0;
     padding: 0;
 }
+
+@media only screen and (max-width: 768px) {
+
+    header {
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

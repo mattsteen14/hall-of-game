@@ -8,10 +8,10 @@ export const GamesList = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>Cover</th>
-                        <th>Game Name</th>
+                        <th></th>
+                        <th>Title</th>
                         <th>Platforms</th>
-                        <th>Release Year</th>
+                        <th>Year</th>
                         <th>Rating</th>
                     </tr>
                 </thead>

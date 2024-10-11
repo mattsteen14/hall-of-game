@@ -5,12 +5,11 @@
 
 table {
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-collapse: collapse;
 }
 
 th, td {
-    border: 1px solid black;
     text-align: center;
     background-color: darkgray;
     text-transform: uppercase;
@@ -22,6 +21,7 @@ th {
     font-size: 0.8em;
     font-style: italic;
     background-color: gainsboro !important;
+    /* border-bottom: 1px solid black; */
 }
 
 .game-cover {
@@ -53,8 +53,28 @@ th {
 }
 
 .game-name, .game-platform, .game-year, .game-rating {
-    border: 10px solid gainsboro;
+    border: 0.3em solid gainsboro;
     background-color: gainsboro;
     border-radius: 5px;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .game-cover {
+        margin: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .game-cover {
+        margin: 0.5em;
+    }
+
+    .game-name, .game-platform, .game-year, .game-rating {
+        font-size: 0.8em;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
 }

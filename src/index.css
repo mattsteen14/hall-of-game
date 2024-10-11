@@ -1,16 +1,7 @@
-:root {
-  font-family: 'Roboto', 'Noto Sans', 'Montserrat', 'Gill Sans','Futura', Helvetica, sans-serif, Arial;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: gainsboro;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -23,15 +14,16 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  background-color: gainsboro;
+  font-family: 'Roboto', 'Noto Sans', 'Montserrat', 'Gill Sans','Futura', Helvetica, sans-serif, Arial;
+  line-height: 1.5;
+  font-weight: 400;
   min-width: 320px;
   min-height: 100vh;
   background-color: gainsboro;
 }
 
 h1 {
-  /* font-size: 3.2em; */
   font-size: 2em;
   line-height: 1.1;
 }
@@ -55,15 +47,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
+@media only screen and (min-width: 768px) {
   button {
-    background-color: #f9f9f9;
+    padding: 0.4em 0.8em;
   }
 }
