@@ -20,7 +20,7 @@ export const Header = () => {
                 <form className='search' onSubmit={handleSearch}>
                     <input
                         type='text'
-                        placeholder='Search'
+                        placeholder='SEARCH'
                         aria-label='Search'
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)} />

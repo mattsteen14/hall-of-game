@@ -15,9 +15,9 @@ main {
 section.game-view {
   flex-grow: 1; /* This makes the GameView take up the remaining space */
   overflow-y: auto; /*Allows scrolling if the content overflows */
-  background-color: #f0f0f0; /* Example background */
   /* padding: 20px;  Some padding around the content */
   width: 100vw;
   /* margin-top: 10px; */
   padding-top: 20px;
 }
+

@@ -12,6 +12,16 @@ table {
 th, td {
     border: 1px solid black;
     text-align: center;
+    background-color: darkgray;
+    text-transform: uppercase;
+}
+
+th {
+    padding: 5px;
+    font-weight: 600;
+    font-size: 0.8em;
+    font-style: italic;
+    background-color: gainsboro !important;
 }
 
 .game-cover {
@@ -21,10 +31,30 @@ th, td {
     padding-top: 5px;
 }
 
-thead {
-    background-color: #f0f0f0;
+.game-cover-td {
+    background-color: gainsboro;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.game-name {
+    color: green;
+}
+
+.game-platform {
+    color: blue;
+}
+
+.game-year {
+    color: yellow;
+    text-shadow: black;
+}
+
+.game-rating {
+    color: red;
+}
+
+.game-name, .game-platform, .game-year, .game-rating {
+    border: 10px solid gainsboro;
+    background-color: gainsboro;
+    border-radius: 5px;
+    font-weight: 600;
 }

@@ -11,7 +11,7 @@ header {
     align-items: center;
     padding-left: max(40px, 3.5vw);
     padding-right: max(3vw, 30px);
-    background-color: white;
+    background-color: gainsboro;
 }
 
 .logo {
@@ -20,6 +20,17 @@ header {
     font-family: 'Roboto', 'Helvetica', 'Futura', sans-serif;
     font-weight: 400;
     font-style: italic;
+    color: #3e3e3e;
+}
+
+.search-bar {
+    border: 5px solid rgba(248, 248, 255, 0.978);
+    border-radius: 5px;
+}
+
+.search-bar, input, .search-icon {
+    background-color: #3e3e3e;
+    color: white;
 }
 
 .search-icon {

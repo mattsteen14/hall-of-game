@@ -13,9 +13,12 @@
     /* padding: 10px; */
     text-align: center;
     /* margin: 10px; */
+    background-color: darkgrey;
+    color: #000;
 };
 
-.filters > p {
+.filters p {
     margin: 0;
     padding: 0;
+    background-color: gainsboro;   
 }

@@ -18,11 +18,11 @@ export const GamesList = () => {
                 <tbody>
                     {games.map((game) => (
                         <tr key={game.id}>
-                            <td><img src={game.cover} alt={game.name} className='game-cover' /></td>
-                            <td>{game.name}</td>
-                            <td>{game.platforms.join(', ')}</td>
-                            <td>{game.release_year}</td>
-                            <td>{game.rating}</td>
+                            <td className='game-cover-td'><img src={game.cover} alt={game.name} className='game-cover' /></td>
+                            <td><span className='game-name'>{game.name}</span></td>
+                            <td><span className='game-platform'>{game.platforms.join(', ')}</span></td>
+                            <td><span className='game-year'>{game.release_year}</span></td>
+                            <td><span className='game-rating'>{game.rating}</span></td>
                         </tr>
                     ))}
                 </tbody>
