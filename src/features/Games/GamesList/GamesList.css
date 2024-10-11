@@ -11,14 +11,14 @@ table {
 
 th, td {
     border: 1px solid black;
-    padding: 10px;
-    text-align: left;
+    text-align: center;
 }
 
 .game-cover {
     width: 50px;
     height: auto;
     object-fit: cover;
+    padding-top: 5px;
 }
 
 thead {

@@ -8,7 +8,7 @@
 main {
   display: flex;
   flex-direction: column;
-  padding-top: calc(max(60px, 10vh) + max(60px, 10vh) + 30px); /* Accounts for Header + Filters */
+  padding-top: calc(max(60px, 10vh) + max(60px, 10vh)); /* Accounts for Header + Filters */
   height: 100vh; /* Full viewport height */
 }
 
@@ -18,6 +18,6 @@ section.game-view {
   background-color: #f0f0f0; /* Example background */
   /* padding: 20px;  Some padding around the content */
   width: 100vw;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   padding-top: 20px;
 }
