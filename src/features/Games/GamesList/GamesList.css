@@ -24,15 +24,20 @@ th {
     /* border-bottom: 1px solid black; */
 }
 
+.game-rank-td, .game-cover-td {
+    background-color: gainsboro;
+}
+
+.game-rank {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
 .game-cover {
     width: 50px;
     height: auto;
     object-fit: cover;
     padding-top: 5px;
-}
-
-.game-cover-td {
-    background-color: gainsboro;
 }
 
 .game-name {
@@ -62,18 +67,30 @@ th {
 @media only screen and (max-width: 1024px) {
 
     .game-cover {
-        margin: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .game-name, .game-platform, .game-year, .game-rating {
+        font-size: 0.8em;
     }
 }
 
 @media only screen and (max-width: 768px) {
 
+    th, td {
+        max-height: fit-content;
+    }
+
+    .game-rank {
+        font-size: 1em;
+    }
+
     .game-cover {
-        margin: 0.5em;
+        margin-right: 0.5em;
     }
 
     .game-name, .game-platform, .game-year, .game-rating {
-        font-size: 0.8em;
+        font-size: 0.6em;
         white-space: pre-wrap;
         word-wrap: break-word;
     }
