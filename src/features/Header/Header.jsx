@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import './Header.css';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { setSearch } from '../Games/gamesSlice';
+import { resetGenreFilter, resetPlatformFilter, resetYearFilter } from '../Games/gamesSlice';
 
 export const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -10,6 +12,12 @@ export const Header = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
+    };
+    const handleReset = () => {
+        dispatch(resetPlatformFilter());
+        dispatch(resetYearFilter());
+        dispatch(resetGenreFilter());
+        setSearchTerm('');
     }
     return (
         <header>
@@ -32,13 +40,13 @@ export const Header = () => {
                     </button>
                 </form>
             </div>
-            <button
+            <Link
                 className='reset-button'
-                type='button'
-                onClick={() => window.location.reload()}
+                to='/'
+                onClick={handleReset}
             >
                 RESET
-            </button>
+            </Link>
         </header>
     )
 }

@@ -1,21 +1,30 @@
-import { useSelector } from 'react-redux'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 import './App.css'
 import { Header } from './features/Header/Header'
 import { GamesList } from './features/Games/GamesList/GamesList'
 import { GameDetails } from './features/Games/GameDetails/GameDetails'
-import { selectCurrentGame } from './features/Games/gamesSlice'
+import { setGames } from './features/Games/gamesSlice'
+import { gameData } from './api/gameData'
 
 function App () {
-  const selectedGame = useSelector(selectCurrentGame);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setGames(gameData));
+  }, [dispatch])
   return (
-    <div>
+    <Router>
       <Header />
       <main>
         <section className='game-view'>
-          {selectedGame ? <GameDetails game={selectedGame} /> : <GamesList />}
+          <Routes>
+            <Route path='/games/:id' element={<GameDetails />} />
+            <Route path='/' element={<GamesList />} />
+          </Routes>
         </section>
       </main>
-    </div>
+    </Router>
   );
 }
 
