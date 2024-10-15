@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux'
 import './App.css'
 import { Header } from './features/Header/Header'
-import { Filters } from './features/Filters/Filters'
 import { GamesList } from './features/Games/GamesList/GamesList'
 import { GameDetails } from './features/Games/GameDetails/GameDetails'
 import { selectCurrentGame } from './features/Games/gamesSlice'
@@ -12,9 +11,6 @@ function App () {
     <div>
       <Header />
       <main>
-        <section>
-          <Filters />
-        </section>
         <section className='game-view'>
           {selectedGame ? <GameDetails game={selectedGame} /> : <GamesList />}
         </section>
