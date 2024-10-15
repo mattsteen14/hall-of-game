@@ -41,6 +41,8 @@ header {
 }
 
 .reset-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     background-color: #3e3e3e;
     color: white;
     border: 5px solid rgba(248, 248, 255, 0.978);
