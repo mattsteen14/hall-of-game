@@ -24,14 +24,21 @@ export const Header = () => {
                         aria-label='Search'
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)} />
-                    <button 
-                    className='search-icon'
-                    type='submit' 
-                    aria-label='Search'>
+                    <button
+                        className='search-icon'
+                        type='submit'
+                        aria-label='Search'>
                         <HiOutlineSearch />
                     </button>
                 </form>
             </div>
+            <button
+                className='reset-button'
+                type='button'
+                onClick={() => window.location.reload()}
+            >
+                RESET
+            </button>
         </header>
     )
 }

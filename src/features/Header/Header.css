@@ -12,6 +12,8 @@ header {
     padding-left: max(40px, 3.5vw);
     padding-right: max(3vw, 30px);
     background-color: gainsboro;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .logo {
@@ -25,7 +27,7 @@ header {
 
 .search-bar {
     border: 5px solid rgba(248, 248, 255, 0.978);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .search-bar, input, .search-icon {
@@ -38,13 +40,41 @@ header {
     padding: 0;
 }
 
+.reset-button {
+    background-color: #3e3e3e;
+    color: white;
+    border: 5px solid rgba(248, 248, 255, 0.978);
+    border-radius: 10px;
+    text-align: end;
+    font-size: 0.8em;
+    padding-top: 2.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.reset-button:hover, .reset-button:active {
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 1),
+        0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:active {
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 2),
+        0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
 @media only screen and (max-width: 768px) {
 
     header {
         height: 50px;
+        margin-top: 0.2rem;
     }
 
     h1 {
         font-size: 1.5em;
+    }
+
+    .reset-button {
+        font-size: 0.5em;
+        padding: 1.8rem 0.5rem 0.1rem;
     }
 }
