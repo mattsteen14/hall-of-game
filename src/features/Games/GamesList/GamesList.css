@@ -22,7 +22,8 @@ th {
     font-style: italic;
     background-color: gainsboro !important;
     color: #000;
-    text-shadow: 1px 1px #0000006d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: text-shadow 0.2s ease-in;
     /* border-bottom: 1px solid black; */
 }
 
@@ -30,8 +31,28 @@ th a {
     color: #000;
 }
 
-th a:hover {
+th a,
+td a {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: text-shadow 0.2s ease-in-out;
+}
+
+th a:hover,
+td a:hover {
+    text-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.8),
+    0px 5px 8px rgba(0, 0, 0, 0.8);
+}
+
+th a:active,
+td a:active {
     text-shadow: none;
+    outline: none;
+}
+
+th a:focus,
+td a:focus {
+    text-shadow: none;
+    outline: none;
 }
 
 .game-rank-td, .game-cover-td {
@@ -73,18 +94,6 @@ th a:hover {
     font-weight: 600;
 }
 
-td {
-    text-shadow: 1px 1px #0000006d;
-}
-
-td a {
-    text-shadow: 1px 1px #0000006d;
-}
-
-td a:hover {
-    text-shadow: none;
-}
-
 @media only screen and (max-width: 1024px) {
 
     .game-cover {
@@ -110,7 +119,7 @@ td a:hover {
         margin-right: 0.5em;
     }
 
-    .game-name, .game-platform, .game-year, .game-rating {
+    .game-name, .game-platform, .game-genre, .game-year, .game-rating {
         font-size: 0.6em;
         white-space: pre-wrap;
         word-wrap: break-word;
