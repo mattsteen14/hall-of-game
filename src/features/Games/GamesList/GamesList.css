@@ -50,7 +50,7 @@ th a:hover {
     padding-top: 5px;
 }
 
-.game-name {
+.game-name, .game-year {
     color: green;
 }
 
@@ -58,7 +58,7 @@ th a:hover {
     color: blue;
 }
 
-.game-year {
+.game-genre {
     color: yellow;
 }
 
@@ -66,7 +66,7 @@ th a:hover {
     color: red;
 }
 
-.game-name, .game-platform, .game-year, .game-rating {
+.game-name, .game-year, .game-platform, .game-genre, .game-rating {
     border: 0.3em solid gainsboro;
     background-color: gainsboro;
     border-radius: 5px;
@@ -91,7 +91,7 @@ td a:hover {
         margin-right: 0.5em;
     }
 
-    .game-name, .game-platform, .game-year, .game-rating {
+    .game-name, .game-platform, .game-year, .game-genre, .game-rating {
         font-size: 0.8em;
     }
 }

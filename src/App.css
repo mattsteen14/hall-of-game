@@ -8,7 +8,8 @@
 main {
   display: flex;
   flex-direction: column;
-  padding-top: calc(max(70px, 10vh)); /* Accounts for Header + Filters */
+  padding-top: calc(max(70px, 12vh)); /* Accounts for Header + Filters */
+  /* margin-top: 1em; */
 }
 
 section.game-view {

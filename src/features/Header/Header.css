@@ -3,17 +3,17 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: max(60px, 10vh);
+    height: max(70px, 12vh);
     z-index: 1100;
     display: flex;
     /* border-bottom: 1px solid black; */
     justify-content: space-around;
     align-items: center;
+    padding-top: 1em;
     padding-left: max(40px, 3.5vw);
     padding-right: max(3vw, 30px);
+    padding-bottom: 1em;
     background-color: gainsboro;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
 }
 
 .logo {
@@ -50,8 +50,8 @@ header {
     text-align: end;
     font-size: 0.8em;
     padding-top: 2.5rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+    padding-bottom: 0.1rem;
+    margin: 1rem;
 }
 
 .reset-button:hover, .reset-button:active {
@@ -67,8 +67,7 @@ header {
 @media only screen and (max-width: 768px) {
 
     header {
-        height: 50px;
-        margin-top: 0.2rem;
+        height: max(50px, 10vh);
     }
 
     h1 {

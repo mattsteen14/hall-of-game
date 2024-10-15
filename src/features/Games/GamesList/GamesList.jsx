@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import './GamesList.css';
 import { gameData } from '../../../api/gameData';
-import { setPlatformFilter, setYearFilter } from '../gamesSlice';
+import { setPlatformFilter, setYearFilter, setGenreFilter } from '../gamesSlice';
 
 export const GamesList = () => {
     const dispatch = useDispatch();
@@ -26,6 +26,10 @@ export const GamesList = () => {
         e.preventDefault();
         dispatch(setYearFilter(year));
     }
+    const handleGenreClick = (e, genre) => {
+        e.preventDefault();
+        dispatch(setGenreFilter(genre));
+    }
     return (
         <div className='games-list'>
             <table>
@@ -33,7 +37,14 @@ export const GamesList = () => {
                     <tr>
                         <th>#</th>
                         <th></th>
-                        <th>Title</th>
+                        <th>
+                            Title / <a
+                                href='#'
+                                onClick={(e) => handleYearClick(e, '')}
+                            >
+                                Year
+                            </a>
+                            </th>
                         <th>
                             <a
                                 href='#'
@@ -44,9 +55,8 @@ export const GamesList = () => {
                         <th>
                             <a
                                 href='#'
-                                onClick={(e) => handleYearClick(e, '')}
-                            >
-                                Year
+                                onClick={(e) => handleGenreClick(e, '')}>
+                                Genres
                             </a>
                         </th>
                         <th>Rating</th>
@@ -79,6 +89,12 @@ export const GamesList = () => {
                                 >
                                     {game.name}
                                 </span>
+                                <a
+                                    className='game-year'
+                                    onClick={(e) => handleYearClick(e, game.release_year)}
+                                >
+                                    ({game.release_year})
+                                </a>
                             </td>
                             <td>
                                 {game.platforms.map((platform) => (
@@ -93,10 +109,10 @@ export const GamesList = () => {
                             </td>
                             <td>
                                 <a
-                                    className='game-year'
-                                    onClick={(e) => handleYearClick(e, game.release_year)}
+                                    className='game-genre'
+                                    onClick={(e) => handleGenreClick(e, game.genres)}
                                 >
-                                    {game.release_year}
+                                    {game.genres}
                                 </a>
                             </td>
                             <td>
