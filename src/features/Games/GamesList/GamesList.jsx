@@ -44,7 +44,7 @@ export const GamesList = () => {
                             >
                                 Year
                             </a>
-                            </th>
+                        </th>
                         <th>
                             <a
                                 href='#'
@@ -85,27 +85,34 @@ export const GamesList = () => {
                             </td>
                             <td>
                                 <span
-                                    className='game-name'
+                                className='game-name'
                                 >
+                                <a>
                                     {game.name}
-                                </span>
+                                </a>
+                                {' '}
                                 <a
                                     className='game-year'
                                     onClick={(e) => handleYearClick(e, game.release_year)}
                                 >
                                     ({game.release_year})
                                 </a>
+                                </span>
                             </td>
                             <td>
-                                {game.platforms.map((platform) => (
-                                    <a
-                                        key={platform}
-                                        className='game-platform'
-                                        onClick={(e) => handlePlatformClick(e, platform)}
+                                {game.platforms.map((platform, index) => (
+                                    <span key={platform}
+                                    className='game-platform'
                                     >
-                                        {platform}
-                                    </a>
-                                )).reduce((prev, curr) => [prev, ', ', curr])}
+                                        <a
+                                            
+                                            onClick={(e) => handlePlatformClick(e, platform)}
+                                        >
+                                            {platform}
+                                        </a>
+                                        {index < game.platforms.length - 1 && ', '}
+                                    </span>
+                                ))}
                             </td>
                             <td>
                                 <a

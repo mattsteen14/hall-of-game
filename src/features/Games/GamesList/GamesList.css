@@ -50,7 +50,7 @@ th a:hover {
     padding-top: 5px;
 }
 
-.game-name, .game-year {
+.game-name {
     color: green;
 }
 
@@ -62,11 +62,11 @@ th a:hover {
     color: yellow;
 }
 
-.game-rating {
+.game-rating{
     color: red;
 }
 
-.game-name, .game-year, .game-platform, .game-genre, .game-rating {
+.game-name, .game-platform, .game-genre, .game-rating {
     border: 0.3em solid gainsboro;
     background-color: gainsboro;
     border-radius: 5px;
