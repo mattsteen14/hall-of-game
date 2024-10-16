@@ -22,3 +22,9 @@ section.game-view {
     padding-top: calc(max(60px, 15vh));
   }
 }
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding-top: calc(max(60px, 10vh));
+  }
+} 

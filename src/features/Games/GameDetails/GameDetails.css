@@ -2,8 +2,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     font-size: 1.2rem;
 }
 
@@ -12,7 +10,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem 0;
     background-color: darkgray;  
 }
@@ -47,13 +45,7 @@
     background-color: darkgray;
 }
 
-.game-box-art {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-}
-
-.game-screenshot {
+.game-box-art, .game-screenshot {
     width: auto;
     height: 100%;
     object-fit: cover;
@@ -151,7 +143,6 @@ a:hover .igdb-logo {
 
 .game-description {
     text-align: start;
-    padding: 1rem 4rem;
 }
 
 .game-description h4 {
@@ -163,9 +154,29 @@ a:hover .igdb-logo {
     margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 768px) {
+footer {
+    padding: 1rem 4rem;
+}
 
+@media only screen and (max-width: 800px) {
+
+    .game-header {
+        font-size: 0.8rem;
+    }
+
+    .game-screenshot {
+        display: none;
+    }
+    
     .game-info-container, .game-description {
         padding: 1rem;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+
+    .game-header {
+        font-size: 0.6rem;
     }
 }
