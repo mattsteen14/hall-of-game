@@ -67,7 +67,8 @@ export const mockGameData = [
     "cover": "https://upload.wikimedia.org/wikipedia/en/2/21/The_Legend_of_Zelda_A_Link_to_the_Past_SNES_Game_Cover.jpg",
     "summary": "A classic top-down adventure with parallel worlds.",
     "story": "Link must save the Seven Maidens and defeat Ganon.",
-    "similar_games": [1, 2, 4]
+    "similar_games": [1, 2, 4],
+    "url": "https://www.igdb.com/games/the-legend-of-zelda-a-link-to-the-past"
   },
   {
     "id": 6,

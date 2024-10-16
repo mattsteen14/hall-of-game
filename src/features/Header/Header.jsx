@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import './Header.css';
@@ -9,15 +9,20 @@ import { resetGenreFilter, resetPlatformFilter, resetYearFilter } from '../Games
 export const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleSearch = (e) => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
+        navigate('/');
     };
     const handleReset = () => {
+        navigate('/');
         dispatch(resetPlatformFilter());
         dispatch(resetYearFilter());
         dispatch(resetGenreFilter());
         setSearchTerm('');
+        dispatch(setSearch(''));
+        navigate('/');
     }
     return (
         <header>

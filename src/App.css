@@ -8,7 +8,7 @@
 main {
   display: flex;
   flex-direction: column;
-  padding-top: calc(max(70px, 12vh)); /* Accounts for Header + Filters */
+  padding-top: calc(max(80px, 15vh)); /* Accounts for Header + Filters */
   /* margin-top: 1em; */
 }
 
@@ -19,6 +19,6 @@ section.game-view {
 
 @media only screen and (max-width: 768px) {
   main {
-    padding-top: calc(max(60px, 10vh));
+    padding-top: calc(max(60px, 15vh));
   }
 }

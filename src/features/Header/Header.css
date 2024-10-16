@@ -3,7 +3,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: max(70px, 12vh);
+    height: max(80px, 15vh);
     z-index: 1100;
     display: flex;
     /* border-bottom: 1px solid black; */
@@ -23,6 +23,7 @@ header {
     font-weight: 400;
     font-style: italic;
     color: #3e3e3e;
+    font-size: 1.5rem;
 }
 
 .search-bar {
@@ -63,14 +64,44 @@ header {
         0px 0px 0px rgba(0, 0, 0, 0.3);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 
     header {
-        height: max(50px, 10vh);
+        height: max(60px, 15vh);
     }
 
-    h1 {
-        font-size: 1.5em;
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .reset-button {
+        font-size: 0.5em;
+        padding: 1.8rem 0.5rem 0.1rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    header {
+        height: max(60px, 10vh);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .search-bar {
+        width: 80px;
+    }
+
+    input {
+        width: 95%;
+    }
+
+    .search-icon {
+        display: none;
     }
 
     .reset-button {

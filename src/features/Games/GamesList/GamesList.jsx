@@ -98,35 +98,38 @@ export const GamesList = () => {
                             </td>
                             <td>
                                 <span
-                                className='game-name'
+                                    className='game-name'
                                 >
-                                <Link to={`/games/${game.id}`}>
-                                    {game.name}
-                                </Link>
-                                {' '}
-                                <a
-                                    className='game-year'
-                                    onClick={(e) => handleYearClick(e, game.release_year)}
-                                >
-                                    ({game.release_year})
-                                </a>
+                                    <Link to={`/games/${game.id}`}>
+                                        {game.name}
+                                    </Link>
+                                    {' '}
+                                    <a
+                                        className='game-year'
+                                        onClick={(e) => handleYearClick(e, game.release_year)}
+                                    >
+                                        ({game.release_year})
+                                    </a>
                                 </span>
                             </td>
                             <td>
-                                {game.platforms.map((platform, index) => (
-                                    <span key={platform}
-                                    className='game-platform'
-                                    >
-                                        <a
-                                            
-                                            onClick={(e) => handlePlatformClick(e, platform)}
-                                        >
-                                            {platform}
+                                {game.platforms.length > 0 && (
+                                    <span className='game-platform'>
+                                        <a onClick={(e) => handlePlatformClick(e, game.platforms[0])}>
+                                            {game.platforms[0]}
                                         </a>
-                                        {index < game.platforms.length - 1 && ', '}
                                     </span>
-                                ))}
+                                )}
                             </td>
+                            {/* <td>
+                                {game.genres.length > 0 && (
+                                    <span className='game-genre'>
+                                        <a onClick={(e) => handleGenreClick(e, game.genres[0])}>
+                                            {game.genres[0]}
+                                        </a>
+                                    </span>
+                                )}
+                            </td> (to handle multiple genres with real API) */}
                             <td>
                                 <a
                                     className='game-genre'
