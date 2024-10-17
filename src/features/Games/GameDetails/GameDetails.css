@@ -155,7 +155,7 @@ a:hover .igdb-logo {
 }
 
 footer {
-    padding: 1rem 4rem;
+    text-align: center;
 }
 
 @media only screen and (max-width: 800px) {

@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./GameDetails.css";
 import { BiLinkExternal } from "react-icons/bi";
 import { HiOutlineDocument } from "react-icons/hi2";
 import { FaWikipediaW, FaTwitch } from "react-icons/fa";
 import { SiIgdb } from "react-icons/si";
 import { selectGameById } from "../gamesSlice";
+import { selectSimilarGamesById } from "../gamesSlice";
 import { SimilarGames } from "./SimilarGames/SimilarGames";
+import { Card } from "../../../components/Card/Card";
 
 export const GameDetails = () => {
     const { id } = useParams();
     const game = useSelector((state) => selectGameById(state, id));
+    const similarGames = useSelector((state) => selectSimilarGamesById(state, id));
     return (
         <div>
             {game ? (
@@ -70,8 +74,20 @@ export const GameDetails = () => {
                         <h4>Story: </h4>
                         <p>{game.story}</p>
                     </section>
-                    <footer>
-                        <SimilarGames />
+                    <footer className="similar-games">
+                        <h3>Similar Games</h3>
+                            {similarGames.map((similarGame) => (
+                        <Link
+                        key={similarGame.id} 
+                        to={`/games/${similarGame.id}`}
+                        >
+                        <Card>
+                            <SimilarGames 
+                            game={similarGame}
+                            />
+                        </Card>
+                        </Link>
+                    ))}
                     </footer>
                 </div>
             ) : (
