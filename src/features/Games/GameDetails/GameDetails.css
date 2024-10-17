@@ -35,6 +35,26 @@
     font-weight: 600;
 }
 
+.game-header a {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: text-shadow 0.2s ease-in-out;
+}
+
+.game-header a:hover {
+    text-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+    2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.game-header a:active {
+    text-shadow: none;
+    outline: none;
+}
+
+.game-header a:focus {
+    text-shadow: none;
+    outline: none;
+}
+
 .game-banner {
     width: 100%;
     display: flex;
@@ -118,6 +138,15 @@ a:hover .igdb-logo {
 
 .game-info h4, .game-aside h4 {
     margin-bottom: 0.5rem;
+}
+
+.game-info a {
+    color: black;
+    text-decoration: underline;
+}
+
+.game-info a:hover {
+    text-decoration: none;
 }
 
 .game-info span {

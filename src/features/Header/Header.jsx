@@ -1,29 +1,15 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import { HiOutlineSearch } from 'react-icons/hi';
-import { setSearch } from '../Games/gamesSlice';
-import { resetGenreFilter, resetPlatformFilter, resetYearFilter } from '../Games/gamesSlice';
+import { useFilterHandlers } from '../../utils/handlers';
 
 export const Header = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const handleSearch = (e) => {
-        e.preventDefault();
-        dispatch(setSearch(searchTerm));
-        navigate('/');
-    };
-    const handleReset = () => {
-        navigate('/');
-        dispatch(resetPlatformFilter());
-        dispatch(resetYearFilter());
-        dispatch(resetGenreFilter());
-        setSearchTerm('');
-        dispatch(setSearch(''));
-        navigate('/');
-    }
+    const {
+        searchTerm,
+        setSearchTerm,
+        handleSearch,
+        handleReset
+    } = useFilterHandlers();
     return (
         <header>
             <div className='logo'>

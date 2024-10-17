@@ -8,10 +8,16 @@ import { FaWikipediaW, FaTwitch } from "react-icons/fa";
 import { SiIgdb } from "react-icons/si";
 import { selectGameById } from "../gamesSlice";
 import { selectSimilarGamesById } from "../gamesSlice";
+import { useFilterHandlers } from "../../../utils/handlers";
 import { SimilarGames } from "./SimilarGames/SimilarGames";
 import { Card } from "../../../components/Card/Card";
 
 export const GameDetails = () => {
+    const {
+        handleYearClick,
+        handlePlatformClick,
+        handleGenreClick
+    } = useFilterHandlers();
     const { id } = useParams();
     const game = useSelector((state) => selectGameById(state, id));
     const similarGames = useSelector((state) => selectSimilarGamesById(state, id));
@@ -21,7 +27,12 @@ export const GameDetails = () => {
                 <div className='game-details'>
                     <section className="game-header">
                         <span className="title">{game.name}</span>
-                        <span className="year">{game.release_year}</span>
+                        <a 
+                        className="year"
+                        onClick={(e) => handleYearClick(e, game.release_year)}
+                        >
+                            {game.release_year}
+                            </a>
                         {game.involved_companies.length > 0 && (
                             <span
                                 className="dev"
@@ -57,13 +68,28 @@ export const GameDetails = () => {
                                     {genre}{index < game.genres.length - 1 && ", "}
                                 </span>
                             ))} */}
-                            <span>{game.genres}</span>
+                            {/* <a
+                                onClick={(e) => handleGenreClick(e, game.genres)}
+                                href="#"
+                            >
+                                {game.genres.join(", ")}
+                                </a> */}
+                            <a
+                                onClick={(e) => handleGenreClick(e, game.genres)}
+                                href="#"
+                            >
+                                {game.genres}
+                                </a>
                             <br />
                             <h4>Platforms: </h4>
                             {game.platforms.map((platform, index) => (
-                                <span key={platform}>
+                                <a 
+                                key={platform}
+                                onClick={(e) => handlePlatformClick(e, platform)}
+                                href="#"
+                                >
                                     {platform}{index < game.platforms.length - 1 && ", "}
-                                </span>
+                                </a>
                             ))}
                         </article>
                         <aside className="game-aside">
@@ -93,6 +119,7 @@ export const GameDetails = () => {
                                 <Link
                                     key={similarGame.id}
                                     to={`/games/${similarGame.id}`}
+                                    onClick={() => window.scrollTo(0, 0)}
                                 >
                                     <Card>
                                         <SimilarGames

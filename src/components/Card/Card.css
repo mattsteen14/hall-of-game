@@ -10,6 +10,26 @@
     background-color: gainsboro;
 }
 
-a:hover .card {
+/* a:hover .card {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+} */
+
+a .card {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: text-shadow 0.2s ease-in-out;
+}
+
+a:hover .card {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+    2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+a:active .card {
+    box-shadow: none;
+    outline: none;
+}
+
+a:focus .card {
+    box-shadow: none;
+    outline: none;
 }
