@@ -103,6 +103,7 @@ a:hover .igdb-logo {
     background-color: gainsboro;
     display: flex;
     justify-content: space-between;
+    align-items: start;
 }
 
 .game-info-container, .game-description {
@@ -111,13 +112,17 @@ a:hover .igdb-logo {
 
 .game-info {
     flex: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+    text-align: left;
+}
+
+.game-info h4, .game-aside h4 {
+    margin-bottom: 0.5rem;
 }
 
 .game-info span {
-    margin-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 .game-aside {
@@ -143,6 +148,7 @@ a:hover .igdb-logo {
 
 .game-description {
     text-align: start;
+    border-bottom: 1px solid black;
 }
 
 .game-description h4 {
@@ -155,7 +161,21 @@ a:hover .igdb-logo {
 }
 
 footer {
+    padding: 1rem;
+    background-color: darkgray;
+}
+
+footer h3 {
     text-align: center;
+    margin-bottom: 1rem;
+}
+
+.similar-games-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -174,17 +194,16 @@ footer {
     
 }
 
+@media only screen and (max-width: 640px) {
+    .similar-games-container {
+        flex-direction: column;
+    }
+}
+
 @media only screen and (max-width: 500px) {
 
-    .game-header {
+    .game-header, .game-details h4, .game-info span, .game-info p, .game-description p, .game-aside h4 {
         font-size: 0.8rem;
     }
 
-    .game-details {
-        font-size: 0.8rem;
-    }
-
-    .game-aside h4 {
-        font-size: 0.8rem;
-    }
 }

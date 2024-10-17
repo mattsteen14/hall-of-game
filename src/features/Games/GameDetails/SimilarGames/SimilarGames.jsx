@@ -9,8 +9,8 @@ export const SimilarGames = ({ game }) => {
                 alt={game.name}
                 className="similar-game-box-art"
             />
-            <span className="similar-game-title">{game.name}</span>
-            <span className="similar-game-rating">{game.rating}</span>
+            <p className="similar-game-title">{game.name}</p>
+            <p className="similar-game-rating">{game.rating}</p>
         </div>
     )
 }

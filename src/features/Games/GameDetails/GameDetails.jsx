@@ -51,10 +51,20 @@ export const GameDetails = () => {
                     </section>
                     <section className="game-info-container">
                         <article className="game-info">
-                            <h4 className="info-title">Genre: </h4>
+                            <h4>Genre: </h4>
+                            {/* {game.genres.map((genre, index) => (
+                                <span key={genre}>
+                                    {genre}{index < game.genres.length - 1 && ", "}
+                                </span>
+                            ))} */}
                             <span>{game.genres}</span>
-                            <h4 className="info-title">Platforms: </h4>
-                            <span>{game.platforms}</span>
+                            <br />
+                            <h4>Platforms: </h4>
+                            {game.platforms.map((platform, index) => (
+                                <span key={platform}>
+                                    {platform}{index < game.platforms.length - 1 && ", "}
+                                </span>
+                            ))}
                         </article>
                         <aside className="game-aside">
                             <h4>Links:</h4>
@@ -74,20 +84,24 @@ export const GameDetails = () => {
                         <h4>Story: </h4>
                         <p>{game.story}</p>
                     </section>
-                    <footer className="similar-games">
-                        <h3>Similar Games</h3>
-                            {similarGames.map((similarGame) => (
-                        <Link
-                        key={similarGame.id} 
-                        to={`/games/${similarGame.id}`}
+                    <footer>
+                        <h3>Similar Games:</h3>
+                        <div
+                        className="similar-games-container"
                         >
-                        <Card>
-                            <SimilarGames 
-                            game={similarGame}
-                            />
-                        </Card>
-                        </Link>
-                    ))}
+                        {similarGames.map((similarGame) => (
+                                <Link
+                                    key={similarGame.id}
+                                    to={`/games/${similarGame.id}`}
+                                >
+                                    <Card>
+                                        <SimilarGames
+                                            game={similarGame}
+                                        />
+                                    </Card>
+                                </Link>
+                        ))}
+                        </div>
                     </footer>
                 </div>
             ) : (

@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 1rem; */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    height: 20rem;
+    width: 12rem;
+    background-color: gainsboro;
+}
+
+a:hover .card {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
