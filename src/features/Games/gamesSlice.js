@@ -56,6 +56,16 @@ export const selectSimilarGamesById = (state, gameId) => {
     return game ? game.similar_games.map(similarGameId => state.games.games.find(game => game.id === similarGameId)) : [];
 }
 
-export const { selectGame, clearSelectedGame, setSearch, delSearch, setPlatformFilter, resetPlatformFilter, setGenreFilter, resetGenreFilter, setYearFilter, resetYearFilter, setGames, selectSimilarGames } = gamesSlice.actions;
+export const { selectGame, 
+    clearSelectedGame, 
+    setSearch, delSearch, 
+    setPlatformFilter, 
+    resetPlatformFilter, 
+    setGenreFilter, 
+    resetGenreFilter, 
+    setYearFilter, 
+    resetYearFilter, 
+    setGames
+} = gamesSlice.actions;
 export const selectCurrentGame = (state) => state.games.currentGame;
 export default gamesSlice.reducer;

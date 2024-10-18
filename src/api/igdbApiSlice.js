@@ -23,13 +23,28 @@ export const igdbApi = createApi({
             query: () => ({
                 url: 'games',
                 method: 'POST',
-                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites, rating, rating_count, involved_companies, screenshots, url; limit 100; where category = 0; order rating desc;'
+                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites, rating, rating_count, involved_companies, screenshots, url, similar_games; limit 100; where category = 0; order rating desc;'
             }),
             transformResponse: (response) => {
                 return response.map(game => {
                     return {
-                        ...game,
-                        weightedRating: calculateWeightedRating(game),
+                        id: game.id,
+                        name: game.name,
+                        cover: game.cover,
+                        first_release_date: game.first_release_date,
+                        platforms: game.platforms,
+                        genres: game.genres,
+                        summary: game.summary,
+                        websites: game.websites,
+                        involvedCompanies: game.involved_companies,
+                        screenshots: game.screenshots,
+                        url: game.url,
+                        weightedRating: calculateWeightedRating({
+                            rating: game.rating,
+                            rating_count: game.rating_count,
+                        }),
+                        similarGames: game.similar_games,
+                        releaseYear: game.first_release_date ? new Date(game.first_release_date).getFullYear() : null,
                     }
                 }).sort((a, b) => b.weightedRating - a.weightedRating);
             },

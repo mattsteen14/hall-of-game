@@ -25,9 +25,10 @@ export const useFilterHandlers = () => {
         e.preventDefault();
         dispatch(resetPlatformFilter());
     };
-    const handleYearClick = (e, year) => {
+    const handleYearClick = (e, first_release_date) => {
         e.preventDefault();
-        dispatch(setYearFilter(year));
+        const releaseYear = new Date(first_release_date).getFullYear();
+        dispatch(setYearFilter(releaseYear));
         navigate('/');
     };
     const handleYearReset = (e) => {
