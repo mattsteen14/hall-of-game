@@ -9,13 +9,13 @@ import { setGames } from './features/Games/gamesSlice'
 import useGetGamesQuery from './api/igdbApiSlice'
 
 function App () {
-  const dispatch = useDispatch();
-  const { data: games } = useGetGamesQuery();
-  useEffect(() => {
-    if (games) {
-      dispatch(setGames(games));
-    }
-  }, [games, dispatch]);
+  // const dispatch = useDispatch();
+  // const { data: games } = useGetGamesQuery();
+  // useEffect(() => {
+  //   if (games) {
+  //     dispatch(setGames(games));
+  //   }
+  // }, [games, dispatch]);
   return (
     <Router>
       <Header />
