@@ -11,19 +11,21 @@ const calculateWeightedRating = game => {
 
 export const igdbApi = createApi({
     reducerPath: 'igdbApi',
-    baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
+    baseQuery: fetchBaseQuery({ 
+        baseUrl: import.meta.env.VITE_PROXY_URL 
+    }),
     prepareHeaders: (headers) => {
-        headers.set('Client-Id', import.meta.env.VITE_CLIENT_ID);
-        headers.set('Authorization', `Bearer ${import.meta.env.VITE_BEARER_TOKEN}`);
-
+        headers.set('x-api-key', import.meta.env.VITE_API_KEY);
+        headers.set('Content-Type', 'application/json');
         return headers;
     },
     endpoints: (builder) => ({
         getGames: builder.query({
+
             query: () => ({
-                url: 'games',
+                url: '/v4/games',
                 method: 'POST',
-                body: 'fields name, cover, first_release_date, platforms, genres, summary, websites, rating, rating_count, involved_companies, screenshots, url, similar_games; limit 100; where category = 0; order rating desc;'
+                body: 'fields id, name, cover, first_release_date, platforms, genres, summary, websites, rating, rating_count, involved_companies, screenshots, url, similar_games; limit 100; where category = 0; order rating desc;'
             }),
             transformResponse: (response) => {
                 return response.map(game => {
