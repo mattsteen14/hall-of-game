@@ -21,7 +21,9 @@ export const fetchGames = async () => {
 
 export const fetchGameById = async (guid) => {
   try {
-    const response = await api.get(`/game/${guid}/${API_KEY}${format}`);
+    const response = await api.get(
+      `/game/${guid}/?api_key=${API_KEY}${format}`
+    );
     console.log("Game fetched successfully:", response.data);
     return response.data;
   } catch (error) {
