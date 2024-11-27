@@ -1,14 +1,18 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './GamesList.css';
-import { gameData } from '../../../api/gameData';
 import { useFilterHandlers } from '../../../utils/handlers';
 
 export const GamesList = () => {
-    const search = useSelector((state) => state.games.search);
-    const platformFilter = useSelector((state) => state.games.platformFilter);
-    const genreFilter = useSelector((state) => state.games.genreFilter);
-    const yearFilter = useSelector((state) => state.games.yearFilter);
+    const {
+        games,
+        search,
+        platformFilter,
+        genreFilter,
+        yearFilter,
+        loading,
+        error
+    } = useSelector((state) => state.games);
     const {
         handlePlatformClick,
         handlePlatformReset,
@@ -17,15 +21,20 @@ export const GamesList = () => {
         handleYearClick,
         handleYearReset
     } = useFilterHandlers();
-    const games = gameData;
     const filteredGames = games
         .filter((game) => game.name.toLowerCase().includes(search.toLowerCase()))
         .filter((game) => !platformFilter || game.platforms.includes(platformFilter))
         .filter((game) => !genreFilter || game.genres.includes(genreFilter))
-        .filter((game) => !yearFilter || game.release_year === yearFilter);
+        .filter((game) => !yearFilter || game.released === yearFilter);
     const rankedGames = filteredGames.map((game, index) => {
         return { ...game, rank: index + 1 };
     });
+    if (loading) {
+        return <div>Loading games...</div>
+    }
+    if (error) {
+        return <div>Error fetching games: {error}</div>
+    }
     return (
         <div className='games-list'>
             <table>
@@ -75,7 +84,7 @@ export const GamesList = () => {
                             >
                                 <Link to={`/games/${game.id}`}>
                                     <img
-                                        src={game.cover}
+                                        src={game.background_image}
                                         alt={game.name}
                                         className='game-cover'
                                     />
@@ -91,43 +100,39 @@ export const GamesList = () => {
                                     {' '}
                                     <a
                                         className='game-year'
-                                        onClick={(e) => handleYearClick(e, game.release_year)}
+                                        onClick={(e) => handleYearClick(e, game.released)}
                                     >
-                                        ({game.release_year})
+                                        ({new Date(game.released).getFullYear()})
                                     </a>
                                 </span>
                             </td>
                             <td>
                                 {game.platforms.length > 0 && (
-                                    <span className='game-platform'>
-                                        <a onClick={(e) => handlePlatformClick(e, game.platforms[0])}>
-                                            {game.platforms[0]}
+                                    <span className="game-platform">
+                                        <a onClick={(e) => handlePlatformClick(e, game.platforms)}>
+                                            {game.platforms
+                                                .map((platformObj) => platformObj.platform.name) // Extract platform name
+                                                .join(', ')}
                                         </a>
                                     </span>
                                 )}
                             </td>
-                            {/* <td>
+                            <td>
                                 {game.genres.length > 0 && (
-                                    <span className='game-genre'>
-                                        <a onClick={(e) => handleGenreClick(e, game.genres[0])}>
-                                            {game.genres[0]}
+                                    <span className="game-genre">
+                                        <a onClick={(e) => handleGenreClick(e, game.genres)}>
+                                            {game.genres
+                                                .map((genre) => genre.name) // Extract genre name
+                                                .join(', ')}
                                         </a>
                                     </span>
                                 )}
-                            </td> (to handle multiple genres with real API) */}
-                            <td>
-                                <a
-                                    className='game-genre'
-                                    onClick={(e) => handleGenreClick(e, game.genres)}
-                                >
-                                    {game.genres}
-                                </a>
                             </td>
                             <td>
                                 <span
                                     className='game-rating'
                                 >
-                                    {game.rating}
+                                    {game.metacritic}
                                 </span>
                             </td>
                         </tr>

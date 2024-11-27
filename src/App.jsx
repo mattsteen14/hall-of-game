@@ -5,13 +5,12 @@ import './App.css'
 import { Header } from './features/Header/Header'
 import { GamesList } from './features/Games/GamesList/GamesList'
 import { GameDetails } from './features/Games/GameDetails/GameDetails'
-import { setGames } from './features/Games/gamesSlice'
-import { gameData } from './api/gameData'
+import { fetchGamesThunk } from './features/Games/gamesSlice'
 
 function App () {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setGames(gameData));
+    dispatch(fetchGamesThunk());
   }, [dispatch])
   return (
     <Router>

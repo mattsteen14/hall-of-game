@@ -16,9 +16,9 @@ export const useFilterHandlers = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const handlePlatformClick = (e, platform) => {
+    const handlePlatformClick = (e, platforms) => {
         e.preventDefault();
-        dispatch(setPlatformFilter(platform));
+        dispatch(setPlatformFilter(platforms));
         navigate('/');
     };
     const handlePlatformReset = (e) => {
@@ -34,9 +34,9 @@ export const useFilterHandlers = () => {
         e.preventDefault();
         dispatch(resetYearFilter());
     };
-    const handleGenreClick = (e, genre) => {
+    const handleGenreClick = (e, genres) => {
         e.preventDefault();
-        dispatch(setGenreFilter(genre));
+        dispatch(setGenreFilter(genres));
         navigate('/');
     };
     const handleGenreReset = (e) => {

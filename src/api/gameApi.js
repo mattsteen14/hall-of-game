@@ -10,8 +10,10 @@ export const fetchGames = async () => {
     try {
         const response = await api.get(`/games`, {
             params: {
-                key: import.meta.env.RAWG_API_KEY,
-                ordering: '-metacritic'
+                key: import.meta.env.VITE_API_KEY,
+                ordering: '-metacritic',
+                page_size: 41,
+                exclude_additions: 'true',
             }
         });
         console.log('Games fetched successfully:', response.data);
@@ -24,7 +26,7 @@ export const fetchGames = async () => {
 
 export const fetchGamesById = async (id) => {
     try {
-        const response = await api.get(`/games/${id}?key=${import.meta.env.RAWG_API_KEY}`);
+        const response = await api.get(`/games/${id}?key=${import.meta.env.VITE_API_KEY}`);
         console.log('Game fetched successfully:', response.data);
         return response.data;
     } catch (error) {
