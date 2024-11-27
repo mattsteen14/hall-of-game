@@ -65,6 +65,10 @@ I like video games & with some recent additions to iOS app store I have been pla
 
 Therefore the idea for this app is to utilise the IGDB API to make an IGDB client web app where the main view is the top 10 (or 100) games with filters so you can then see the top games per platform or genre or that are available for each emulation platform. Then when you click or search for a game the view changes to a game details page for each page. I will have to set up numerous filters and be very specific to ensure that online releases, remasters & other non-original releases do not feature in these lists. The API has limitations such as no write operations, you cannot update the data. I was considering including functionality for users to rate games and them to favourites list but I would have to create my own backend for this & it could complicate the existing user ratings. This is maybe something to think about for the future, but for now on the game details page I will include a link to the IGDB page with a note that the user can rate the game there.
 
+### Update
+
+I could not get the AWS proxy to work for the IGDB API (from the looks of the IGDB API discord, I wasn't the only one). After exploring alternative video game API's I finally decided on [RAWG]('https://rawg.io/apidocs')'s API and with the help of [Jak](https://github.com/jakr-s), we got it to work. I'm just working to reconfigure the build to the new API as some things are not working as they were before with mock data like the filtering system on GamesList and the GameDetails page not rendering.
+
 <details>
 <summary>Project Objectives</summary>
 
@@ -166,8 +170,9 @@ Ensure you have the following software installed before proceeding:
 - [x] Wireframe the application.
 - [x] Create files and run it locally.
 - [x] Version control. Set up on GitHub.
-- [ ] Build the components.
-- [ ] Add IGDB data.
+- [x] Build the components.
+- [x] Add RAWG API data.
+- [ ] Reconfigure build to new API.
 - [ ] Testing and dubugging.
 - [ ] Deploy and publish to the web.
 - [ ] Share on Codecademy forums for feedback.
@@ -228,6 +233,7 @@ Project Link: [https://github.com/mattsteen14/hall-of-game](https://github.com/m
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
+- [Jak Rhodes-Smith](https://github.com/jakr-s) for helping me with the API.
 - [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place.
 - [Othneil Drew](https://github.com/othneildrew) for the README template.
 - [Choose an Open Source License](https://choosealicense.com)
