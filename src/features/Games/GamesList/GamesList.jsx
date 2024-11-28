@@ -1,10 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './GamesList.css';
+import { fetchGamesThunk } from '../gamesSlice';
 import { useFilterHandlers } from '../../../utils/handlers';
 
 export const GamesList = () => {
+    const dispatch = useDispatch();
     const {
         games,
         search,
@@ -14,6 +16,11 @@ export const GamesList = () => {
         loading,
         error
     } = useSelector((state) => state.games);
+    useEffect(() => {
+        if(!games.length) {
+            dispatch(fetchGamesThunk());
+        }
+    }, [dispatch, games])
     const {
         handlePlatformClick,
         handlePlatformReset,

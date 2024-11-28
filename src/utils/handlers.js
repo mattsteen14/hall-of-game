@@ -9,7 +9,8 @@ import {
     resetYearFilter,
     setGenreFilter,
     resetGenreFilter,
-    setSearch
+    setSearch,
+    setGames
 } from "../features/Games/gamesSlice";
 
 export const useFilterHandlers = () => {
@@ -61,6 +62,7 @@ export const useFilterHandlers = () => {
         dispatch(resetGenreFilter());
         setSearchTerm('');
         dispatch(setSearch(''));
+        dispatch(setGames([]));
         navigate('/');
     };
     return {
