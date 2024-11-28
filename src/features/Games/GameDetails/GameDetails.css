@@ -23,11 +23,11 @@
     color: blue;
 }
 
-.dev {
-    color: yellow;
+.rating {
+    color: red;
 }
 
-.title, .year, .dev, .rating {
+.title, .year, .rating {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     border: 0.3em solid gainsboro;
     background-color: gainsboro;
@@ -71,51 +71,6 @@
     object-fit: cover;
 }
 
-.igdb-rating {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    background-color: gainsboro;
-    border-radius: 5px;
-    width: 8rem;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.rating {
-    color: red;
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-.igdb-logo {
-    margin: 0;
-    padding: 0;
-    width: 3.5rem;
-    height: 3.5rem;
-    object-fit: cover;
-    color: red;
-    border-radius: 5px;
-}
-
-a:hover .igdb-logo {
-    color: blueviolet;
-}
-
-.igdb-note {
-    margin: 0;
-    padding: 0.2rem 0;
-    font-size: 0.6rem;
-    text-align: center;
-    line-height: 1.2;
-    max-height: 2rem;
-}
-
 .game-info-container {
     width: 100%;
     border-bottom: 1px solid black;
@@ -142,11 +97,11 @@ a:hover .igdb-logo {
 
 .game-info a {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .game-info a:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .game-info span {

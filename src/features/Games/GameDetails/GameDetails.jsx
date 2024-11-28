@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -38,9 +39,7 @@ export const GameDetails = () => {
                     >
                         {new Date(game.released).getFullYear()}
                     </a>
-                    {game.developers?.length > 0 && (
-                        <span className="dev">{game.developers[0].name || "Unknown Developer"}</span>
-                    )}
+                    <span className="rating">{game.metacritic || "N/A"}</span>
                 </section>
 
                 <section className="game-banner">
@@ -56,29 +55,43 @@ export const GameDetails = () => {
                             className="game-screenshot"
                         />
                     )}
-                    <aside className="igdb-rating">
-                        <span className="rating">{game.metacritic || "N/A"}</span>
-                        {/* IGDB Link (commented out) */}
-                    </aside>
                 </section>
 
                 <section className="game-info-container">
                     <article className="game-info">
                         <h4>Genre:</h4>
-                        <a onClick={(e) => handleGenreClick(e, game.genres.map(g => g.name))} 
-                        href="#"
-                        >
-                            {game.genres?.map((g) => g.name).join(", ") || "No genres available"}
-                        </a>
+                        {game.genres.map((g, index) => (
+                            <React.Fragment key={index}>
+                                <a
+                                    onClick={(e) => handleGenreClick(e, g.name)}
+                                    href="#"
+                                >
+                                    {g.name}
+                                </a>
+                                {index < game.genres.length - 1 && ", "} {/* Comma-separated genres */}
+                            </React.Fragment>
+                        ))}
                         <br />
                         <h4>Platforms:</h4>
-                        <a onClick={(e) => handlePlatformClick(e, game.platforms.map(p => p.platform.name))}
-                        href="#"
-                        >
-                            {game.platforms
-                                ?.map((p) => p.platform.name)
-                                .join(", ") || "No platforms available"}
-                        </a>
+                        {game.platforms.map((p, index) => (
+                            <React.Fragment key={index}>
+                                <a
+                                    onClick={(e) => handlePlatformClick(e, p.platform.name)}
+                                    href="#"
+                                >
+                                    {p.platform.name}
+                                </a>
+                                {index < game.platforms.length - 1 && ", "} {/* Comma-separated platforms */}
+                            </React.Fragment>
+                        ))}
+                        <h4>Developers:</h4>
+                        <p>
+                        {game.developers?.map(((dev) => dev.name)).join(", ") || "No developers listed"}
+                        </p>
+                        <h4>Publishers:</h4>
+                        <p>
+                        {game.publishers?.map(((pub) => pub.name)).join(", ") || "No publishers listed"}
+                        </p>
                     </article>
 
                     <aside className="game-aside">
