@@ -20,6 +20,7 @@ export const useFilterHandlers = () => {
     const handlePlatformClick = (e, platform) => {
         e.preventDefault();
         dispatch(setPlatformFilter([platform]));
+        dispatch(setGames([]));
         navigate('/');
     };
 
@@ -31,6 +32,7 @@ export const useFilterHandlers = () => {
     const handleYearClick = (e, year) => {
         e.preventDefault();
         dispatch(setYearFilter(year.toString()));
+        dispatch(setGames([]));
         navigate('/');
     };
 
@@ -42,6 +44,7 @@ export const useFilterHandlers = () => {
     const handleGenreClick = (e, genre) => {
         e.preventDefault();
         dispatch(setGenreFilter([genre]));
+        dispatch(setGames([]));
         navigate('/');
     };
 
