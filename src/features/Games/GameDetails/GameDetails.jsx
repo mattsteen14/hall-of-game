@@ -21,7 +21,10 @@ export const GameDetails = () => {
         dispatch(fetchGamesByIdThunk(id));
     }, [id, dispatch]);
 
-    const { handleYearClick, handlePlatformClick, handleGenreClick } = useFilterHandlers();
+    const { handleYearClick, 
+        handlePlatformClick, 
+        handleGenreClick,
+        } = useFilterHandlers();
 
     if (!game) {
         return <div>Loading game...</div>;

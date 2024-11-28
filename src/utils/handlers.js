@@ -49,7 +49,7 @@ export const useFilterHandlers = () => {
         dispatch(resetGenreFilter());
     };
 
-    const handleSearch = (e, searchTerm) => {
+    const handleSearch = (e) => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
         navigate('/');

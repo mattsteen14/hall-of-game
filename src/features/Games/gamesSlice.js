@@ -42,15 +42,39 @@ const gamesSlice = createSlice({
         yearFilter: '',
     },
     reducers: {
-        setGames: (state, action) => { state.games = action.payload; },
-        setSearch: (state, action) => { state.search = action.payload; },
-        delSearch: (state) => { state.search = ''; },
-        setPlatformFilter: (state, action) => { state.platformFilter = action.payload; },
-        resetPlatformFilter: (state) => { state.platformFilter = []; },
-        setGenreFilter: (state, action) => { state.genreFilter = action.payload; },
-        resetGenreFilter: (state) => { state.genreFilter = []; },
-        setYearFilter: (state, action) => { state.yearFilter = action.payload; },
-        resetYearFilter: (state) => { state.yearFilter = ''; },
+        setGames: (state, action) => { 
+            state.games = action.payload; 
+        },
+        selectGame(state, action) {
+            state.currentGame = action.payload;
+        },
+        clearSelectedGame(state) {
+            state.currentGame = null;
+        },
+        setSearch: (state, action) => { 
+            state.search = action.payload; 
+        },
+        delSearch: (state) => { 
+            state.search = ''; 
+        },
+        setPlatformFilter: (state, action) => { 
+            state.platformFilter = action.payload; 
+        },
+        resetPlatformFilter: (state) => { 
+            state.platformFilter = []; 
+        },
+        setGenreFilter: (state, action) => { 
+            state.genreFilter = action.payload; 
+        },
+        resetGenreFilter: (state) => { 
+            state.genreFilter = []; 
+        },
+        setYearFilter: (state, action) => { 
+            state.yearFilter = action.payload; 
+        },
+        resetYearFilter: (state) => { 
+            state.yearFilter = ''; 
+        },
     },
     extraReducers: (builder) => {
         builder
