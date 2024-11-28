@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './GamesList.css';
@@ -23,9 +24,12 @@ export const GamesList = () => {
     } = useFilterHandlers();
     const filteredGames = games
         .filter((game) => game.name.toLowerCase().includes(search.toLowerCase()))
-        .filter((game) => !platformFilter || game.platforms.includes(platformFilter))
-        .filter((game) => !genreFilter || game.genres.includes(genreFilter))
-        .filter((game) => !yearFilter || game.released === yearFilter);
+        // Match if any of the selected platforms match the game's platforms
+        .filter((game) => !platformFilter.length || game.platforms.some((p) => platformFilter.includes(p.platform.name)))
+        // Match if any of the selected genres match the game's genres
+        .filter((game) => !genreFilter.length || game.genres.some((g) => genreFilter.includes(g.name)))
+        // Filter by year if set
+        .filter((game) => !yearFilter || new Date(game.released).getFullYear() === parseInt(yearFilter, 10));
     const rankedGames = filteredGames.map((game, index) => {
         return { ...game, rank: index + 1 };
     });
@@ -100,33 +104,39 @@ export const GamesList = () => {
                                     {' '}
                                     <a
                                         className='game-year'
-                                        onClick={(e) => handleYearClick(e, game.released)}
+                                        onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
                                     >
                                         ({new Date(game.released).getFullYear()})
                                     </a>
                                 </span>
                             </td>
                             <td>
-                                {game.platforms.length > 0 && (
-                                    <span className="game-platform">
-                                        <a onClick={(e) => handlePlatformClick(e, game.platforms)}>
-                                            {game.platforms
-                                                .map((platformObj) => platformObj.platform.name) // Extract platform name
-                                                .join(', ')}
-                                        </a>
-                                    </span>
-                                )}
+                                <span className="game-platform">
+                                    {game.platforms.map((p, index) => (
+                                        <React.Fragment key={index}>
+                                            <a
+                                                onClick={(e) => handlePlatformClick(e, p.platform.name)}
+                                            >
+                                                {p.platform.name}
+                                            </a>
+                                            {index < game.platforms.length - 1 && ", "} {/* Comma-separated platforms */}
+                                        </React.Fragment>
+                                    ))}
+                                </span>
                             </td>
                             <td>
-                                {game.genres.length > 0 && (
-                                    <span className="game-genre">
-                                        <a onClick={(e) => handleGenreClick(e, game.genres)}>
-                                            {game.genres
-                                                .map((genre) => genre.name) // Extract genre name
-                                                .join(', ')}
-                                        </a>
-                                    </span>
-                                )}
+                                <span className="game-genre">
+                                    {game.genres.map((g, index) => (
+                                        <React.Fragment key={index}>
+                                            <a
+                                                onClick={(e) => handleGenreClick(e, g.name)}
+                                            >
+                                                {g.name}
+                                            </a>
+                                            {index < game.genres.length - 1 && ", "} {/* Comma-separated genres */}
+                                        </React.Fragment>
+                                    ))}
+                                </span>
                             </td>
                             <td>
                                 <span

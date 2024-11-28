@@ -30,51 +30,27 @@ export const fetchGamesByIdThunk = createAsyncThunk(
 );
 
 const gamesSlice = createSlice({
-    name: "games",
+    name: 'games',
     initialState: {
         currentGame: null,
         games: [],
         loading: false,
         error: null,
         search: '',
-        platformFilter: '',
-        genreFilter: '',
+        platformFilter: [],
+        genreFilter: [],
         yearFilter: '',
     },
     reducers: {
-        setGames(state, action) {
-            state.games = action.payload;
-        },
-        selectGame(state, action) {
-            state.currentGame = action.payload;
-        },
-        clearSelectedGame(state) {
-            state.currentGame = null;
-        },
-        setSearch: (state, action) => {
-            state.search = action.payload;
-        },
-        delSearch: (state) => {
-            state.search = '';
-        },
-        setPlatformFilter: (state, action) => {
-            state.platformFilter = action.payload;
-        },
-        resetPlatformFilter: (state) => {
-            state.platformFilter = '';
-        },
-        setGenreFilter: (state, action) => {
-            state.genreFilter = action.payload;
-        },
-        resetGenreFilter: (state) => {
-            state.genreFilter = '';
-        },
-        setYearFilter: (state, action) => {
-            state.yearFilter = action.payload;
-        },
-        resetYearFilter: (state) => {
-            state.yearFilter = '';
-        }
+        setGames: (state, action) => { state.games = action.payload; },
+        setSearch: (state, action) => { state.search = action.payload; },
+        delSearch: (state) => { state.search = ''; },
+        setPlatformFilter: (state, action) => { state.platformFilter = action.payload; },
+        resetPlatformFilter: (state) => { state.platformFilter = []; },
+        setGenreFilter: (state, action) => { state.genreFilter = action.payload; },
+        resetGenreFilter: (state) => { state.genreFilter = []; },
+        setYearFilter: (state, action) => { state.yearFilter = action.payload; },
+        resetYearFilter: (state) => { state.yearFilter = ''; },
     },
     extraReducers: (builder) => {
         builder
@@ -92,6 +68,14 @@ const gamesSlice = createSlice({
             })
             .addCase(fetchGamesByIdThunk.fulfilled, (state, action) => {
                 state.currentGame = action.payload;
+            })
+            .addCase(fetchGamesByIdThunk.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message;
+            })
+            .addCase(fetchGamesByIdThunk.pending, (state) => {
+                state.loading = true;
+                state.error = null;
             });
     }
 });

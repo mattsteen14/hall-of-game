@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { 
+import {
     setPlatformFilter,
     resetPlatformFilter,
     setYearFilter,
@@ -16,34 +16,40 @@ export const useFilterHandlers = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const handlePlatformClick = (e, platforms) => {
+    const handlePlatformClick = (e, platform) => {
         e.preventDefault();
-        dispatch(setPlatformFilter(platforms));
+        dispatch(setPlatformFilter([platform]));
         navigate('/');
     };
+
     const handlePlatformReset = (e) => {
         e.preventDefault();
         dispatch(resetPlatformFilter());
     };
+
     const handleYearClick = (e, year) => {
         e.preventDefault();
-        dispatch(setYearFilter(year));
+        dispatch(setYearFilter(year.toString()));
         navigate('/');
     };
+
     const handleYearReset = (e) => {
         e.preventDefault();
         dispatch(resetYearFilter());
     };
-    const handleGenreClick = (e, genres) => {
+
+    const handleGenreClick = (e, genre) => {
         e.preventDefault();
-        dispatch(setGenreFilter(genres));
+        dispatch(setGenreFilter([genre]));
         navigate('/');
     };
+
     const handleGenreReset = (e) => {
         e.preventDefault();
         dispatch(resetGenreFilter());
     };
-    const handleSearch = (e) => {
+
+    const handleSearch = (e, searchTerm) => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
         navigate('/');

@@ -33,9 +33,10 @@ export const GameDetails = () => {
                     <span className="title">{game.name || "No title available"}</span>
                     <a
                         className="year"
-                        onClick={(e) => handleYearClick(e, game.released)}
+                        onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
+                        href="#"
                     >
-                        {game.released ? new Date(game.released).toDateString() : "Unknown release date"}
+                        {new Date(game.released).getFullYear()}
                     </a>
                     {game.developers?.length > 0 && (
                         <span className="dev">{game.developers[0].name || "Unknown Developer"}</span>
@@ -64,14 +65,18 @@ export const GameDetails = () => {
                 <section className="game-info-container">
                     <article className="game-info">
                         <h4>Genre:</h4>
-                        <a onClick={(e) => handleGenreClick(e, game.genres)} href="#">
-                            {game.genres?.map((genre) => genre.name).join(", ") || "No genres available"}
+                        <a onClick={(e) => handleGenreClick(e, game.genres.map(g => g.name))} 
+                        href="#"
+                        >
+                            {game.genres?.map((g) => g.name).join(", ") || "No genres available"}
                         </a>
                         <br />
                         <h4>Platforms:</h4>
-                        <a onClick={(e) => handlePlatformClick(e, game.platforms)} href="#">
+                        <a onClick={(e) => handlePlatformClick(e, game.platforms.map(p => p.platform.name))}
+                        href="#"
+                        >
                             {game.platforms
-                                ?.map((platformObj) => platformObj.platform.name)
+                                ?.map((p) => p.platform.name)
                                 .join(", ") || "No platforms available"}
                         </a>
                     </article>
