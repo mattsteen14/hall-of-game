@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './GamesList.css';
 import { fetchGamesThunk } from '../gamesSlice';
 import { useFilterHandlers } from '../../../utils/handlers';
+import { Loading } from '../../../components/Loading/Loading';
 
 export const GamesList = () => {
     const dispatch = useDispatch();
@@ -41,7 +42,11 @@ export const GamesList = () => {
         return { ...game, rank: index + 1 };
     });
     if (loading) {
-        return <div>Loading games...</div>
+        return (
+            <div>
+                <Loading />
+            </div>
+        )
     }
     if (error) {
         return <div>Error fetching games: {error}</div>

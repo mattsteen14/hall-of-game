@@ -10,6 +10,7 @@ import { FaWikipediaW, FaTwitch } from "react-icons/fa";
 // import { SiIgdb } from "react-icons/si";
 import { selectCurrentGame, fetchGamesByIdThunk } from "../gamesSlice";
 import { useFilterHandlers } from "../../../utils/handlers";
+import { Loading } from "../../../components/Loading/Loading";
 
 export const GameDetails = () => {
     const { id } = useParams();
@@ -27,7 +28,11 @@ export const GameDetails = () => {
         } = useFilterHandlers();
 
     if (!game) {
-        return <div>Loading game...</div>;
+        return (
+            <div>
+                <Loading />
+            </div>
+        )
     }
 
     return (
