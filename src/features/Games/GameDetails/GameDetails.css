@@ -134,51 +134,24 @@
 
 .links a:hover {
     color: blue;
-}
-
-.rawg-logo {
-    color: white !important;
-    background-color: black;
-    font-weight: 900;
-    letter-spacing: 5px;
-    line-height: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 5px;
-}
-
-.rawg-logo:hover {
-    color: black !important;
-    background-color: white;
+    text-decoration: none;
 }
 
 .game-description {
     text-align: start;
-    border-bottom: 1px solid black;
 }
 
 .game-description p {
     line-height: 1.5;
-    margin-bottom: 1rem;
 }
 
-/* footer {
-    padding: 1rem;
-    background-color: darkgray;
-} */
-
-footer h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.similar-games-container {
+/* .similar-games-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-}
+} */
 
 @media only screen and (max-width: 800px) {
 
@@ -204,7 +177,7 @@ footer h3 {
 
 @media only screen and (max-width: 500px) {
 
-    .game-header, .game-details h4, .game-info span, .game-info a, .game-info p, .game-description p, .game-aside h4, .game-aside span, .game-aside p {
+    .game-header, .game-details h4, .game-info span, .game-info a, .game-info p, .game-description p, .game-aside h4, .game-aside span, .game-aside p, .rawg-logo {
         font-size: 0.8rem;
     }
 

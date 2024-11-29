@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import './App.css'
+import { fetchGamesThunk } from './features/Games/gamesSlice'
 import { Header } from './features/Header/Header'
 import { GamesList } from './features/Games/GamesList/GamesList'
 import { GameDetails } from './features/Games/GameDetails/GameDetails'
-import { fetchGamesThunk } from './features/Games/gamesSlice'
+import { Footer } from './features/Footer/Footer'
 
-function App () {
+function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchGamesThunk());
@@ -23,7 +24,9 @@ function App () {
           </Routes>
         </section>
       </main>
+      <Footer />
     </Router>
+
   );
 }
 

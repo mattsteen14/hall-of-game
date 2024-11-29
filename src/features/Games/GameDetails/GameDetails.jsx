@@ -99,6 +99,31 @@ export const GameDetails = () => {
                     </article>
 
                     <aside className="game-aside">
+                        <h4>Stores:</h4>
+                        <p>
+                            {game.stores && game.stores.length > 0 ? (
+                                game.stores.map((store, index) => (
+                                    <span key={index}>
+                                        <a
+                                            href={`https://${store.store.domain}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {store.store.name}
+                                        </a>
+                                        {index < game.stores.length - 1 && ", "}
+                                    </span>
+                                ))
+                            ) : (
+                                "No stores listed"
+                            )}
+                        </p>
+                        <h4>Age Rating:</h4>
+                        {game.esrb_rating ? (
+                            <span className="age-ratings">{game.esrb_rating.name}</span>
+                        ) : (
+                            <span className="age-ratings">Not Rated</span>
+                        )}
                         <h4>Links:</h4>
                         <article className="links">
                             <a
@@ -121,31 +146,6 @@ export const GameDetails = () => {
                                 RAWG
                             </a>
                         </article>
-                        <h4>Age Rating:</h4>
-                        {game.esrb_rating ? (
-                            <span className="age-ratings">{game.esrb_rating.name}</span>
-                        ) : (
-                            <span className="age-ratings">Not Rated</span>
-                        )}
-                        <h4>Stores:</h4>
-                        <p>
-                            {game.stores && game.stores.length > 0 ? (
-                                game.stores.map((store, index) => (
-                                    <span key={index}>
-                                        <a
-                                            href={`https://${store.store.domain}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {store.store.name}
-                                        </a>
-                                        {index < game.stores.length - 1 && ", "}
-                                    </span>
-                                ))
-                            ) : (
-                                "No stores listed"
-                            )}
-                        </p>
                     </aside>
                 </section>
 
@@ -154,8 +154,7 @@ export const GameDetails = () => {
                     <p>{game.description_raw || "No description available"}</p>
                 </section>
 
-                <footer>
-                    {/* <h3>Similar Games:</h3>
+                {/* <h3>Similar Games:</h3>
                         <div
                         className="similar-games-container"
                         >
@@ -173,7 +172,6 @@ export const GameDetails = () => {
                                 </Link>
                         ))}
                         </div> */}
-                </footer>
             </div>
         </div>
     );

@@ -32,6 +32,25 @@ button:hover {
   cursor: pointer;
 }
 
+.rawg-logo {
+  color: white !important;
+  background-color: black;
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.rawg-logo:hover {
+  color: black !important;
+  background-color: white;
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 768px) {
   button {
     padding: 0.4em 0.8em;
