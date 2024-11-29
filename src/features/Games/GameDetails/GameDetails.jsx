@@ -4,10 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 // import { Link } from "react-router-dom";
 import "./GameDetails.css";
-import { BiLinkExternal } from "react-icons/bi";
-import { HiOutlineDocument } from "react-icons/hi2";
-import { FaWikipediaW, FaTwitch } from "react-icons/fa";
-// import { SiIgdb } from "react-icons/si";
+import { SiMetacritic, SiReddit } from "react-icons/si";
 import { selectCurrentGame, fetchGamesByIdThunk } from "../gamesSlice";
 import { useFilterHandlers } from "../../../utils/handlers";
 import { Loading } from "../../../components/Loading/Loading";
@@ -22,10 +19,10 @@ export const GameDetails = () => {
         dispatch(fetchGamesByIdThunk(id));
     }, [id, dispatch]);
 
-    const { handleYearClick, 
-        handlePlatformClick, 
+    const { handleYearClick,
+        handlePlatformClick,
         handleGenreClick,
-        } = useFilterHandlers();
+    } = useFilterHandlers();
 
     if (!game) {
         return (
@@ -47,7 +44,7 @@ export const GameDetails = () => {
                     >
                         {new Date(game.released).getFullYear()}
                     </a>
-                    <span className="rating">{game.metacritic || "N/A"}</span>
+                    <span className="rating"><SiMetacritic /> {game.metacritic || "N/A"}</span>
                 </section>
 
                 <section className="game-banner">
@@ -79,7 +76,6 @@ export const GameDetails = () => {
                                 {index < game.genres.length - 1 && ", "} {/* Comma-separated genres */}
                             </React.Fragment>
                         ))}
-                        <br />
                         <h4>Platforms:</h4>
                         {game.platforms.map((p, index) => (
                             <React.Fragment key={index}>
@@ -94,28 +90,62 @@ export const GameDetails = () => {
                         ))}
                         <h4>Developers:</h4>
                         <p>
-                        {game.developers?.map(((dev) => dev.name)).join(", ") || "No developers listed"}
+                            {game.developers?.map(((dev) => dev.name)).join(", ") || "No developers listed"}
                         </p>
                         <h4>Publishers:</h4>
                         <p>
-                        {game.publishers?.map(((pub) => pub.name)).join(", ") || "No publishers listed"}
+                            {game.publishers?.map(((pub) => pub.name)).join(", ") || "No publishers listed"}
                         </p>
                     </article>
 
                     <aside className="game-aside">
                         <h4>Links:</h4>
                         <article className="links">
-                            <BiLinkExternal />
-                            <HiOutlineDocument />
-                            <FaWikipediaW />
-                            <FaTwitch />
+                            <a
+                                href={game.metacritic_url}
+                                target="_blank"
+                            >
+                                <SiMetacritic />
+                            </a>
+                            <a
+                                href={game.reddit_url}
+                                target="_blank"
+                            >
+                                <SiReddit />
+                            </a>
+                            <a
+                                className="rawg-logo"
+                                href={`https://www.rawg.io/games/${game.slug}?ref=api`}
+                                target="_blank"
+                            >
+                                RAWG
+                            </a>
                         </article>
-                        <h4>Age Ratings:</h4>
+                        <h4>Age Rating:</h4>
                         {game.esrb_rating ? (
                             <span className="age-ratings">{game.esrb_rating.name}</span>
                         ) : (
                             <span className="age-ratings">Not Rated</span>
                         )}
+                        <h4>Stores:</h4>
+                        <p>
+                            {game.stores && game.stores.length > 0 ? (
+                                game.stores.map((store, index) => (
+                                    <span key={index}>
+                                        <a
+                                            href={`https://${store.store.domain}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {store.store.name}
+                                        </a>
+                                        {index < game.stores.length - 1 && ", "}
+                                    </span>
+                                ))
+                            ) : (
+                                "No stores listed"
+                            )}
+                        </p>
                     </aside>
                 </section>
 

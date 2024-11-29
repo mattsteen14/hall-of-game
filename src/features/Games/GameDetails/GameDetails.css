@@ -5,6 +5,10 @@
     font-size: 1.2rem;
 }
 
+.game-details h4 {
+    white-space: nowrap;
+}
+
 .game-header {
     width: 100%;
     display: flex;
@@ -86,21 +90,20 @@
 }
 
 .game-info {
-    flex: 3;
+    flex: 2;
     display: block;
     text-align: left;
 }
 
-.game-info h4, .game-aside h4 {
-    margin-bottom: 0.5rem;
-}
-
-.game-info a {
+.game-info a,
+.game-aside a
+{
     color: black;
     text-decoration: none;
 }
 
-.game-info a:hover {
+.game-info a:hover,
+.game-aside a:hover {
     text-decoration: underline;
 }
 
@@ -114,29 +117,44 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    text-align: center;
     font-size: 1.2rem;
 }
 
 .links {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.game-details h4 {
-    white-space: nowrap;
+.links a {
+    color: black;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: blue;
+}
+
+.rawg-logo {
+    color: white !important;
+    background-color: black;
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.rawg-logo:hover {
+    color: black !important;
+    background-color: white;
 }
 
 .game-description {
     text-align: start;
     border-bottom: 1px solid black;
-}
-
-.game-description h4 {
-    margin-bottom: 1rem;
 }
 
 .game-description p {
@@ -186,7 +204,7 @@ footer h3 {
 
 @media only screen and (max-width: 500px) {
 
-    .game-header, .game-details h4, .game-info span, .game-info p, .game-description p, .game-aside h4 {
+    .game-header, .game-details h4, .game-info span, .game-info a, .game-info p, .game-description p, .game-aside h4, .game-aside span, .game-aside p {
         font-size: 0.8rem;
     }
 
