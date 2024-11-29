@@ -170,7 +170,9 @@ Ensure you have the following software installed before proceeding:
 - [x] Build the components.
 - [x] Add RAWG API data.
 - [x] Reconfigure build to new API.
-- [ ] Mention RAWG on site.
+- [x] Mention RAWG on site.
+- [x] Populate links in GameDetails.
+- [x] Add parent platform icons to minimise & simplify platform column.
 - [ ] Overhaul design to improve UX & responsivity.
 - [ ] Testing and dubugging.
 - [ ] Deploy and publish to the web.

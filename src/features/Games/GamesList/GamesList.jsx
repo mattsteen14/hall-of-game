@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './GamesList.css';
+import { SiMetacritic } from 'react-icons/si';
 import { fetchGamesThunk } from '../gamesSlice';
 import { useFilterHandlers } from '../../../utils/handlers';
 import { Loading } from '../../../components/Loading/Loading';
@@ -79,7 +80,7 @@ export const GamesList = () => {
                                 Genres
                             </a>
                         </th>
-                        <th>Rating</th>
+                        <th><SiMetacritic /> Rating</th>
                     </tr>
                 </thead>
                 <tbody>

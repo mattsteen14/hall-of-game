@@ -6,3 +6,10 @@
     border-radius: 5px;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 860px) {
+
+    .parent-platform-icon {
+        font-size: 1em;
+    }
+}
