@@ -1,0 +1,8 @@
+.parent-platform-icon {
+    font-size: 2em;
+    color: blue;
+    border: 0.3em solid gainsboro;
+    background-color: gainsboro;
+    border-radius: 5px;
+    font-weight: 600;
+}

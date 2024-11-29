@@ -5,39 +5,38 @@ import './GamesList.css';
 import { fetchGamesThunk } from '../gamesSlice';
 import { useFilterHandlers } from '../../../utils/handlers';
 import { Loading } from '../../../components/Loading/Loading';
+import { ParentPlatformIcons } from '../../../components/PlatformIcons/ParentPlatformIcons';
 
 export const GamesList = () => {
     const dispatch = useDispatch();
     const {
         games,
         search,
-        platformFilter,
-        genreFilter,
-        yearFilter,
+        filters,
         loading,
         error
     } = useSelector((state) => state.games);
     useEffect(() => {
-        if(!games.length) {
+        if (!games.length) {
             dispatch(fetchGamesThunk());
         }
     }, [dispatch, games])
     const {
-        handlePlatformClick,
-        handlePlatformReset,
         handleGenreClick,
         handleGenreReset,
         handleYearClick,
-        handleYearReset
+        handleYearReset,
+        handlePlatformReset
     } = useFilterHandlers();
     const filteredGames = games
         .filter((game) => game.name.toLowerCase().includes(search.toLowerCase()))
         // Match if any of the selected platforms match the game's platforms
-        .filter((game) => !platformFilter.length || game.platforms.some((p) => platformFilter.includes(p.platform.name)))
+        .filter((game) => !filters.platform.length || game.platforms.some((p) => filters.platform.includes(p.platform.name)))
+        .filter((game) => !filters.parentPlatform.length || game.parent_platforms.some((p) => filters.parentPlatform.includes(p.platform.slug)))
         // Match if any of the selected genres match the game's genres
-        .filter((game) => !genreFilter.length || game.genres.some((g) => genreFilter.includes(g.name)))
+        .filter((game) => !filters.genre.length || game.genres.some((g) => filters.genre.includes(g.name)))
         // Filter by year if set
-        .filter((game) => !yearFilter || new Date(game.released).getFullYear() === parseInt(yearFilter, 10));
+        .filter((game) => !filters.year || new Date(game.released).getFullYear() === parseInt(filters.year, 10));
     const rankedGames = filteredGames.map((game, index) => {
         return { ...game, rank: index + 1 };
     });
@@ -123,18 +122,10 @@ export const GamesList = () => {
                                 </span>
                             </td>
                             <td>
-                                <span className="game-platform">
-                                    {game.platforms.map((p, index) => (
-                                        <React.Fragment key={index}>
-                                            <a
-                                                onClick={(e) => handlePlatformClick(e, p.platform.name)}
-                                            >
-                                                {p.platform.name}
-                                            </a>
-                                            {index < game.platforms.length - 1 && ", "} {/* Comma-separated platforms */}
-                                        </React.Fragment>
-                                    ))}
-                                </span>
+                                <ParentPlatformIcons
+                                    // onClick={handlePlatformClick}
+                                    parentPlatforms={game.parent_platforms}
+                                />
                             </td>
                             <td>
                                 <span className="game-genre">

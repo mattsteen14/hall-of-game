@@ -37,9 +37,12 @@ const gamesSlice = createSlice({
         loading: false,
         error: null,
         search: '',
-        platformFilter: [],
-        genreFilter: [],
-        yearFilter: '',
+        filters: {
+            platform: [],
+            genre: [],
+            year: '',
+            parentPlatform: [],
+        }
     },
     reducers: {
         setGames: (state, action) => { 
@@ -58,22 +61,28 @@ const gamesSlice = createSlice({
             state.search = ''; 
         },
         setPlatformFilter: (state, action) => { 
-            state.platformFilter = action.payload; 
+            state.filters.platform = action.payload; 
         },
         resetPlatformFilter: (state) => { 
-            state.platformFilter = []; 
+            state.filters.platform = []; 
+        },
+        setParentPlatformFilter: (state, action) => {
+            state.filters.parentPlatform = action.payload;
+        },
+        resetParentPlatformFilter: (state) => {
+            state.filters.parentPlatform = [];
         },
         setGenreFilter: (state, action) => { 
-            state.genreFilter = action.payload; 
+            state.filters.genre = action.payload; 
         },
         resetGenreFilter: (state) => { 
-            state.genreFilter = []; 
+            state.filters.genre = []; 
         },
         setYearFilter: (state, action) => { 
-            state.yearFilter = action.payload; 
+            state.filters.year = action.payload; 
         },
         resetYearFilter: (state) => { 
-            state.yearFilter = ''; 
+            state.filters.year = ''; 
         },
     },
     extraReducers: (builder) => {
@@ -116,6 +125,8 @@ export const {
     setYearFilter, 
     resetYearFilter, 
     setGames, 
+    setParentPlatformFilter,
+    resetParentPlatformFilter
 } = gamesSlice.actions;
 export const selectCurrentGame = (state) => state.games.currentGame;
 export const selectGames = (state) => state.games.games;

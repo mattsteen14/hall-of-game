@@ -11,7 +11,9 @@ import {
     resetGenreFilter,
     setSearch,
     setGames,
-    clearSelectedGame
+    clearSelectedGame,
+    setParentPlatformFilter,
+    resetParentPlatformFilter
 } from "../features/Games/gamesSlice";
 
 export const useFilterHandlers = () => {
@@ -29,8 +31,17 @@ export const useFilterHandlers = () => {
     const handlePlatformReset = (e) => {
         e.preventDefault();
         dispatch(resetPlatformFilter());
+        dispatch(resetParentPlatformFilter())
     };
 
+    const handleParentPlatformClick = (e, parentPlatform) => {
+        e.preventDefault();
+        dispatch(setParentPlatformFilter([parentPlatform]));
+    }
+    const handleParentPlatformReset = (e) => {
+        e.preventDefault();
+        dispatch(resetParentPlatformFilter());
+    }
     const handleYearClick = (e, year) => {
         e.preventDefault();
         dispatch(setYearFilter(year.toString()));
@@ -83,6 +94,8 @@ export const useFilterHandlers = () => {
         handleSearch,
         handleReset,
         searchTerm,
-        setSearchTerm
+        setSearchTerm,
+        handleParentPlatformClick,
+        handleParentPlatformReset
     }
 }
