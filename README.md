@@ -173,7 +173,8 @@ Ensure you have the following software installed before proceeding:
 - [x] Mention RAWG on site.
 - [x] Populate links in GameDetails.
 - [x] Add parent platform icons to minimise & simplify platform column.
-- [ ] Overhaul design to improve UX & responsivity.
+- [x] Overhaul design to improve UX & responsivity.
+- [ ] Add filters to games list.
 - [ ] Testing and dubugging.
 - [ ] Deploy and publish to the web.
 - [ ] Share on Codecademy forums for feedback.

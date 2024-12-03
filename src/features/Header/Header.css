@@ -3,17 +3,17 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: max(80px, 15vh);
+    height: max(100px, 15vh);
     z-index: 1100;
     display: flex;
-    /* border-bottom: 1px solid black; */
+    border-bottom: 1px solid black;
     justify-content: space-around;
     align-items: center;
     padding-top: 1em;
     padding-left: max(40px, 3.5vw);
     padding-right: max(3vw, 30px);
     padding-bottom: 1em;
-    background-color: gainsboro;
+    background-color: darkgrey;
 }
 
 .logo {
@@ -24,10 +24,14 @@ header {
     font-style: italic;
     color: #3e3e3e;
     font-size: 1.5rem;
+    background-color: gainsboro;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    padding: 0.5em;
 }
 
 .search-bar {
-    border: 5px solid rgba(248, 248, 255, 0.978);
+    border: 5px solid gainsboro;
     border-radius: 10px;
 }
 
@@ -46,7 +50,7 @@ header {
     font-weight: 600;
     background-color: #3e3e3e;
     color: white;
-    border: 5px solid rgba(248, 248, 255, 0.978);
+    border: 5px solid gainsboro;
     border-radius: 10px;
     text-align: end;
     font-size: 0.8em;
@@ -67,7 +71,7 @@ header {
 @media only screen and (max-width: 800px) {
 
     header {
-        height: max(60px, 15vh);
+        height: max(80px, 15vh);
     }
 
     .logo {
@@ -80,7 +84,7 @@ header {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 
     header {
         height: max(60px, 10vh);
@@ -111,6 +115,10 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+
+    header {
+        height: max(50px, 8vh);
+    }
     
     .logo {
         font-size: 0.6rem;
