@@ -37,7 +37,14 @@ export const GamesList = () => {
         )
     };
     if (error) {
-        return <div>Error fetching games: {error}</div>
+        return (
+            <div className='error'>
+                <div className='error-header'>
+                    <h1>Game Over!</h1>
+                    <h2>Error:</h2>
+                    <h3>{error}</h3>
+                </div>
+            </div>)
     };
 
     return (
@@ -47,32 +54,32 @@ export const GamesList = () => {
                 <select onChange={(e) => setPlatform(e.target.value)} value={platform}>
                     <option value=''>All Platforms</option>
                     {Array.from(new Set(games.flatMap(game => game.platforms.map(p => p.platform.name))))
-                    .sort((a, b) => a.localeCompare(b)).map(platform => (
-                        <option key={platform} value={platform}>
-                            {platform}
-                        </option>
-                    ))}
+                        .sort((a, b) => a.localeCompare(b)).map(platform => (
+                            <option key={platform} value={platform}>
+                                {platform}
+                            </option>
+                        ))}
                 </select>
 
                 <select onChange={(e) => setGenre(e.target.value)} value={genre}>
                     <option value=''>All Genres</option>
                     {Array.from(new Set(games.flatMap(game => game.genres.map(g => g.name))))
-                    .sort((a, b) => a.localeCompare(b)).map(genre => (
-                        <option key={genre} value={genre}>
-                            {genre}
-                        </option>
-                    ))}
+                        .sort((a, b) => a.localeCompare(b)).map(genre => (
+                            <option key={genre} value={genre}>
+                                {genre}
+                            </option>
+                        ))}
                 </select>
 
                 <select onChange={(e) => setYear(e.target.value)} value={year}>
                     <option value=''>All Years</option>
                     {Array.from(new Set(games.map(game => new Date(game.released).getFullYear().toString())))
-                    .sort((a, b) => a - b)
-                    .map(year => (
-                        <option key={year} value={year}>
-                            {year}
-                        </option>
-                    ))}
+                        .sort((a, b) => a - b)
+                        .map(year => (
+                            <option key={year} value={year}>
+                                {year}
+                            </option>
+                        ))}
                 </select>
             </div>
 

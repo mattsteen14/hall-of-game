@@ -29,3 +29,15 @@
     justify-content: space-around;
     padding: 1rem;
 }
+
+.error-header {
+    text-align: center;
+    font-weight: 600;
+    color: red;
+    padding: 2rem;
+    background-color: gainsboro;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2rem;
+    text-transform: uppercase;
+}
