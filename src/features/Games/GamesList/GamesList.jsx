@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './GamesList.css';
 import { fetchGamesThunk } from '../gamesSlice';
+import { Loading } from '../../../components/Loading/Loading';
 import { Card } from '../../../components/Card/Card';
 import { Game } from '../Game/Game';
 
@@ -28,16 +29,25 @@ export const GamesList = () => {
             .filter(game => !year || new Date(game.released).getFullYear().toString() === year);
     }, [games, search, platform, genre, year]);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error fetching games: {error}</div>;
+    if (loading) {
+        return (
+            <div>
+                <Loading />
+            </div>
+        )
+    };
+    if (error) {
+        return <div>Error fetching games: {error}</div>
+    };
 
     return (
-        <div>
+        <div className='games-list-container'>
             {/* Filter Dropdowns */}
             <div className='filters'>
                 <select onChange={(e) => setPlatform(e.target.value)} value={platform}>
                     <option value=''>All Platforms</option>
-                    {Array.from(new Set(games.flatMap(game => game.platforms.map(p => p.platform.name)))).map(platform => (
+                    {Array.from(new Set(games.flatMap(game => game.platforms.map(p => p.platform.name))))
+                    .sort((a, b) => a.localeCompare(b)).map(platform => (
                         <option key={platform} value={platform}>
                             {platform}
                         </option>
@@ -46,7 +56,8 @@ export const GamesList = () => {
 
                 <select onChange={(e) => setGenre(e.target.value)} value={genre}>
                     <option value=''>All Genres</option>
-                    {Array.from(new Set(games.flatMap(game => game.genres.map(g => g.name)))).map(genre => (
+                    {Array.from(new Set(games.flatMap(game => game.genres.map(g => g.name))))
+                    .sort((a, b) => a.localeCompare(b)).map(genre => (
                         <option key={genre} value={genre}>
                             {genre}
                         </option>
@@ -55,7 +66,9 @@ export const GamesList = () => {
 
                 <select onChange={(e) => setYear(e.target.value)} value={year}>
                     <option value=''>All Years</option>
-                    {Array.from(new Set(games.map(game => new Date(game.released).getFullYear().toString()))).map(year => (
+                    {Array.from(new Set(games.map(game => new Date(game.released).getFullYear().toString())))
+                    .sort((a, b) => a - b)
+                    .map(year => (
                         <option key={year} value={year}>
                             {year}
                         </option>
