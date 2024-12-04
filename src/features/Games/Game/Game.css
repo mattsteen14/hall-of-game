@@ -109,4 +109,5 @@ td a:focus {
     color: black;
     background-color: rgb(0, 206, 122);
     padding: 0.2em;
+    border-radius: 5px;
 }

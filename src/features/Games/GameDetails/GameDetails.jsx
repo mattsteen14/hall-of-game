@@ -5,6 +5,7 @@ import { useEffect } from "react";
 // import { Link } from "react-router-dom";
 import "./GameDetails.css";
 import { SiMetacritic, SiReddit } from "react-icons/si";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { selectCurrentGame, fetchGamesByIdThunk } from "../gamesSlice";
 import { useFilterHandlers } from "../../../utils/handlers";
 import { Loading } from "../../../components/Loading/Loading";
@@ -37,14 +38,39 @@ export const GameDetails = () => {
             <div className="game-details">
                 <section className="game-header">
                     <span className="title">{game.name || "No title available"}</span>
-                    <a
-                        className="year"
-                        onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
-                        href="#"
+                    <div
+                        className="links"
                     >
-                        {new Date(game.released).getFullYear()}
-                    </a>
-                    <span className="rating"><SiMetacritic /> {game.metacritic || "N/A"}</span>
+                        <a 
+                        className="rating"
+                        href={`https://www.metacritic.com/game/${game.slug}`}
+                        target="_blank"
+                        >
+                            <SiMetacritic /> {game.metacritic || "N/A"}
+                            </a>
+
+                        <a
+                            className="rawg-logo"
+                            href={`https://www.rawg.io/games/${game.slug}?ref=api`}
+                            target="_blank"
+                        >
+                            RAWG
+                        </a>
+                        {game.website &&
+                            <a
+                                href={game.website}
+                                target="_blank"
+                            >
+                                <FaExternalLinkAlt />
+                            </a>}
+                        <a
+                            href={game.reddit_url}
+                            target="_blank"
+                        >
+                            <SiReddit />
+                        </a>
+                    </div>
+
                 </section>
 
                 <section className="game-banner">
@@ -64,41 +90,58 @@ export const GameDetails = () => {
 
                 <section className="game-info-container">
                     <article className="game-info">
-                        <h4>Genre:</h4>
-                        {game.genres.map((g, index) => (
-                            <React.Fragment key={index}>
-                                <a
-                                    onClick={(e) => handleGenreClick(e, g.name)}
-                                    href="#"
-                                >
-                                    {g.name}
-                                </a>
-                                {index < game.genres.length - 1 && ", "} {/* Comma-separated genres */}
-                            </React.Fragment>
-                        ))}
+                        <h4>Genres:</h4>
+                        <p>
+                            {game.genres?.map((g, index) => (
+                                <React.Fragment key={index}>
+                                    <a
+                                        onClick={(e) => handleGenreClick(e, g.name)}
+                                        href="#"
+                                    >
+                                        {g.name}
+                                    </a>
+                                    {index < game.genres.length - 1 && ", "}
+                                </React.Fragment>
+                            )) || "No genres listed"}
+                        </p>
+
                         <h4>Platforms:</h4>
-                        {game.platforms.map((p, index) => (
-                            <React.Fragment key={index}>
-                                <a
-                                    onClick={(e) => handlePlatformClick(e, p.platform.name)}
-                                    href="#"
-                                >
-                                    {p.platform.name}
-                                </a>
-                                {index < game.platforms.length - 1 && ", "} {/* Comma-separated platforms */}
-                            </React.Fragment>
-                        ))}
+                        <p>
+                            {game.platforms?.map((p, index) => (
+                                <React.Fragment key={index}>
+                                    <a
+                                        onClick={(e) => handlePlatformClick(e, p.platform.name)}
+                                        href="#"
+                                    >
+                                        {p.platform.name}
+                                    </a>
+                                    {index < game.platforms.length - 1 && ", "}
+                                </React.Fragment>
+                            )) || "No platforms listed"}
+                        </p>
+
                         <h4>Developers:</h4>
                         <p>
-                            {game.developers?.map(((dev) => dev.name)).join(", ") || "No developers listed"}
+                            {game.developers?.map((dev) => dev.name).join(", ") || "No developers listed"}
                         </p>
+
                         <h4>Publishers:</h4>
                         <p>
-                            {game.publishers?.map(((pub) => pub.name)).join(", ") || "No publishers listed"}
+                            {game.publishers?.map((pub) => pub.name).join(", ") || "No publishers listed"}
                         </p>
                     </article>
 
                     <aside className="game-aside">
+                        <h4>Release Date:</h4>
+                        <a
+                            className="year"
+                            onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
+                            href="#"
+                        >
+                            {new Date(game.released).toLocaleDateString()}
+                        </a>
+                        <h4>Play Time:</h4>
+                        <span>{game.playtime} hours</span>
                         <h4>Stores:</h4>
                         <p>
                             {game.stores && game.stores.length > 0 ? (
@@ -124,28 +167,6 @@ export const GameDetails = () => {
                         ) : (
                             <span className="age-ratings">Not Rated</span>
                         )}
-                        <h4>Links:</h4>
-                        <article className="links">
-                            <a
-                                href={game.metacritic_url}
-                                target="_blank"
-                            >
-                                <SiMetacritic />
-                            </a>
-                            <a
-                                href={game.reddit_url}
-                                target="_blank"
-                            >
-                                <SiReddit />
-                            </a>
-                            <a
-                                className="rawg-logo"
-                                href={`https://www.rawg.io/games/${game.slug}?ref=api`}
-                                target="_blank"
-                            >
-                                RAWG
-                            </a>
-                        </article>
                     </aside>
                 </section>
 
