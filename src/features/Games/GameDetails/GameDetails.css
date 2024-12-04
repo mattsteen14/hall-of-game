@@ -102,6 +102,7 @@
     flex: 2;
     display: block;
     text-align: left;
+    padding-right: 1rem;
 }
 
 .game-info a,
@@ -131,6 +132,7 @@
 .game-description {
     text-align: start;
     background-color: gainsboro;
+    padding: 1rem 4rem;
 }
 
 .game-description p {
@@ -153,7 +155,7 @@
 
     .game-info-container,
     .game-description {
-        padding: 1rem;
+        padding: 1rem 2rem;
     }
 
 }
