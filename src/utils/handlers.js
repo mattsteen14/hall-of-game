@@ -25,7 +25,7 @@ export const useFilterHandlers = () => {
         dispatch(setPlatformFilter([platform]));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        navigate('/');
+        navigate(`/?platform=${platform}`);
     };
 
     const handlePlatformReset = (e) => {
@@ -47,7 +47,7 @@ export const useFilterHandlers = () => {
         dispatch(setYearFilter(year.toString()));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        navigate('/');
+        navigate(`/?year=${year}`);
     };
 
     const handleYearReset = (e) => {
@@ -60,7 +60,7 @@ export const useFilterHandlers = () => {
         dispatch(setGenreFilter([genre]));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        navigate('/');
+        navigate(`/?genre=${genre}`);
     };
 
     const handleGenreReset = (e) => {
@@ -71,7 +71,7 @@ export const useFilterHandlers = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
-        navigate('/');
+        navigate(`/?search=${searchTerm}`);
     };
     const handleReset = (e) => {
         if (e) e.preventDefault();
