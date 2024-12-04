@@ -3,7 +3,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: max(100px, 15vh);
+    height: max(120px, 20vh);
     z-index: 1100;
     display: flex;
     border-bottom: 1px solid black;
