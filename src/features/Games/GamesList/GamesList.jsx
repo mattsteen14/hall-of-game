@@ -10,7 +10,7 @@ import { setPlatformFilter, setYearFilter, setGenreFilter } from '../gamesSlice'
 export const GamesList = () => {
     const dispatch = useDispatch();
     const { games, loading, error, filters } = useSelector((state) => state.games);
-    const { search, year } = filters;
+    const { search, year, parentPlatform } = filters;
 
     // Get filter values from Redux state
     const platform = filters.platform[0]; // Ensure it's a single value
@@ -28,9 +28,10 @@ export const GamesList = () => {
         return games
             .filter(game => game.name.toLowerCase().includes(search.toLowerCase())) // Apply search filter
             .filter(game => !platform || game.platforms.some(p => p.platform.name === platform)) // Apply platform filter
+            .filter(game => !parentPlatform.length || game.parent_platforms.some(p => parentPlatform.includes(p.platform.slug)))
             .filter(game => !genre || game.genres.some(g => g.name === genre)) // Apply genre filter
             .filter(game => !year || new Date(game.released).getFullYear().toString() === year); // Apply year filter
-    }, [games, search, platform, genre, year]);
+    }, [games, search, platform, genre, year, parentPlatform]);
 
     if (loading) {
         return (
