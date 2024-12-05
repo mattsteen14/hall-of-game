@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-// import { Link } from "react-router-dom";
 import "./GameDetails.css";
 import { SiMetacritic, SiReddit } from "react-icons/si";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -14,7 +13,6 @@ export const GameDetails = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const game = useSelector(selectCurrentGame);
-    // const similarGames = useSelector((state) => selectSimilarGamesById(state, id));
 
     useEffect(() => {
         dispatch(fetchGamesByIdThunk(id));
@@ -174,25 +172,6 @@ export const GameDetails = () => {
                     <h4>Description:</h4>
                     <p>{game.description_raw || "No description available"}</p>
                 </section>
-
-                {/* <h3>Similar Games:</h3>
-                        <div
-                        className="similar-games-container"
-                        >
-                        {similarGames.map((similarGame) => (
-                                <Link
-                                    key={similarGame.id}
-                                    to={`/games/${similarGame.id}`}
-                                    onClick={() => window.scrollTo(0, 0)}
-                                >
-                                    <Card>
-                                        <SimilarGames
-                                            game={similarGame}
-                                        />
-                                    </Card>
-                                </Link>
-                        ))}
-                        </div> */}
             </div>
         </div>
     );

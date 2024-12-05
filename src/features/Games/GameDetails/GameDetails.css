@@ -30,21 +30,7 @@
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     font-weight: 600;
-}
-
-.rating {
-    color: black;
-    background-color: rgb(0, 206, 122);
-    border-radius: 5px;
-    padding: 0.2em;
-    font-weight: 600;
-}
-
-.rating:hover {
-    color: rgb(0, 206, 122) !important;
-    background-color: black;
-    padding: 0.2em;
-    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .links {
@@ -139,14 +125,6 @@
     line-height: 1.5;
 }
 
-/* .similar-games-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-} */
-
 @media only screen and (max-width: 800px) {
 
     .game-screenshot {
@@ -159,12 +137,6 @@
     }
 
 }
-
-/* @media only screen and (max-width: 640px) {
-    .similar-games-container {
-        flex-direction: column;
-    }
-} */
 
 @media only screen and (max-width: 500px) {
 

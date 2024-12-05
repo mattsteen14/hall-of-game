@@ -13,7 +13,7 @@ export const fetchGames = async (page) => {
                 key: import.meta.env.VITE_API_KEY,
                 ordering: '-metacritic',
                 page,
-                page_size: 41,
+                page_size: 40,
                 exclude_additions: 'true',
             }
         });

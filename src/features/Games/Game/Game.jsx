@@ -12,15 +12,15 @@ export const Game = ({ game }) => {
     return (
         <div className='game'>
             <div
-            className='game-image-container'
+                className='game-image-container'
             >
-            <Link to={`/games/${game.id}`}>
-                <img
-                    src={game.background_image}
-                    alt={game.name}
-                    className='game-cover'
-                />
-            </Link>
+                <Link to={`/games/${game.id}`}>
+                    <img
+                        src={game.background_image}
+                        alt={game.name}
+                        className='game-cover'
+                    />
+                </Link>
             </div>
             <div className='game-name'>
                 <Link to={`/games/${game.id}`}>
@@ -36,12 +36,13 @@ export const Game = ({ game }) => {
                 >
                     {new Date(game.released).getFullYear()}
                 </a>
-                <span className='game-rating'>
-                    <SiMetacritic
-                    />
-                    {' '}
-                    {game.metacritic}
-                </span>
+                <a
+                    className="rating"
+                    href={`https://www.metacritic.com/game/${game.slug}`}
+                    target="_blank"
+                >
+                    <SiMetacritic /> {game.metacritic || "N/A"}
+                </a>
             </div>
             <div className='game-platforms'>
                 <ParentPlatformIcons parentPlatforms={game.parent_platforms} />
