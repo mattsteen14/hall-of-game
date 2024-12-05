@@ -174,7 +174,8 @@ Ensure you have the following software installed before proceeding:
 - [x] Populate links in GameDetails.
 - [x] Add parent platform icons to minimise & simplify platform column.
 - [x] Overhaul design to improve UX & responsivity.
-- [ ] Add filters to games list.
+- [x] Add filters to games list.
+- [ ] Add functionality to navigate between API result pages. 
 - [ ] Testing and dubugging.
 - [ ] Deploy and publish to the web.
 - [ ] Share on Codecademy forums for feedback.
