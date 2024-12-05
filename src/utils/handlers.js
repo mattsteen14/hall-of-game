@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -14,13 +14,20 @@ import {
     clearSelectedGame,
     setParentPlatformFilter,
     resetParentPlatformFilter,
-    resetFilters
+    resetFilters,
+    setPage,
+    selectCurrentPage,
+    selectNextPage,
+    selectPreviousPage
 } from "../features/Games/gamesSlice";
 
 export const useFilterHandlers = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const currentPage = useSelector(selectCurrentPage);
+    const nextPage = useSelector(selectNextPage);
+    const previousPage = useSelector(selectPreviousPage);
     const handlePlatformClick = (e, platform) => {
         e.preventDefault();
         dispatch(setPlatformFilter([platform]));
@@ -85,6 +92,16 @@ export const useFilterHandlers = () => {
         dispatch(clearSelectedGame());
         navigate('/');
     };
+    const handleNextPage = () => {
+        if(nextPage) {
+            dispatch(setPage(currentPage + 1))
+        }
+    };
+    const handlePreviousPage = () => {
+        if(previousPage && currentPage > 1) {
+            dispatch(setPage(currentPage - 1))
+        }
+    };
     return {
         handlePlatformClick,
         handlePlatformReset,
@@ -97,6 +114,9 @@ export const useFilterHandlers = () => {
         searchTerm,
         setSearchTerm,
         handleParentPlatformClick,
-        handleParentPlatformReset
+        handleParentPlatformReset,
+        handleNextPage,
+        handlePreviousPage,
+        currentPage
     }
 }

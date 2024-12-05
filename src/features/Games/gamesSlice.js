@@ -3,14 +3,14 @@ import { fetchGames, fetchGamesById } from "../../api/gameApi";
 
 export const fetchGamesThunk = createAsyncThunk(
     "games/fetchGames",
-    async (_, { rejectWithValue }) => {
+    async (page = 1, { rejectWithValue }) => {
         try {
-            const data = await fetchGames();
+            const data = await fetchGames(page);
             const filterGames = data.results.filter(game => game.added > 1);
             const uniqueGames = filterGames.filter((game, index, self) =>
                 index === self.findIndex((g) => g.id === game.id) 
             )
-            return uniqueGames;
+            return { games: uniqueGames, next: data.next, previous: data.previous };
         } catch (error) {
             return rejectWithValue(error.response ? error.response.data : error.message);
         }
@@ -36,6 +36,9 @@ const gamesSlice = createSlice({
         games: [],
         loading: false,
         error: null,
+        currentPage: 1,
+        next: null,
+        previous: null,
         filters: {
             platform: [],
             genre: [],
@@ -45,7 +48,7 @@ const gamesSlice = createSlice({
         }
     },
     reducers: {
-        setGames: (state, action) => { 
+        setGames (state, action) { 
             state.games = action.payload; 
         },
         selectGame(state, action) {
@@ -54,25 +57,28 @@ const gamesSlice = createSlice({
         clearSelectedGame(state) {
             state.currentGame = null;
         },
-        setSearch: (state, action) => { 
+        setPage(state, action) { 
+            state.currentPage = action.payload; 
+        },
+        setSearch(state, action) { 
             state.filters.search = action.payload; 
         },
-        delSearch: (state) => { 
+        delSearch(state) { 
             state.filters.search = ''; 
         },
-        setPlatformFilter: (state, action) => { 
+        setPlatformFilter(state, action) { 
             state.filters.platform = action.payload; 
         },
-        resetPlatformFilter: (state) => { 
+        resetPlatformFilter(state) { 
             state.filters.platform = []; 
         },
-        setParentPlatformFilter: (state, action) => {
+        setParentPlatformFilter(state, action) {
             state.filters.parentPlatform = action.payload;
         },
-        resetParentPlatformFilter: (state) => {
+        resetParentPlatformFilter(state) {
             state.filters.parentPlatform = [];
         },
-        setGenreFilter: (state, action) => { 
+        setGenreFilter(state, action) { 
             state.filters.genre = action.payload; 
         },
         resetFilters(state) {
@@ -84,13 +90,13 @@ const gamesSlice = createSlice({
                 search: ''
             };
         },
-        resetGenreFilter: (state) => { 
+        resetGenreFilter(state) { 
             state.filters.genre = []; 
         },
-        setYearFilter: (state, action) => { 
+        setYearFilter(state, action) { 
             state.filters.year = action.payload; 
         },
-        resetYearFilter: (state) => { 
+        resetYearFilter(state) { 
             state.filters.year = ''; 
         },
     },
@@ -103,6 +109,8 @@ const gamesSlice = createSlice({
             .addCase(fetchGamesThunk.fulfilled, (state, action) => {
                 state.loading = false;
                 state.games = action.payload;
+                state.next = action.payload.next;
+                state.previous = action.payload.previous;
             })
             .addCase(fetchGamesThunk.rejected, (state, action) => {
                 state.loading = false;
@@ -136,8 +144,12 @@ export const {
     setGames, 
     setParentPlatformFilter,
     resetParentPlatformFilter,
-    resetFilters
+    resetFilters,
+    setPage
 } = gamesSlice.actions;
 export const selectCurrentGame = (state) => state.games.currentGame;
 export const selectGames = (state) => state.games.games;
+export const selectCurrentPage = (state) => state.games.currentPage;
+export const selectNextPage = (state) => state.games.next;
+export const selectPreviousPage = (state) => state.games.previous;
 export default gamesSlice.reducer;
