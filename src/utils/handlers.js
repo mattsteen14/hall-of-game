@@ -13,7 +13,8 @@ import {
     setGames,
     clearSelectedGame,
     setParentPlatformFilter,
-    resetParentPlatformFilter
+    resetParentPlatformFilter,
+    resetFilters
 } from "../features/Games/gamesSlice";
 
 export const useFilterHandlers = () => {
@@ -75,9 +76,7 @@ export const useFilterHandlers = () => {
     };
     const handleReset = (e) => {
         if (e) e.preventDefault();
-        dispatch(resetPlatformFilter());
-        dispatch(resetYearFilter());
-        dispatch(resetGenreFilter());
+        dispatch(resetFilters());
         setSearchTerm('');
         dispatch(setSearch(''));
         dispatch(setGames([]));
