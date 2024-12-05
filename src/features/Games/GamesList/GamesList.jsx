@@ -8,6 +8,7 @@ import { Filters } from '../../Filters/Filters';
 import { Loading } from '../../../components/Loading/Loading';
 import { Card } from '../../../components/Card/Card';
 import { Game } from '../Game/Game';
+import { PageSelect } from '../../Pages/PageSelect';
 
 export const GamesList = () => {
     const dispatch = useDispatch();
@@ -17,11 +18,7 @@ export const GamesList = () => {
     // Get filter values from Redux state
     const platform = filters.platform[0];
     const genre = filters.genre[0];
-    const {
-        currentPage,
-        handleNextPage,
-        handlePreviousPage
-    } = useFilterHandlers();
+    const { currentPage } = useFilterHandlers();
 
     useEffect(() => {
         // Fetch games only if the game list is empty
@@ -66,11 +63,7 @@ export const GamesList = () => {
             </div>
 
             {/* Pagination */}
-            <div className='page-select'>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>{'<'} Previous Page</button>
-                <span>Page {currentPage}</span>
-                <button onClick={handleNextPage} >Next Page {'>'} </button>
-            </div>
+            <PageSelect />
         </div>
     );
 };
