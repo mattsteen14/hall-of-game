@@ -72,6 +72,8 @@ export const useFilterHandlers = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
+        dispatch(setGames([]));
+        dispatch(clearSelectedGame());
         navigate(`/?search=${searchTerm}`);
     };
     const handleReset = (e) => {
