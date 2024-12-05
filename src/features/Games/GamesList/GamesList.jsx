@@ -15,22 +15,18 @@ export const GamesList = () => {
     const { year, parentPlatform, search } = filters;
 
     // Get filter values from Redux state
-    const platform = filters.platform[0]; 
-    const genre = filters.genre[0]; 
+    const platform = filters.platform[0];
+    const genre = filters.genre[0];
     const {
         currentPage,
-        nextPage,
-        previousPage,
         handleNextPage,
         handlePreviousPage
     } = useFilterHandlers();
 
     useEffect(() => {
         // Fetch games only if the game list is empty
-        if (!games.length) {
-            dispatch(fetchGamesThunk(currentPage));
-        }
-    }, [dispatch, games, currentPage]);
+        dispatch(fetchGamesThunk(currentPage));
+    }, [dispatch, currentPage]);
 
     // Filter games based on search and filters in Redux
     const filteredGames = useMemo(() => filterGames(games, { search, platform, genre, year, parentPlatform }), [games, search, platform, genre, year, parentPlatform]);
@@ -71,9 +67,9 @@ export const GamesList = () => {
 
             {/* Pagination */}
             <div className='page-select'>
-                <button onClick={handlePreviousPage} disabled={!previousPage || currentPage === 1}>Previous Page</button>
+                <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous Page</button>
                 <span>Page {currentPage}</span>
-                <button onClick={handleNextPage} disabled={!nextPage}>Next Page</button>
+                <button onClick={handleNextPage} >Next Page</button>
             </div>
         </div>
     );

@@ -6,13 +6,13 @@ const api = axios.create({
     baseURL: API_URL,
 });
 
-export const fetchGames = async (page = 1) => {
+export const fetchGames = async (page) => {
     try {
         const response = await api.get(`/games`, {
             params: {
                 key: import.meta.env.VITE_API_KEY,
                 ordering: '-metacritic',
-                page: {page},
+                page,
                 page_size: 41,
                 exclude_additions: 'true',
             }

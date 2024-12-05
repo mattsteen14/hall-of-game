@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import './App.css'
 import { fetchGamesThunk } from './features/Games/gamesSlice'
-import { useFilterHandlers } from './utils/handlers'
+// import { selectCurrentPage } from './features/Games/gamesSlice'
 import { Header } from './features/Header/Header'
 import { GamesList } from './features/Games/GamesList/GamesList'
 import { GameDetails } from './features/Games/GameDetails/GameDetails'
@@ -11,10 +11,10 @@ import { Footer } from './features/Footer/Footer'
 
 function App() {
   const dispatch = useDispatch();
-  const { currentPage } = useFilterHandlers();
+  // const currentPage = selectCurrentPage();
   useEffect(() => {
-    dispatch(fetchGamesThunk(currentPage));
-  }, [dispatch, currentPage]);
+    dispatch(fetchGamesThunk(1));
+  }, [dispatch]);
   return (
     <Router>
       <Header />

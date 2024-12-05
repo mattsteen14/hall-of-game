@@ -3,7 +3,7 @@ import { fetchGames, fetchGamesById } from "../../api/gameApi";
 
 export const fetchGamesThunk = createAsyncThunk(
     "games/fetchGames",
-    async (page = 1, { rejectWithValue }) => {
+    async (page, { rejectWithValue }) => {
         try {
             const data = await fetchGames(page);
             const filterGames = data.results.filter(game => game.added > 1);
@@ -108,9 +108,10 @@ const gamesSlice = createSlice({
             })
             .addCase(fetchGamesThunk.fulfilled, (state, action) => {
                 state.loading = false;
-                state.games = action.payload;
+                state.games = action.payload.games;
                 state.next = action.payload.next;
                 state.previous = action.payload.previous;
+                console.log('Next:', action.payload.next, 'Previous:', action.payload.previous);
             })
             .addCase(fetchGamesThunk.rejected, (state, action) => {
                 state.loading = false;

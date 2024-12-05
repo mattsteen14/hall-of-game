@@ -81,6 +81,7 @@ export const useFilterHandlers = () => {
         dispatch(setSearch(searchTerm));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
+        dispatch(setPage(1));
         navigate(`/?search=${searchTerm}`);
     };
     const handleReset = (e) => {
@@ -88,8 +89,8 @@ export const useFilterHandlers = () => {
         dispatch(resetFilters());
         setSearchTerm('');
         dispatch(setSearch(''));
-        dispatch(setGames([]));
         dispatch(clearSelectedGame());
+        dispatch(setPage(1));
         navigate('/');
     };
     const handleNextPage = () => {
