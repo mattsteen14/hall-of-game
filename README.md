@@ -175,7 +175,8 @@ Ensure you have the following software installed before proceeding:
 - [x] Add parent platform icons to minimise & simplify platform column.
 - [x] Overhaul design to improve UX & responsivity.
 - [x] Add filters to games list.
-- [ ] Add functionality to navigate between API result pages. 
+- [x] Add functionality to navigate between API result pages.
+- [ ] Investigate whether users can filter & search over all pages instead of the current page.
 - [ ] Testing and dubugging.
 - [ ] Deploy and publish to the web.
 - [ ] Share on Codecademy forums for feedback.
