@@ -67,9 +67,9 @@ export const GamesList = () => {
 
             {/* Pagination */}
             <div className='page-select'>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous Page</button>
+                <button onClick={handlePreviousPage} disabled={currentPage === 1}>{'<'} Previous Page</button>
                 <span>Page {currentPage}</span>
-                <button onClick={handleNextPage} >Next Page</button>
+                <button onClick={handleNextPage} >Next Page {'>'} </button>
             </div>
         </div>
     );
