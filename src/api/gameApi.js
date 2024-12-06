@@ -6,7 +6,7 @@ const api = axios.create({
     baseURL: API_URL,
 });
 
-export const fetchGames = async (page) => {
+export const fetchGames = async (page, filters) => {
     try {
         const response = await api.get(`/games`, {
             params: {
@@ -15,6 +15,7 @@ export const fetchGames = async (page) => {
                 page,
                 page_size: 40,
                 exclude_additions: 'true',
+                ...filters
             }
         });
         console.log('Games fetched successfully:', response.data);

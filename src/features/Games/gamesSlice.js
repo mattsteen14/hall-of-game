@@ -3,9 +3,9 @@ import { fetchGames, fetchGamesById } from "../../api/gameApi";
 
 export const fetchGamesThunk = createAsyncThunk(
     "games/fetchGames",
-    async (page, { rejectWithValue }) => {
+    async ({page, filters}, { rejectWithValue }) => {
         try {
-            const data = await fetchGames(page);
+            const data = await fetchGames(page, filters);
             const filterGames = data.results.filter(game => game.added > 1);
             const uniqueGames = filterGames.filter((game, index, self) =>
                 index === self.findIndex((g) => g.id === game.id) 

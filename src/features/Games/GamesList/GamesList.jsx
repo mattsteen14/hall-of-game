@@ -22,8 +22,8 @@ export const GamesList = () => {
 
     useEffect(() => {
         // Fetch games only if the game list is empty
-        dispatch(fetchGamesThunk(currentPage));
-    }, [dispatch, currentPage]);
+        dispatch(fetchGamesThunk({ page: currentPage, filters }));
+    }, [dispatch, currentPage, filters]);
 
     // Filter games based on search and filters in Redux
     const filteredGames = useMemo(() => filterGames(games, { search, platform, genre, year, parentPlatform }), [games, search, platform, genre, year, parentPlatform]);
