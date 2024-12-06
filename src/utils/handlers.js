@@ -88,8 +88,8 @@ export const useFilterHandlers = () => {
         setSearchTerm('');
         dispatch(setSearch(''));
         dispatch(clearSelectedGame());
-        dispatch(setPage(1));
         navigate('/');
+        dispatch(setPage(1));   
     };
     const handleNextPage = () => {
         if(nextPage) {
