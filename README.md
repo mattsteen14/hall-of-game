@@ -176,7 +176,7 @@ Ensure you have the following software installed before proceeding:
 - [x] Overhaul design to improve UX & responsivity.
 - [x] Add filters to games list.
 - [x] Add functionality to navigate between API result pages.
-- [ ] Investigate whether users can filter & search over all pages instead of the current page.
+- [ ] Filter numerous results that spans multiple pages much like search results.
 - [ ] Testing and dubugging.
 - [ ] Deploy and publish to the web.
 - [ ] Share on Codecademy forums for feedback.
