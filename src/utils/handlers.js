@@ -28,12 +28,16 @@ export const useFilterHandlers = () => {
     const currentPage = useSelector(selectCurrentPage);
     const nextPage = useSelector(selectNextPage);
     const previousPage = useSelector(selectPreviousPage);
+    const updateUrl = params => {
+        const searchParams = new URLSearchParams(params);
+        navigate(`/?${searchParams.toString()}`);
+    }
     const handlePlatformClick = (e, platform) => {
         e.preventDefault();
         dispatch(setPlatformFilter([platform]));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        navigate(`/?platform=${platform}`);
+        updateUrl({ platform });
     };
 
     const handlePlatformReset = (e) => {
@@ -55,7 +59,7 @@ export const useFilterHandlers = () => {
         dispatch(setYearFilter(year.toString()));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        navigate(`/?year=${year}`);
+        updateUrl({ year });
     };
 
     const handleYearReset = (e) => {
@@ -68,7 +72,7 @@ export const useFilterHandlers = () => {
         dispatch(setGenreFilter([genre]));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        navigate(`/?genre=${genre}`);
+        updateUrl({ genre });
     };
 
     const handleGenreReset = (e) => {
@@ -80,7 +84,7 @@ export const useFilterHandlers = () => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
         dispatch(clearSelectedGame());
-        navigate(`/?search=${searchTerm}`);
+        updateUrl({ search: searchTerm });
     };
     const handleReset = (e) => {
         if (e) e.preventDefault();
@@ -93,12 +97,16 @@ export const useFilterHandlers = () => {
     };
     const handleNextPage = () => {
         if(nextPage) {
-            dispatch(setPage(currentPage + 1))
+            const newPage = currentPage + 1;
+            dispatch(setPage(newPage))
+            updateUrl({ page: newPage })
         }
     };
     const handlePreviousPage = () => {
         if(previousPage && currentPage > 1) {
-            dispatch(setPage(currentPage - 1))
+            const newPage = currentPage - 1;
+            dispatch(setPage(newPage))
+            updateUrl({ page: newPage })
         }
     };
     return {
