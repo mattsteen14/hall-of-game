@@ -15,7 +15,10 @@ import {
     SiCommodore
 } from "react-icons/si";
 
+import { GiRetroController } from "react-icons/gi";
+import { IoLogoGameControllerA } from "react-icons/io";
 import { FaAppStoreIos } from "react-icons/fa";
+import { TbWorldWww } from "react-icons/tb";
 
 export const ParentPlatformIcons = ({ parentPlatforms }) => {
     const { handleParentPlatformClick } = useFilterHandlers();
@@ -30,7 +33,10 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
         android: SiAndroid,
         ios: FaAppStoreIos,
         atari: SiAtari,
-        'commodore-amiga': SiCommodore
+        'commodore-amiga': SiCommodore,
+        web: TbWorldWww,
+        'neo-geo': GiRetroController,
+        '3do': IoLogoGameControllerA
     }
 
     return (
