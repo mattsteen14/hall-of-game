@@ -48,7 +48,8 @@ export const useFilterHandlers = () => {
 
     const handleParentPlatformClick = (e, parentPlatform) => {
         e.preventDefault();
-        dispatch(setParentPlatformFilter([parentPlatform]));
+        dispatch(setParentPlatformFilter(parentPlatform));
+        updateUrl({ parentPlatform });
     }
     const handleParentPlatformReset = (e) => {
         e.preventDefault();

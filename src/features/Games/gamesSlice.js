@@ -43,7 +43,7 @@ const gamesSlice = createSlice({
             platform: '',
             genre: '',
             year: '',
-            parentPlatform: [],
+            parentPlatform: '',
             search: ''
         }
     },
@@ -76,7 +76,7 @@ const gamesSlice = createSlice({
             state.filters.parentPlatform = action.payload;
         },
         resetParentPlatformFilter(state) {
-            state.filters.parentPlatform = [];
+            state.filters.parentPlatform = '';
         },
         setGenreFilter(state, action) { 
             state.filters.genre = action.payload; 
@@ -86,7 +86,7 @@ const gamesSlice = createSlice({
                 platform: '',
                 genre: '',
                 year: '',
-                parentPlatform: [],
+                parentPlatform: '',
                 search: ''
             };
         },

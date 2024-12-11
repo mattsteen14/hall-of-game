@@ -8,7 +8,7 @@ const api = axios.create({
 
 export const fetchGames = async (page, filters) => {
     try {
-        const { platform, genre, year, search } = filters;
+        const { platform, genre, year, search, parentPlatform } = filters;
         const response = await api.get(`/games`, {
             params: {
                 key: import.meta.env.VITE_API_KEY,
@@ -20,6 +20,7 @@ export const fetchGames = async (page, filters) => {
                 genres: genre || undefined,
                 dates: year ? `${year}-01-01,${year}-12-31` : undefined,
                 search: search || undefined,
+                parent_platforms: parentPlatform || undefined
             },
         });
         console.log('Games fetched successfully:', response.data);

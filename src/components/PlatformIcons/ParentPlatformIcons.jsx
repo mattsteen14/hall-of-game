@@ -47,7 +47,7 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
                     <span key={platform.platform.id}
                         className="parent-platform-icon"
                     >
-                        <a onClick={(e) => handleParentPlatformClick(e, platform.platform.slug)}>
+                        <a onClick={(e) => handleParentPlatformClick(e, platform.platform.id)}>
                             <Icon />
                         </a>
                     </span>
