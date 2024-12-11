@@ -168,6 +168,7 @@ Ensure you have the following software installed before proceeding:
 - [x] Create files and run it locally.
 - [x] Version control. Set up on GitHub.
 - [x] Build the components.
+- [x] Share on Codecademy forums for feedback.
 - [x] Add RAWG API data.
 - [x] Reconfigure build to new API.
 - [x] Mention RAWG on site.
@@ -176,10 +177,10 @@ Ensure you have the following software installed before proceeding:
 - [x] Overhaul design to improve UX & responsivity.
 - [x] Add filters to games list.
 - [x] Add functionality to navigate between API result pages.
-- [ ] Filter numerous results that spans multiple pages much like search results.
+- [x] Improve filtering functionality.
 - [ ] Testing and dubugging.
+- [ ] Optimisation.
 - [ ] Deploy and publish to the web.
-- [ ] Share on Codecademy forums for feedback.
 - [ ] Additional features.
 
 See the [open issues](https://github.com/mattsteen14/hall-of-game/issues) for a full list of proposed features (and known issues).
