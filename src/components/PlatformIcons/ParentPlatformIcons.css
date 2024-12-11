@@ -1,5 +1,5 @@
 .parent-platform-icon {
-    font-size: 1.6em;
+    font-size: 1.8em;
     padding: 0;
     margin: 0;
     display: inline-block; /* Ensures it behaves like a block but fits its content */
@@ -19,4 +19,19 @@
 
 .parent-platform-icon a:hover {
     transform: scale(2); /* Grows without affecting layout */
+}
+
+.nintendo-icon {
+    font-size: 2em;
+    transition: all 0.3s ease; /* Smooth transition for border and color */
+}
+
+.nintendo-icon a {
+    display: flex; /* Centering */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it fills the parent */
+    height: 100%;
+    text-decoration: none; /* Prevent underline on the link */
+    color: inherit; /* Inherits the color from parent */
 }

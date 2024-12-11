@@ -15,6 +15,7 @@ import {
     SiCommodore
 } from "react-icons/si";
 
+import { TbSquareRoundedLetterN } from "react-icons/tb";
 import { GiRetroController } from "react-icons/gi";
 import { IoLogoGameControllerA } from "react-icons/io";
 import { FaAppStoreIos } from "react-icons/fa";
@@ -25,7 +26,7 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
     const platformIcons = {
         playstation: SiPlaystation,
         xbox: SiXbox,
-        nintendo: SiNintendo,
+        nintendo: TbSquareRoundedLetterN || SiNintendo,
         sega: SiSega,
         pc: SiWindows,
         mac: SiApple,
@@ -44,9 +45,10 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
             {parentPlatforms.map((platform) => {
                 if(!platform || !platform.platform) return null;
                 const Icon = platformIcons[platform.platform.slug] || platformIcons['undefined'];
+                const isNintendo = platform.platform.slug === 'nintendo';
                 return (
                     <span key={platform.platform.id}
-                        className="parent-platform-icon"
+                        className={`parent-platform-icon ${isNintendo ? 'nintendo-icon' : ''}`}
                     >
                         <a onClick={(e) => handleParentPlatformClick(e, platform.platform.id)}>
                             <Icon />
