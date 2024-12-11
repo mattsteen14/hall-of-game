@@ -13,7 +13,7 @@ function App() {
   const dispatch = useDispatch();
   // const currentPage = selectCurrentPage();
   useEffect(() => {
-    dispatch(fetchGamesThunk(1));
+    dispatch(fetchGamesThunk(1, {}));
   }, [dispatch]);
   return (
     <Router>
