@@ -34,7 +34,7 @@ export const useFilterHandlers = () => {
     }
     const handlePlatformClick = (e, platform) => {
         e.preventDefault();
-        dispatch(setPlatformFilter([platform]));
+        dispatch(setPlatformFilter(platform));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
         updateUrl({ platform });
@@ -69,7 +69,7 @@ export const useFilterHandlers = () => {
 
     const handleGenreClick = (e, genre) => {
         e.preventDefault();
-        dispatch(setGenreFilter([genre]));
+        dispatch(setGenreFilter(genre));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
         updateUrl({ genre });
