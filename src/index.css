@@ -70,3 +70,12 @@ button:hover {
     padding: 0.4em 0.8em;
   }
 }
+
+@media only screen and (max-width: 500px) {
+
+  .rawg-logo {
+    font-size: 0.8em;
+    padding: 3px;
+  }
+
+}

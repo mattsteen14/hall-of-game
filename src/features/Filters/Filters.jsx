@@ -56,6 +56,7 @@ export const Filters = () => {
 
             {/* Year Filter */}
             <select
+                className="year-filter"
                 onChange={(e) => dispatch(setYearFilter(e.target.value))}
                 value={year || ''}
             >
