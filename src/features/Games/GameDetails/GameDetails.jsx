@@ -93,7 +93,7 @@ export const GameDetails = () => {
                             {game.genres?.map((g, index) => (
                                 <React.Fragment key={index}>
                                     <a
-                                        onClick={(e) => handleGenreClick(e, g.name)}
+                                        onClick={(e) => handleGenreClick(e, g.id)}
                                         href="#"
                                     >
                                         {g.name}
@@ -108,7 +108,7 @@ export const GameDetails = () => {
                             {game.platforms?.map((p, index) => (
                                 <React.Fragment key={index}>
                                     <a
-                                        onClick={(e) => handlePlatformClick(e, p.platform.name)}
+                                        onClick={(e) => handlePlatformClick(e, p.platform.id)}
                                         href="#"
                                     >
                                         {p.platform.name}
