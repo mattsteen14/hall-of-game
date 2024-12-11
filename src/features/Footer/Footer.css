@@ -2,6 +2,10 @@ footer {
     padding: 1rem;
     background-color: gainsboro;
     text-align: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer a {
@@ -12,6 +16,19 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.top-arrow {
+    font-size: 1.4rem;
+    background-color: black;
+    color: darkgray;
+    border-radius: 5px;
+}
+
+.top-arrow:hover {
+    cursor: pointer;
+    color: black;
+    background-color: darkgray;
 }
 
 @media only screen and (max-width: 500px) {
