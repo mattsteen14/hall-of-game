@@ -36,13 +36,14 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
         'commodore-amiga': SiCommodore,
         web: TbWorldWww,
         'neo-geo': GiRetroController,
-        '3do': IoLogoGameControllerA
+        '3do': IoLogoGameControllerA,
     }
 
     return (
         <div>
             {parentPlatforms.map((platform) => {
-                const Icon = platformIcons[platform.platform.slug];
+                if(!platform || !platform.platform) return null;
+                const Icon = platformIcons[platform.platform.slug] || platformIcons['undefined'];
                 return (
                     <span key={platform.platform.id}
                         className="parent-platform-icon"
@@ -58,6 +59,9 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
     )
 }
 
+ParentPlatformIcons.defaultProps = {
+    parentPlatforms: [] // default to an empty array
+};
 ParentPlatformIcons.propTypes = {
     parentPlatforms: PropTypes.arrayOf(PropTypes.object).isRequired
 }
