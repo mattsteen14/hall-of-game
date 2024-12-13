@@ -15,9 +15,8 @@ import {
     SiCommodore
 } from "react-icons/si";
 
-import { TbSquareRoundedLetterN } from "react-icons/tb";
+import { TbSquareRoundedLetterN, TbSquareRoundedNumber3 } from "react-icons/tb";
 import { GiRetroController } from "react-icons/gi";
-import { IoLogoGameControllerA } from "react-icons/io";
 import { FaAppStoreIos } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 
@@ -37,7 +36,7 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
         'commodore-amiga': SiCommodore,
         web: TbWorldWww,
         'neo-geo': GiRetroController,
-        '3do': IoLogoGameControllerA,
+        '3do': TbSquareRoundedNumber3,
     }
 
     return (
@@ -46,9 +45,10 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
                 if(!platform || !platform.platform) return null;
                 const Icon = platformIcons[platform.platform.slug] || platformIcons['undefined'];
                 const isNintendo = platform.platform.slug === 'nintendo';
+                const is3do = platform.platform.slug === '3do';
                 return (
                     <span key={platform.platform.id}
-                        className={`parent-platform-icon ${isNintendo ? 'nintendo-icon' : ''}`}
+                        className={`parent-platform-icon ${isNintendo ? 'nintendo-icon' : ''} ${is3do ? 'threedo-icon' : ''}`}
                     >
                         <a onClick={(e) => handleParentPlatformClick(e, platform.platform.id)}>
                             <Icon />

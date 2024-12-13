@@ -21,12 +21,14 @@
     transform: scale(2); /* Grows without affecting layout */
 }
 
-.nintendo-icon {
+.nintendo-icon, 
+.threedo-icon {
     font-size: 2em;
     transition: all 0.3s ease; /* Smooth transition for border and color */
 }
 
-.nintendo-icon a {
+.nintendo-icon a,
+.threedo-icon a {
     display: flex; /* Centering */
     align-items: center;
     justify-content: center;

@@ -30,3 +30,12 @@
         display: none;
     }
 }
+
+@media only screen and (max-width: 400px) {
+
+    .filters select {
+        font-size: 0.6rem;
+        padding: 0.2rem;
+    }
+
+}
