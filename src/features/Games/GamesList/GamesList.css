@@ -13,14 +13,20 @@
     padding: 1rem;
 }
 
-.error-header {
+.error-header, 
+.no-results {
     text-align: center;
     font-weight: 600;
-    color: red;
+    font-family: 'press start 2p';
     padding: 2rem;
     background-color: gainsboro;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 2rem;
     text-transform: uppercase;
+}
+
+.error-header h1, h2, h3,
+.no-results h1, h2, p {
+    padding: 0.5rem;
 }

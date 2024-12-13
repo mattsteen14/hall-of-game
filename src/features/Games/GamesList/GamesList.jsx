@@ -31,9 +31,9 @@ export const GamesList = () => {
         return (
             <div className='error'>
                 <div className='error-header'>
-                    <h1>Game Over!</h1>
-                    <h2>Error:</h2>
-                    <h3>{error}</h3>
+                    <h1>Game Over</h1>
+                    <h2>Error:{error}</h2>
+                    <h3>Press Reset button to try again.</h3>
                 </div>
             </div>
         );
@@ -46,11 +46,20 @@ export const GamesList = () => {
 
             {/* Games List */}
             <div className='games-list'>
-                {games.map(game => (
+                {games.length > 0 ? (
+                games.map(game => (
                     <Card key={game.id}>
                         <Game game={game} />
                     </Card>
-                ))}
+                ))
+                ) : (
+                <div className='no-results'>
+                    <h1>Game Over</h1>
+                    <h2>No Games Found</h2>
+                    <p>Try different search term or adjust filters to try again.</p>
+                </div>
+                )
+            }
             </div>
 
             {/* Pagination */}

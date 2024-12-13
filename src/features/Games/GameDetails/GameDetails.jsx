@@ -43,6 +43,7 @@ export const GameDetails = () => {
                         className="rating"
                         href={`https://www.metacritic.com/game/${game.slug}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         >
                             <SiMetacritic /> {game.metacritic || "N/A"}
                             </a>
@@ -51,6 +52,7 @@ export const GameDetails = () => {
                             className="rawg-logo"
                             href={`https://www.rawg.io/games/${game.slug}?ref=api`}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             RAWG
                         </a>
@@ -58,6 +60,7 @@ export const GameDetails = () => {
                             <a
                                 href={game.website}
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <FaExternalLinkAlt />
                             </a>}
@@ -76,12 +79,14 @@ export const GameDetails = () => {
                         src={game.background_image || "fallback_image_url"}
                         alt={game.name || "Game image"}
                         className="game-box-art"
+                        loading="lazy"
                     />
                     {game.background_image_additional && (
                         <img
                             src={game.background_image_additional}
                             alt="screenshot"
                             className="game-screenshot"
+                            loading="lazy"
                         />
                     )}
                 </section>

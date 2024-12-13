@@ -9,6 +9,7 @@ export const Game = ({ game }) => {
     const {
         handleYearClick,
     } = useFilterHandlers();
+    
     return (
         <div className='game'>
             <div
@@ -19,6 +20,7 @@ export const Game = ({ game }) => {
                         src={game.background_image}
                         alt={game.name}
                         className='game-cover'
+                        loading='lazy'
                     />
                 </Link>
             </div>
@@ -40,6 +42,7 @@ export const Game = ({ game }) => {
                     className="rating"
                     href={`https://www.metacritic.com/game/${game.slug}`}
                     target="_blank"
+                    rel="noreferrer"
                 >
                     <SiMetacritic /> {game.metacritic || "N/A"}
                 </a>

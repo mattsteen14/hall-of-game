@@ -28,16 +28,12 @@ export const useFilterHandlers = () => {
     const currentPage = useSelector(selectCurrentPage);
     const nextPage = useSelector(selectNextPage);
     const previousPage = useSelector(selectPreviousPage);
-    const updateUrl = params => {
-        const searchParams = new URLSearchParams(params);
-        navigate(`/?${searchParams.toString()}`);
-    }
     const handlePlatformClick = (e, platform) => {
         e.preventDefault();
         dispatch(setPlatformFilter(platform));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        updateUrl({ platform });
+        navigate('/');
     };
 
     const handlePlatformReset = (e) => {
@@ -49,7 +45,6 @@ export const useFilterHandlers = () => {
     const handleParentPlatformClick = (e, parentPlatform) => {
         e.preventDefault();
         dispatch(setParentPlatformFilter(parentPlatform));
-        updateUrl({ parentPlatform });
     }
     const handleParentPlatformReset = (e) => {
         e.preventDefault();
@@ -60,7 +55,7 @@ export const useFilterHandlers = () => {
         dispatch(setYearFilter(year.toString()));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        updateUrl({ year });
+        navigate('/');
     };
 
     const handleYearReset = (e) => {
@@ -73,7 +68,7 @@ export const useFilterHandlers = () => {
         dispatch(setGenreFilter(genre));
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
-        updateUrl({ genre });
+        navigate('/');
     };
 
     const handleGenreReset = (e) => {
@@ -85,7 +80,7 @@ export const useFilterHandlers = () => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
         dispatch(clearSelectedGame());
-        updateUrl({ search: searchTerm });
+        navigate('/');
     };
     const handleReset = (e) => {
         if (e) e.preventDefault();
@@ -100,14 +95,12 @@ export const useFilterHandlers = () => {
         if(nextPage) {
             const newPage = currentPage + 1;
             dispatch(setPage(newPage))
-            updateUrl({ page: newPage })
         }
     };
     const handlePreviousPage = () => {
         if(previousPage && currentPage > 1) {
             const newPage = currentPage - 1;
             dispatch(setPage(newPage))
-            updateUrl({ page: newPage })
         }
     };
     return {
@@ -125,6 +118,8 @@ export const useFilterHandlers = () => {
         handleParentPlatformReset,
         handleNextPage,
         handlePreviousPage,
-        currentPage
+        currentPage,
+        nextPage,
+        previousPage
     }
 }

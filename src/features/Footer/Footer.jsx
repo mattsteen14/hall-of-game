@@ -28,6 +28,7 @@ export const Footer = () => {
                 <BsCaretUpSquareFill
                     className="top-arrow"
                     onClick={() => window.scrollTo(0, 0)}
+                    aria-label="Back to top"
                 />
             </a>
         </footer>

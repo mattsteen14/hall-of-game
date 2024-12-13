@@ -35,6 +35,7 @@ export const Header = () => {
                 className='reset-button'
                 to='/'
                 onClick={handleReset}
+                aria-label='Reset'
             >
                 RESET
             </Link>
