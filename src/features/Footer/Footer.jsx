@@ -1,20 +1,10 @@
 import './Footer.css'
 import { BsCaretUpSquareFill } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => {
     return (
         <footer>
-            <span>
-                Developed by
-                <a
-                    className="github-logo"
-                    href="https://mattsteen14.github.io/portfolio/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    Matt Steen-Brookes
-                </a>
-                . Powered by
                 <a
                     className="rawg-logo"
                     href="https://www.rawg.io/"
@@ -23,7 +13,14 @@ export const Footer = () => {
                 >
                     RAWG
                 </a>
-            </span>
+                <a
+                    className="github-logo"
+                    href="https://github.com/mattsteen14/hall-of-game"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                <FaGithub />
+                </a>
             <a>
                 <BsCaretUpSquareFill
                     className="top-arrow"

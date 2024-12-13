@@ -35,13 +35,13 @@ button:hover {
   color: white !important;
   background-color: black;
   font-weight: 900;
-  letter-spacing: 5px;
-  line-height: 18px;
+  letter-spacing: 1px;
+  line-height: 20px;
   text-align: center;
   text-transform: uppercase;
-  padding: 5px;
+  padding: 3px;
   border-radius: 5px;
-  margin: 0 5px;
+  margin: 5px;
 }
 
 .rawg-logo:hover {

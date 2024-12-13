@@ -23,7 +23,7 @@
 
 .game-header,
 .game-banner {
-    background-color: gainsboro;
+    background-color: darkgray;
 }
 
 .title {
@@ -73,7 +73,7 @@
 .game-info-container {
     width: 100%;
     text-align: start;
-    background-color: darkgray;
+    background-color: gainsboro;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -117,7 +117,7 @@
 
 .game-description {
     text-align: start;
-    background-color: gainsboro;
+    background-color: darkgray;
     padding: 1rem 4rem;
 }
 

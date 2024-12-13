@@ -3,36 +3,39 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: max(100px, 15vh);
+    height: max(80px, 10px, 10vh);
     z-index: 1100;
     display: flex;
     border-bottom: 1px solid black;
     justify-content: space-around;
     align-items: center;
-    padding-top: 1em;
-    padding-left: max(40px, 3.5vw);
-    padding-right: max(3vw, 30px);
-    padding-bottom: 1em;
-    background-color: darkgrey;
+    background-color: gainsboro;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     font-family: 'Roboto', 'Helvetica', 'Futura', sans-serif;
     font-weight: 400;
     font-style: italic;
     color: #3e3e3e;
-    font-size: 1.5rem;
-    background-color: gainsboro;
-    border: 0.5px solid black;
-    border-radius: 10px;
-    padding: 0.5em;
+    margin: 0;
+    flex-wrap: nowrap;
+}
+
+.logo h1 {
+    font-size: calc(1.2rem + 1.2vw);
 }
 
 .search-bar {
-    border: 5px solid gainsboro;
+    border: 5px solid white;
     border-radius: 10px;
+    width: 120px;
+}
+
+input {
+    width: 80%;
 }
 
 .search-bar, input, .search-icon {
@@ -50,12 +53,11 @@ header {
     font-weight: 600;
     background-color: #3e3e3e;
     color: white;
-    border: 5px solid gainsboro;
+    border: 5px solid white;
     border-radius: 10px;
     text-align: end;
-    font-size: 0.8em;
-    padding: 2.5rem 0.5rem 0.1rem;
-    margin: 1rem;
+    font-size: 0.6em;
+    padding: 2rem 0.5rem 0.1rem;
 }
 
 .reset-button:hover, .reset-button:active {
@@ -68,109 +70,10 @@ header {
         0px 0px 0px rgba(0, 0, 0, 0.3);
 }
 
-@media (orientation: portrait) {
-
-    header {
-        height: max(80px, 10vh);
-    }
-}
-
-@media only screen and (max-width: 800px) {
-
-    .logo {
-        font-size: 1.2rem;
-    }
+@media only screen and (max-width: 450px) {
 
     .reset-button {
-        font-size: 0.5em;
-        padding: 1.8rem 0.5rem 0.1rem;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-
-    header {
-        height: max(60px, 15vh);
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-size: 1rem;
-    }
-
-    .search-bar {
-        width: 80px;
-    }
-
-    input {
-        width: 95%;
-        font-size: 0.6rem;
-    }
-
-    .search-icon {
         display: none;
-    }
-
-    .reset-button {
-        font-size: 0.5em;
-        padding: 1.8rem 0.5rem 0.1rem;
-    }
-}
-
-
-@media only screen and (max-width: 500px) {
-    
-    .logo {
-        font-size: 0.8rem;
-    }
-
-    .search input {
-        font-size: 0.6rem;
-    }
-
-    .reset-button {
-        font-size: 0.4em;
-        padding: 1.5rem 0.5rem 0.1rem;
-    }
-
-}
-
-@media (orientation: portrait) and (max-width: 450px) {
-    
-    header {
-        height: max(60px, 10vh);
-        padding-left: max(20px, 3.5vw);
-        padding-right: max(3vw, 20px);
-    }
-
-    .logo {
-        padding: 0.5rem;
-        margin: 0;
-    }
-
-    .logo h1 {
-        margin: 0;
-        padding: 0;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-
-    .logo h1 {
-        font-size: 1rem;
-    }
-
-}
-
-@media only screen and (max-width: 350px) {
-
-    header {
-        height: max(50px, 8vh);
-    }
-
-    .logo h1 {
-        font-size: 0.8rem;
     }
 
 }
