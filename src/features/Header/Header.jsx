@@ -12,9 +12,12 @@ export const Header = () => {
     } = useFilterHandlers();
     return (
         <header>
-            <div className='logo'>
+            <Link 
+            className='logo'
+            to='/'
+            >
                 <h1>HALL OF GAME</h1>
-            </div>
+            </Link>
             <div className='search-bar'>
                 <form className='search' onSubmit={handleSearch}>
                     <input
