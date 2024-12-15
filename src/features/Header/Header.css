@@ -28,14 +28,18 @@ header {
     font-size: calc(1.2rem + 1.2vw);
 }
 
+.logo:hover {
+    text-decoration: underline;
+}
+
 .search-bar {
     border: 5px solid white;
     border-radius: 10px;
-    width: 120px;
+    width: 160px;
 }
 
 input {
-    width: 80%;
+    width: 85%;
 }
 
 .search-bar, input, .search-icon {
@@ -48,32 +52,13 @@ input {
     padding: 0;
 }
 
-.reset-button {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    background-color: #3e3e3e;
-    color: white;
-    border: 5px solid white;
-    border-radius: 10px;
-    text-align: end;
-    font-size: 0.6em;
-    padding: 2rem 0.5rem 0.1rem;
-}
+@media only screen and (max-width: 400px) {
 
-.reset-button:hover, .reset-button:active {
-    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 1),
-        0px 0px 0px rgba(0, 0, 0, 0.3);
-}
-
-.reset-button:active {
-    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 2),
-        0px 0px 0px rgba(0, 0, 0, 0.3);
-}
-
-@media only screen and (max-width: 450px) {
-
-    .reset-button {
-        display: none;
+    .search-bar {
+        width: 120px;
     }
 
+    input {
+        width: 80%;
+    }
 }

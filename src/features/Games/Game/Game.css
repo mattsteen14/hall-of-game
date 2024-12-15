@@ -33,6 +33,7 @@
     text-transform: uppercase;
     white-space: pre-wrap;
     word-wrap: break-word;
+    padding-top: 1em;
 }
 
 .game-name a {
@@ -47,7 +48,6 @@
     color: black;
 }
 
-.game-name,
 .middle-row,
 .game-platforms {
     padding: 1em 0;

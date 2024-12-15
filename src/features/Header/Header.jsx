@@ -12,9 +12,11 @@ export const Header = () => {
     } = useFilterHandlers();
     return (
         <header>
-            <Link 
-            className='logo'
-            to='/'
+            <Link
+                className='logo'
+                to='/'
+                aria-label='Home'
+                onClick={handleReset}
             >
                 <h1>HALL OF GAME</h1>
             </Link>
@@ -34,14 +36,6 @@ export const Header = () => {
                     </button>
                 </form>
             </div>
-            <Link
-                className='reset-button'
-                to='/'
-                onClick={handleReset}
-                aria-label='Reset'
-            >
-                RESET
-            </Link>
         </header>
     )
 }

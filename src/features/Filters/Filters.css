@@ -5,25 +5,52 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 1rem;
+    padding: 1rem;
 }
 
 .filters select {
-    padding: 0.5rem;
+    padding: 0.3rem;
     margin: 0.5rem;
     background-color: gainsboro;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.reset-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #3e3e3e;
+    color: white;
+    border: 5px solid gainsboro;
+    border-radius: 10px;
+    text-align: end;
+    font-size: 0.6em;
+    padding: 2.5rem 0.5rem 0.1rem;
+}
+
+.reset-button:hover, .reset-button:active {
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 1),
+        0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:active {
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 2),
+        0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 600px) {
+
+    .reset-button {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
 
     .filters {
         margin-top: 0.5rem;
-    }
-
-    .filters select {
-        font-size: 0.8rem;
-        padding: 0.3rem;
     }
 
     .year-filter {

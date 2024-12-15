@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPlatformFilter, setGenreFilter, setYearFilter } from '../Games/gamesSlice';
+import { useFilterHandlers } from '../../utils/handlers';
 import axios from 'axios';
 import './Filters.css';
 
@@ -11,6 +13,7 @@ export const Filters = () => {
 
     const [platforms, setPlatforms] = useState([]);
     const [genres, setGenres] = useState([]);
+    const handleReset = useFilterHandlers(dispatch);
 
     useEffect(() => {
         // Fetch available platforms and genres
@@ -65,6 +68,14 @@ export const Filters = () => {
                     <option key={yr} value={yr}>{yr}</option>
                 ))}
             </select>
+            <Link
+                className='reset-button'
+                to='/'
+                onClick={handleReset}
+                aria-label='Reset'
+            >
+                RESET
+            </Link>
         </div>
     );
 };
