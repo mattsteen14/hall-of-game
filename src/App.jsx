@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import './App.css'
 import { fetchGamesThunk } from './features/Games/gamesSlice'
@@ -10,22 +10,9 @@ import { Footer } from './features/Footer/Footer'
 
 function App() {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
   useEffect(() => {
     dispatch(fetchGamesThunk(1, {}));
   }, [dispatch]);
-  
-  if(state.games.error) { // Use state.games.error instead of console.error
-    return (
-      <div className='error'>
-        <div className='error-header'>
-          <h1>Game Over</h1>
-          <h2>Error:{state.games.error}</h2>
-        </div>
-      </div>
-    );
-  }
-
 
   return (
     <Router>

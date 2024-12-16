@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './GamesList.css';
 import { fetchGamesThunk } from '../gamesSlice';
 import { useFilterHandlers } from '../../../utils/handlers';
@@ -32,8 +33,17 @@ export const GamesList = () => {
             <div className='error'>
                 <div className='error-header'>
                     <h1>Game Over</h1>
-                    <h2>Error:{error}</h2>
-                    <h3>Press Reset button to try again.</h3>
+                    <h2>Error:</h2>
+                    <h3>{error.status}</h3>
+                    <h4>{error.message || 'An error occurred'}</h4>
+                    <Link
+                        className='reset-button'
+                        to='/'
+                        onClick={() => window.location.reload()}
+                        aria-label='Error Reset'
+                    >
+                        RESET
+                    </Link>
                 </div>
             </div>
         );
@@ -47,19 +57,19 @@ export const GamesList = () => {
             {/* Games List */}
             <div className='games-list'>
                 {games.length > 0 ? (
-                games.map(game => (
-                    <Card key={game.id}>
-                        <Game game={game} />
-                    </Card>
-                ))
+                    games.map(game => (
+                        <Card key={game.id}>
+                            <Game game={game} />
+                        </Card>
+                    ))
                 ) : (
-                <div className='no-results'>
-                    <h1>Game Over</h1>
-                    <h2>No Games Found</h2>
-                    <p>Try different search term or adjust filters to try again.</p>
-                </div>
+                    <div className='no-results'>
+                        <h1>Game Over</h1>
+                        <h2>No Games Found</h2>
+                        <p>Try different search term or adjust filters to try again.</p>
+                    </div>
                 )
-            }
+                }
             </div>
 
             {/* Pagination */}
