@@ -84,6 +84,10 @@
     padding: 1rem 4rem;
 }
 
+.game-info-container p {
+    padding: 0;
+}
+
 .game-info {
     flex: 2;
     display: block;
@@ -100,11 +104,6 @@
 .game-info a:hover,
 .game-aside a:hover {
     text-decoration: underline;
-}
-
-.game-info span {
-    display: inline-block;
-    margin-bottom: 1rem;
 }
 
 .game-aside {
