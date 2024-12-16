@@ -17,6 +17,8 @@ export const Header = () => {
                 to='/'
                 aria-label='Home'
                 onClick={handleReset}
+                role='link'
+                title='Home'
             >
                 <h1>HALL OF GAME</h1>
             </Link>
@@ -24,6 +26,8 @@ export const Header = () => {
                 <form className='search' onSubmit={handleSearch}>
                     <input
                         type='text'
+                        name='search'
+                        role='textbox'
                         placeholder='SEARCH'
                         aria-label='Search'
                         value={searchTerm}
@@ -31,7 +35,9 @@ export const Header = () => {
                     <button
                         className='search-icon'
                         type='submit'
-                        aria-label='Search'>
+                        aria-label='Search'
+                        role='button'
+                        >
                         <HiOutlineSearch />
                     </button>
                 </form>
