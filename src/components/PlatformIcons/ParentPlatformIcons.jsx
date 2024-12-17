@@ -42,15 +42,20 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
     return (
         <div>
             {parentPlatforms.map((platform) => {
-                if(!platform || !platform.platform) return null;
+                if (!platform || !platform.platform) return null;
                 const Icon = platformIcons[platform.platform.slug] || platformIcons['undefined'];
                 const isNintendo = platform.platform.slug === 'nintendo';
                 const is3do = platform.platform.slug === '3do';
                 return (
-                    <span key={platform.platform.id}
+                    <span
+                        key={platform.platform.id}
                         className={`parent-platform-icon ${isNintendo ? 'nintendo-icon' : ''} ${is3do ? 'threedo-icon' : ''}`}
                     >
-                        <a onClick={(e) => handleParentPlatformClick(e, platform.platform.id)}>
+                        <a
+                            onClick={(e) => handleParentPlatformClick(e, platform.platform.id)}
+                            role='link'
+                            aria-label={`${platform.platform.name} icon`}
+                        >
                             <Icon />
                         </a>
                     </span>
