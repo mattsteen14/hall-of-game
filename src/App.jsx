@@ -1,18 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
 import './App.css'
-import { fetchGamesThunk } from './features/Games/gamesSlice'
 import { Header } from './features/Header/Header'
 import { GamesList } from './features/Games/GamesList/GamesList'
 import { GameDetails } from './features/Games/GameDetails/GameDetails'
 import { Footer } from './features/Footer/Footer'
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchGamesThunk(1, {}));
-  }, [dispatch]);
 
   return (
     <Router>
@@ -20,8 +13,8 @@ function App() {
       <main>
         <section className='game-view'>
           <Routes>
-            <Route path='/games/:id' element={<GameDetails />} />
             <Route path='/' element={<GamesList />} />
+            <Route path='/games/:id' element={<GameDetails />} />
           </Routes>
         </section>
       </main>

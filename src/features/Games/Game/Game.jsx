@@ -21,6 +21,8 @@ export const Game = ({ game }) => {
                         alt={game.name}
                         className='game-cover'
                         loading='lazy'
+                        width='100%'
+                        height='100%'
                     />
                 </Link>
             </div>

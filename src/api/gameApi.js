@@ -15,7 +15,7 @@ export const fetchGames = async (page, filters) => {
                 ordering: '-metacritic',
                 page,
                 page_size: 40,
-                exclude_additions: 'true',
+                // exclude_additions: 'true',
                 platforms: platform || undefined, // Include only if provided
                 genres: genre || undefined,
                 dates: year ? `${year}-01-01,${year}-12-31` : undefined,
