@@ -11,10 +11,26 @@ export const PageSelect = () => {
     } = useFilterHandlers();
 
     return (
-        <div className='page-select'>
-                <button onClick={handlePreviousPage} disabled={!previousPage}>{'<'} Previous Page</button>
+        <div 
+        className='page-select'
+        role='navigation'
+        >
+                <button 
+                onClick={handlePreviousPage} 
+                disabled={!previousPage} 
+                role='button' 
+                aria-label='Previous Page'
+                >
+                    {'<'} Previous Page
+                </button>
                 <span>Page {currentPage}</span>
-                <button onClick={handleNextPage} disabled={!nextPage}>Next Page {'>'} </button>
+                <button 
+                onClick={handleNextPage} 
+                disabled={!nextPage}
+                role='button'
+                aria-label='Next Page'
+                >Next Page {'>'} 
+                </button>
             </div>
     )
 }
