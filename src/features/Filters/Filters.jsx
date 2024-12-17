@@ -35,11 +35,16 @@ export const Filters = () => {
     }, []);
 
     return (
-        <div className="filters">
+        <div 
+        className="filters"
+        role='navigation'
+        >
             {/* Platforms Filter */}
             <select
                 onChange={(e) => dispatch(setPlatformFilter(parseInt(e.target.value) || ''))}
                 value={platform || ''}
+                role='combobox'
+                aria-label='All Platforms'
             >
                 <option value="">All Platforms</option>
                 {platforms.map((p) => (
@@ -50,6 +55,8 @@ export const Filters = () => {
             <select
                 onChange={(e) => dispatch(setGenreFilter(parseInt(e.target.value) || ''))}
                 value={genre || ''}
+                role='combobox'
+                aria-label='All Genres'
             >
                 <option value="">All Genres</option>
                 {genres.map((g) => (
@@ -62,6 +69,8 @@ export const Filters = () => {
                 className="year-filter"
                 onChange={(e) => dispatch(setYearFilter(e.target.value))}
                 value={year || ''}
+                role='combobox'
+                aria-label='All Years'
             >
                 <option value="">All Years</option>
                 {Array.from({ length: 50 }, (_, i) => new Date().getFullYear() - i).map((yr) => (
