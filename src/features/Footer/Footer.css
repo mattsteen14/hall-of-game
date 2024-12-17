@@ -1,4 +1,6 @@
 footer {
+    position: sticky;
+    width: 100%;
     padding: 1rem;
     background-color: gainsboro;
     display: flex;

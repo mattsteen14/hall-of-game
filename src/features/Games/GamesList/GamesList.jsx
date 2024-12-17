@@ -55,13 +55,19 @@ export const GamesList = () => {
             <Filters />
             {/* Games List */}
             <div className='games-list'>
-                {games.map(game => (
-                    <Card key={game.id}>
-                        <Game game={game} />
-                    </Card>
-                ))}
+                {games.length > 0 ? (
+                    games.map(game => (
+                        <Card key={game.id}>
+                            <Game game={game} />
+                        </Card>
+                    ))
+                ) : (
+                        <div>
+                            <Loading />
+                        </div>
+                    )
+                }
             </div>
-
             {/* Pagination */}
             <PageSelect />
         </div>
