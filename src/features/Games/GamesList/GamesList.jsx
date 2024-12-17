@@ -31,13 +31,13 @@ export const GamesList = () => {
     if (error) {
         return (
             <div className='error'>
-                <div className='error-header'>
+                <div className='error-box'>
                     <h1>Game Over</h1>
                     <h2>Error:</h2>
                     <h3>{error.status}</h3>
                     <h4>{error.message || 'An error occurred'}</h4>
                     <Link
-                        className='reset-button'
+                        className='reset-button error-reset'
                         to='/'
                         onClick={() => window.location.reload()}
                         aria-label='Error Reset'
@@ -56,20 +56,11 @@ export const GamesList = () => {
 
             {/* Games List */}
             <div className='games-list'>
-                {games.length > 0 ? (
-                    games.map(game => (
-                        <Card key={game.id}>
-                            <Game game={game} />
-                        </Card>
-                    ))
-                ) : (
-                    <div className='no-results'>
-                        <h1>Game Over</h1>
-                        <h2>No Games Found</h2>
-                        <p>Try different search term or adjust filters to try again.</p>
-                    </div>
-                )
-                }
+                {games.map(game => (
+                    <Card key={game.id}>
+                        <Game game={game} />
+                    </Card>
+                ))}
             </div>
 
             {/* Pagination */}

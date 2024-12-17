@@ -13,8 +13,22 @@
     padding: 1rem;
 }
 
-.error-header, 
-.no-results {
+/* .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin: 2rem;
+} */
+
+.error-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-weight: 600;
     font-family: 'press start 2p';
@@ -26,7 +40,11 @@
     text-transform: uppercase;
 }
 
-.error-header h1, h2, h3,
-.no-results h1, h2, p {
+.error-box h1, h2, h3, h4 {
     padding: 0.5rem;
+}
+
+.reset-button.error-reset {
+    margin: 0.5rem;
+    border-color: white;
 }

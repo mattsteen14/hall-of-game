@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Game.css'
+import 'lazysizes';
 import { SiMetacritic } from 'react-icons/si';
 import { useFilterHandlers } from '../../../utils/handlers';
 import { ParentPlatformIcons } from '../../../components/PlatformIcons/ParentPlatformIcons';
 
 export const Game = ({ game }) => {
-    const {
-        handleYearClick,
-    } = useFilterHandlers();
+    const { handleYearClick } = useFilterHandlers();
     
     return (
         <div className='game'>
@@ -17,10 +16,9 @@ export const Game = ({ game }) => {
             >
                 <Link to={`/games/${game.id}`}>
                     <img
-                        src={game.background_image}
+                        data-src={game.background_image}
                         alt={game.name}
-                        className='game-cover'
-                        loading='lazy'
+                        className='game-cover lazyload'
                         width='100%'
                         height='100%'
                     />
