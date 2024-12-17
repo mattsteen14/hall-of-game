@@ -12,6 +12,14 @@ describe('Footer component', () => {
         render(<Footer />);
         expect(screen.getByText('RAWG')).toBeInTheDocument();
     });
+    test('renders secret link correctly', () => {
+        render(<Footer />);
+        const secret = screen.getByRole('link', { name: 'Super Metroid'});
+        expect(secret).toBeInTheDocument();
+        expect(secret).toHaveAttribute('href', 'https://www.ign.com/games/super-metroid');
+        expect(secret).toHaveAttribute('target', '_blank');
+        expect(secret).toHaveAttribute('rel', 'noreferrer');
+    })
     test('renders GitHub link correctly', () => {
         render(<Footer />);
         const githubLink = screen.getByRole('link', { name: 'GitHub' });

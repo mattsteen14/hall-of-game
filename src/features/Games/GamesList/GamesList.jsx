@@ -53,7 +53,6 @@ export const GamesList = () => {
         <div className='games-list-container'>
             {/* Filter Dropdowns */}
             <Filters />
-
             {/* Games List */}
             <div className='games-list'>
                 {games.map(game => (

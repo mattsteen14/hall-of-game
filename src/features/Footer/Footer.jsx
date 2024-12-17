@@ -1,6 +1,7 @@
 import './Footer.css'
 import { BsCaretUpSquareFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
+import { GiMetroid } from "react-icons/gi";
 
 export const Footer = () => {
     return (
@@ -24,6 +25,18 @@ export const Footer = () => {
                 title="GitHub"
             >
                 <FaGithub />
+            </a>
+            <a
+            className='metroid'
+            href='https://www.ign.com/games/super-metroid'
+            target='_blank'
+            rel='noreferrer'
+            role='link'
+            aria-label="Super Metroid"
+            name="Super Metroid"
+            title="Super Metroid"
+            >
+                <GiMetroid />
             </a>
             <a>
                 <BsCaretUpSquareFill

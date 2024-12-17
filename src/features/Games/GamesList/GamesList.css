@@ -13,17 +13,6 @@
     padding: 1rem;
 }
 
-/* .error {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    margin: 2rem;
-} */
-
 .error-box {
     display: flex;
     flex-direction: column;
