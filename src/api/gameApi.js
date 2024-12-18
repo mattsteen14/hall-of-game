@@ -1,10 +1,4 @@
-import axios from 'axios';
-
-const API_URL = 'https://api.rawg.io/api';
-
-const api = axios.create({
-    baseURL: API_URL,
-});
+import { api } from './api';
 
 export const fetchGames = async (page, filters) => {
     try {

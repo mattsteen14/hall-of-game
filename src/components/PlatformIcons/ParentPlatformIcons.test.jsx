@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it, beforeEach, afterEach } from 'vitest';
+import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import { vi } from 'vitest';
 import { ParentPlatformIcons } from './ParentPlatformIcons';
 import { useFilterHandlers } from '../../utils/handlers';
 

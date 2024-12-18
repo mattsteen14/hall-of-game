@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --header-height: calc(50px + 2.5vh);
+}
+
 body {
   background-color: darkgray;
   font-family: 'Montserrat', 'Roboto', 'Noto Sans', 'Gill Sans','Futura', Helvetica, sans-serif, Arial;
