@@ -10,15 +10,6 @@ footer {
     border-top: 1px solid black;
 }
 
-.metroid {
-    font-size: 1.6rem;
-    color: gainsboro;
-}
-
-.metroid:hover {
-    color: red;
-}
-
 .github-logo {
     font-size: 1.6rem;
     color: black;
@@ -38,12 +29,4 @@ footer {
 .top-arrow:hover {
     color: black;
     background-color: darkgray;
-}
-
-@media only screen and (max-width: 500px) {
-
-    .metroid {
-        display: none;
-    }
-
 }

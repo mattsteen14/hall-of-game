@@ -32,6 +32,15 @@ header {
     text-decoration: underline;
 }
 
+.metroid {
+    font-size: 1.6rem;
+    color: gainsboro;
+}
+
+.metroid:hover {
+    color: red;
+}
+
 .search-bar {
     border: 5px solid white;
     border-radius: 10px;
@@ -50,6 +59,14 @@ input {
 .search-icon {
     margin: 0;
     padding: 0;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .metroid {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 400px) {

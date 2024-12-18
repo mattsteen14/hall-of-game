@@ -26,7 +26,7 @@ describe('Header component', () => {
                 </BrowserRouter>
             </Provider>
         );
-        expect(screen.getByRole('link')).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
         expect(screen.getByText('HALL OF GAME')).toBeInTheDocument();
     });
     test('renders back to home link in hall of game logo', () => {
@@ -44,6 +44,20 @@ describe('Header component', () => {
         expect(homeLink).not.toHaveAttribute('target');
         expect(homeLink).not.toHaveAttribute('rel');
     });
+        test('renders secret link correctly', () => {
+            render(
+                <Provider store={store}>
+                    <BrowserRouter>
+                        <Header />
+                    </BrowserRouter>
+                </Provider>
+            );
+            const secret = screen.getByRole('link', { name: 'Super Metroid'});
+            expect(secret).toBeInTheDocument();
+            expect(secret).toHaveAttribute('href', 'https://www.ign.com/games/super-metroid');
+            expect(secret).toHaveAttribute('target', '_blank');
+            expect(secret).toHaveAttribute('rel', 'noreferrer');
+        })
     test('renders search input', () => {
         render(
             <Provider store={store}>
