@@ -45,10 +45,22 @@ export const Filters = () => {
                 value={platform || ''}
                 role='combobox'
                 aria-label='All Platforms'
+                name='All Platforms'
+                title='All Platforms'
+                aria-expanded={platform ? 'true' : 'false'}
+                aria-controls='platform-filter-options'
             >
                 <option value="">All Platforms</option>
                 {platforms.map((p) => (
-                    <option key={p.id} value={p.id}>{p.name}</option>
+                    <option
+                    key={p.id} 
+                    value={p.id} 
+                    aria-selected={p.id === platform}
+                    name={p.name}
+                    title={p.name}
+                    >
+                        {p.name}
+                        </option>
                 ))}
             </select>
             {/* Genres Filter */}
@@ -57,10 +69,22 @@ export const Filters = () => {
                 value={genre || ''}
                 role='combobox'
                 aria-label='All Genres'
+                name='All Genres'
+                title='All Genres'
+                aria-expanded={genre ? 'true' : 'false'}
+                aria-controls='genre-filter-options'
             >
                 <option value="">All Genres</option>
                 {genres.map((g) => (
-                    <option key={g.id} value={g.id}>{g.name}</option>
+                    <option 
+                    key={g.id} 
+                    value={g.id} 
+                    aria-selected={g.id === genre}
+                    name={g.name}
+                    title={g.name}
+                    >
+                        {g.name}
+                    </option>
                 ))}
             </select>
 
@@ -71,10 +95,22 @@ export const Filters = () => {
                 value={year || ''}
                 role='combobox'
                 aria-label='All Years'
+                name='All Years'
+                title='All Years'
+                aria-expanded={year ? 'true' : 'false'}
+                aria-controls='year-filter-options'
             >
                 <option value="">All Years</option>
                 {Array.from({ length: 50 }, (_, i) => new Date().getFullYear() - i).map((yr) => (
-                    <option key={yr} value={yr}>{yr}</option>
+                    <option 
+                    key={yr} 
+                    value={yr} 
+                    aria-selected={yr === year} 
+                    name={yr} 
+                    title={yr}
+                    >
+                        {yr}
+                    </option>
                 ))}
             </select>
             <Link

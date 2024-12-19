@@ -12,7 +12,10 @@ export const Header = () => {
         handleReset
     } = useFilterHandlers();
 
-    const handleInputChange = (e) => setSearchTerm(e.target.value);
+    const handleInputChange = (event) => {
+        setSearchTerm(event.target.value);
+        handleSearch(event.target.value); // Trigger search on input change
+    };
     return (
         <header>
             <Link
@@ -48,6 +51,8 @@ export const Header = () => {
                         title='Search input'
                         value={searchTerm}
                         onChange={handleInputChange} 
+                        autoComplete='on'
+                        autoCorrect='on'
                         />
                     <button
                         className='search-icon'

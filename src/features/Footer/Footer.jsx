@@ -35,6 +35,7 @@ export const Footer = () => {
                     role='link'
                     className="top-arrow"
                     onClick={scrollToTop}
+                    href='#'
                     aria-label="Back to top"
                     name="Back to top"
                 />

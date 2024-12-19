@@ -131,7 +131,7 @@ export const GameDetails = () => {
                                     <a
                                         onClick={(e) => handleGenreClick(e, g.id)}
                                         href="#"
-                                        role='filter'
+                                        role='button'
                                         aria-label={`Filter by genre: ${g.name}`}
                                         name={`Filter by genre: ${g.name}`}
                                         title={`Filter by genre: ${g.name}`}
@@ -150,7 +150,7 @@ export const GameDetails = () => {
                                     <a
                                         onClick={(e) => handlePlatformClick(e, p.platform.id)}
                                         href="#"
-                                        role='filter'
+                                        role='button'
                                         aria-label={`Filter by platform: ${p.platform.name}`}
                                         name={`Filter by platform: ${p.platform.name}`}
                                         title={`Filter by platform: ${p.platform.name}`}
@@ -179,7 +179,7 @@ export const GameDetails = () => {
                             className="year"
                             onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
                             href="#"
-                            role='filter'
+                            role='button'
                             aria-label={`Filter by release year: ${new Date(game.released).getFullYear()}`}
                             name={`Filter by release year: ${new Date(game.released).getFullYear()}`}
                             title={`Filter by release year: ${new Date(game.released).getFullYear()}`}

@@ -62,7 +62,7 @@ export const ParentPlatformIcons = ({ parentPlatforms }) => {
                         {Icon && (
                             <a
                                 onClick={(e) => handleParentPlatformClick(e, id)}
-                                role="filter"
+                                role="button"
                                 aria-label={`${name} icon`}
                                 title={`${name} icon`}
                                 name={`${name} icon`}

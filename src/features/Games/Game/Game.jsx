@@ -45,7 +45,7 @@ export const Game = ({ game }) => {
                 <a
                     className='game-year'
                     onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
-                    role='filter'
+                    role='button'
                     aria-label={`Filter by year ${new Date(game.released).getFullYear()}`}
                     name={`Filter by year ${new Date(game.released).getFullYear()}`}
                     title={`Filter by year ${new Date(game.released).getFullYear()}`}
