@@ -3,13 +3,18 @@ import { BsCaretUpSquareFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => {
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
     return (
         <footer>
             <a
                 className="rawg-logo"
                 href="https://www.rawg.io/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                role='link'
+                aria-label="RAWG website"
+                name="RAWG website"
+                title="RAWG website"
             >
                 RAWG
             </a>
@@ -19,9 +24,9 @@ export const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 role='link'
-                aria-label="GitHub"
-                name="GitHub"
-                title="GitHub"
+                aria-label="Hall of Game GitHub repository"
+                name="Hall of Game GitHub repository"
+                title="Hall of Game GitHub repository"
             >
                 <FaGithub />
             </a>
@@ -29,7 +34,7 @@ export const Footer = () => {
                 <BsCaretUpSquareFill
                     role='link'
                     className="top-arrow"
-                    onClick={() => window.scrollTo(0, 0)}
+                    onClick={scrollToTop}
                     aria-label="Back to top"
                     name="Back to top"
                 />

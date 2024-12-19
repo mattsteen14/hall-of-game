@@ -11,6 +11,8 @@ export const Header = () => {
         handleSearch,
         handleReset
     } = useFilterHandlers();
+
+    const handleInputChange = (e) => setSearchTerm(e.target.value);
     return (
         <header>
             <Link
@@ -43,12 +45,16 @@ export const Header = () => {
                         role='textbox'
                         placeholder='SEARCH'
                         aria-label='Search'
+                        title='Search input'
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)} />
+                        onChange={handleInputChange} 
+                        />
                     <button
                         className='search-icon'
                         type='submit'
                         aria-label='Search'
+                        title='Search button'
+                        name='Search button'
                         role='button'
                         >
                         <HiOutlineSearch />

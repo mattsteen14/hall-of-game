@@ -33,9 +33,9 @@ describe('ParentPlatformIcons', () => {
         render(<ParentPlatformIcons parentPlatforms={parentPlatforms} />);
 
         // Check that the icons for PlayStation, Xbox, and Nintendo are rendered
-        expect(screen.getByRole('link', { name: /PlayStation/i })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /Xbox/i })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /Nintendo/i })).toBeInTheDocument();
+        expect(screen.getByRole('filter', { name: /PlayStation/i })).toBeInTheDocument();
+        expect(screen.getByRole('filter', { name: /Xbox/i })).toBeInTheDocument();
+        expect(screen.getByRole('filter', { name: /Nintendo/i })).toBeInTheDocument();
     });
 
     it('applies the correct classes for special cases', () => {
@@ -47,11 +47,11 @@ describe('ParentPlatformIcons', () => {
         render(<ParentPlatformIcons parentPlatforms={parentPlatforms} />);
 
         // Nintendo should have the "nintendo-icon" class
-        const nintendoIcon = screen.getByRole('link', { name: /Nintendo/i }).parentElement;
+        const nintendoIcon = screen.getByRole('filter', { name: /Nintendo/i }).parentElement;
         expect(nintendoIcon).toHaveClass('nintendo-icon');
 
         // 3DO should have the "threedo-icon" class
-        const threedoIcon = screen.getByRole('link', { name: /3DO/i }).parentElement;
+        const threedoIcon = screen.getByRole('filter', { name: /3DO/i }).parentElement;
         expect(threedoIcon).toHaveClass('threedo-icon');
     });
 
@@ -63,7 +63,7 @@ describe('ParentPlatformIcons', () => {
         render(<ParentPlatformIcons parentPlatforms={parentPlatforms} />);
 
         const user = userEvent.setup();
-        const playstationIcon = screen.getByRole('link', { name: /PlayStation/i });
+        const playstationIcon = screen.getByRole('filter', { name: /PlayStation/i });
 
         // Simulate a click on the icon
         await user.click(playstationIcon);
@@ -74,7 +74,7 @@ describe('ParentPlatformIcons', () => {
 
     it('renders nothing when parentPlatforms is an empty array', () => {
         render(<ParentPlatformIcons parentPlatforms={[]} />);
-        expect(screen.queryByRole('link')).not.toBeInTheDocument();
+        expect(screen.queryByRole('filter')).not.toBeInTheDocument();
     });
 
     it('renders nothing for invalid platform data', () => {
@@ -83,6 +83,6 @@ describe('ParentPlatformIcons', () => {
         ];
 
         render(<ParentPlatformIcons parentPlatforms={parentPlatforms} />);
-        expect(screen.queryByRole('link')).not.toBeInTheDocument();
+        expect(screen.queryByRole('filter')).not.toBeInTheDocument();
     });
 });

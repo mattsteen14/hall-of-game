@@ -21,11 +21,21 @@ export const Game = ({ game }) => {
                         className='game-cover lazyload'
                         width='100%'
                         height='100%'
+                        role='img link'
+                        aria-label='Game Cover'
+                        name='Game Cover'
+                        title='Game Cover'
                     />
                 </Link>
             </div>
             <div className='game-name'>
-                <Link to={`/games/${game.id}`}>
+                <Link 
+                to={`/games/${game.id}`}
+                role='link'
+                aria-label={`See more details for ${game.name}`}
+                name={`See more details for ${game.name}`}
+                title={`See more details for ${game.name}`}
+                >
                     {game.name}
                 </Link>
             </div>
@@ -35,6 +45,10 @@ export const Game = ({ game }) => {
                 <a
                     className='game-year'
                     onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
+                    role='filter'
+                    aria-label={`Filter by year ${new Date(game.released).getFullYear()}`}
+                    name={`Filter by year ${new Date(game.released).getFullYear()}`}
+                    title={`Filter by year ${new Date(game.released).getFullYear()}`}
                 >
                     {new Date(game.released).getFullYear()}
                 </a>
@@ -42,7 +56,11 @@ export const Game = ({ game }) => {
                     className="rating"
                     href={`https://www.metacritic.com/game/${game.slug}`}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
+                    role='link'
+                    aria-label={`Metacritic rating for ${game.name}`}
+                    name={`Metacritic rating for ${game.name}`}
+                    title={`Metacritic rating for ${game.name}`}
                 >
                     <SiMetacritic /> {game.metacritic || "N/A"}
                 </a>
@@ -55,5 +73,20 @@ export const Game = ({ game }) => {
 }
 
 Game.propTypes = {
-    game: PropTypes.object.isRequired
-}
+    game: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        background_image: PropTypes.string,
+        released: PropTypes.string,
+        metacritic: PropTypes.number,
+        slug: PropTypes.string.isRequired,
+        parent_platforms: PropTypes.arrayOf(
+            PropTypes.shape({
+                platform: PropTypes.shape({
+                    id: PropTypes.number,
+                    name: PropTypes.string,
+                }),
+            })
+        ),
+    }).isRequired,
+};

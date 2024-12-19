@@ -1,5 +1,10 @@
 import { api } from './api';
 
+const handleError = (error) => {
+    console.error('API Error:', error?.response.data || error.message);
+    throw error;
+};
+
 export const fetchGames = async (page, filters) => {
     try {
         const { platform, genre, year, search, parentPlatform } = filters;
@@ -20,18 +25,20 @@ export const fetchGames = async (page, filters) => {
         console.log('Games fetched successfully:', response.data);
         return response.data;
     } catch (error) {
-        console.error('Error fetching games:', error);
-        throw error;
+        handleError(error);
     }
 };
 
 export const fetchGamesById = async (id) => {
     try {
-        const response = await api.get(`/games/${id}?key=${import.meta.env.VITE_API_KEY}`);
+        const response = await api.get(`/games/${id}`, {
+            params: {
+                key: import.meta.env.VITE_API_KEY,
+            },
+        });
         console.log('Game fetched successfully:', response.data);
         return response.data;
     } catch (error) {
-        console.error('Error fetching game:', error);
-        throw error;
+        handleError(error);
     }
 }

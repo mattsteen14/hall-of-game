@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import "./GameDetails.css";
 import { SiMetacritic, SiReddit } from "react-icons/si";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -25,7 +24,14 @@ export const GameDetails = () => {
 
     if (!game) {
         return (
-            <div>
+            <div
+                aria-live="polite"
+                aria-busy="true"
+                role='status'
+                aria-label='Loading'
+                name='Loading'
+                title='Loading'
+            >
                 <Loading />
             </div>
         )
@@ -39,20 +45,28 @@ export const GameDetails = () => {
                     <div
                         className="links"
                     >
-                        <a 
-                        className="rating"
-                        href={`https://www.metacritic.com/game/${game.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        <a
+                            className="rating"
+                            href={`https://www.metacritic.com/game/${game.slug}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            role='link'
+                            aria-label={`Metacritic rating for ${game.name}`}
+                            name={`Metacritic rating for ${game.name}`}
+                            title={`Metacritic rating for ${game.name}`}
                         >
                             <SiMetacritic /> {game.metacritic || "N/A"}
-                            </a>
+                        </a>
 
                         <a
                             className="rawg-logo"
                             href={`https://www.rawg.io/games/${game.slug}?ref=api`}
                             target="_blank"
                             rel="noopener noreferrer"
+                            role='link'
+                            aria-label={`${game.name} RAWG page`}
+                            name={`${game.name} RAWG page`}
+                            title={`${game.name} RAWG page`}
                         >
                             RAWG
                         </a>
@@ -61,12 +75,21 @@ export const GameDetails = () => {
                                 href={game.website}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                role='link'
+                                aria-label={`Website for ${game.name}`}
+                                name={`Website for ${game.name}`}
+                                title={`Website for ${game.name}`}
                             >
                                 <FaExternalLinkAlt />
                             </a>}
                         <a
                             href={game.reddit_url}
                             target="_blank"
+                            rel="noopener noreferrer"
+                            role='link'
+                            aria-label={`Reddit page for ${game.name}`}
+                            name={`Reddit page for ${game.name}`}
+                            title={`Reddit page for ${game.name}`}
                         >
                             <SiReddit />
                         </a>
@@ -78,6 +101,10 @@ export const GameDetails = () => {
                     <img
                         src={game.background_image || "fallback_image_url"}
                         alt={game.name || "Game image"}
+                        role="img"
+                        aria-label={`Main image or box art for ${game.name}`}
+                        name={`Main image or box art for ${game.name}`}
+                        title={`Main image or box art for ${game.name}`}
                         className="game-box-art"
                         loading="lazy"
                     />
@@ -86,6 +113,10 @@ export const GameDetails = () => {
                             src={game.background_image_additional}
                             alt="screenshot"
                             className="game-screenshot"
+                            role="img"
+                            aria-label={`Screenshot for ${game.name}`}
+                            name={`Screenshot for ${game.name}`}
+                            title={`Screenshot for ${game.name}`}
                             loading="lazy"
                         />
                     )}
@@ -100,6 +131,10 @@ export const GameDetails = () => {
                                     <a
                                         onClick={(e) => handleGenreClick(e, g.id)}
                                         href="#"
+                                        role='filter'
+                                        aria-label={`Filter by genre: ${g.name}`}
+                                        name={`Filter by genre: ${g.name}`}
+                                        title={`Filter by genre: ${g.name}`}
                                     >
                                         {g.name}
                                     </a>
@@ -115,6 +150,10 @@ export const GameDetails = () => {
                                     <a
                                         onClick={(e) => handlePlatformClick(e, p.platform.id)}
                                         href="#"
+                                        role='filter'
+                                        aria-label={`Filter by platform: ${p.platform.name}`}
+                                        name={`Filter by platform: ${p.platform.name}`}
+                                        title={`Filter by platform: ${p.platform.name}`}
                                     >
                                         {p.platform.name}
                                     </a>
@@ -140,6 +179,10 @@ export const GameDetails = () => {
                             className="year"
                             onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
                             href="#"
+                            role='filter'
+                            aria-label={`Filter by release year: ${new Date(game.released).getFullYear()}`}
+                            name={`Filter by release year: ${new Date(game.released).getFullYear()}`}
+                            title={`Filter by release year: ${new Date(game.released).getFullYear()}`}
                         >
                             {new Date(game.released).toLocaleDateString()}
                         </a>
@@ -154,6 +197,10 @@ export const GameDetails = () => {
                                             href={`https://${store.store.domain}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
+                                            role='link'
+                                            aria-label={`Visit ${store.store.name}'s website`}
+                                            name={`Visit ${store.store.name}'s website`}
+                                            title={`Visit ${store.store.name}'s website`}
                                         >
                                             {store.store.name}
                                         </a>
@@ -166,14 +213,26 @@ export const GameDetails = () => {
                         </p>
                         <h4>Age Rating:</h4>
                         {game.esrb_rating ? (
-                            <span className="age-ratings">{game.esrb_rating.name}</span>
+                            <span 
+                            className="age-ratings"
+                            role='info'
+                            aria-label={`Age rating for ${game.name}: ${game.esrb_rating.name}`}
+                            name={`Age rating for ${game.name}: ${game.esrb_rating.name}`}
+                            title={`Age rating for ${game.name}: ${game.esrb_rating.name}`}
+                            >{game.esrb_rating.name}</span>
                         ) : (
                             <span className="age-ratings">Not Rated</span>
                         )}
                     </aside>
                 </section>
 
-                <section className="game-description">
+                <section 
+                className="game-description"
+                role='info'
+                aria-label={`Description for ${game.name}`}
+                name={`Description for ${game.name}`}
+                title={`Description for ${game.name}`}
+                >
                     <h4>Description:</h4>
                     <p>{game.description_raw || "No description available"}</p>
                 </section>

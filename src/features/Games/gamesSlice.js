@@ -3,12 +3,12 @@ import { fetchGames, fetchGamesById } from "../../api/gameApi";
 
 export const fetchGamesThunk = createAsyncThunk(
     "games/fetchGames",
-    async ({page, filters = {}}, { rejectWithValue }) => {
+    async ({ page, filters = {} }, { rejectWithValue }) => {
         try {
             const data = await fetchGames(page, filters);
             const filterGames = data.results.filter(game => game.added > 1);
             const uniqueGames = filterGames.filter((game, index, self) =>
-                index === self.findIndex((g) => g.id === game.id) 
+                index === self.findIndex((g) => g.id === game.id)
             )
             return { games: uniqueGames, next: data.next, previous: data.previous };
         } catch (error) {
@@ -48,38 +48,32 @@ const gamesSlice = createSlice({
         }
     },
     reducers: {
-        setGames (state, action) { 
-            state.games = action.payload; 
-        },
-        selectGame(state, action) {
-            state.currentGame = action.payload;
+        setGames(state, action) {
+            state.games = action.payload;
         },
         clearSelectedGame(state) {
             state.currentGame = null;
         },
-        setPage(state, action) { 
-            state.currentPage = action.payload; 
+        setPage(state, action) {
+            state.currentPage = action.payload;
         },
-        setSearch(state, action) { 
-            state.filters.search = action.payload; 
+        setSearch(state, action) {
+            state.filters.search = action.payload;
         },
-        delSearch(state) { 
-            state.filters.search = ''; 
+        delSearch(state) {
+            state.filters.search = '';
         },
-        setPlatformFilter(state, action) { 
-            state.filters.platform = action.payload; 
-        },
-        resetPlatformFilter(state) { 
-            state.filters.platform = ''; 
+        setPlatformFilter(state, action) {
+            state.filters.platform = action.payload;
         },
         setParentPlatformFilter(state, action) {
             state.filters.parentPlatform = action.payload;
         },
-        resetParentPlatformFilter(state) {
-            state.filters.parentPlatform = '';
+        setGenreFilter(state, action) {
+            state.filters.genre = action.payload;
         },
-        setGenreFilter(state, action) { 
-            state.filters.genre = action.payload; 
+        setYearFilter(state, action) {
+            state.filters.year = action.payload;
         },
         resetFilters(state) {
             state.filters = {
@@ -89,15 +83,6 @@ const gamesSlice = createSlice({
                 parentPlatform: '',
                 search: ''
             };
-        },
-        resetGenreFilter(state) { 
-            state.filters.genre = ''; 
-        },
-        setYearFilter(state, action) { 
-            state.filters.year = action.payload; 
-        },
-        resetYearFilter(state) { 
-            state.filters.year = ''; 
         },
     },
     extraReducers: (builder) => {
@@ -117,34 +102,31 @@ const gamesSlice = createSlice({
                 state.loading = false;
                 state.error = action.error.message;
             })
+            .addCase(fetchGamesByIdThunk.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
             .addCase(fetchGamesByIdThunk.fulfilled, (state, action) => {
+                state.loading = false;
                 state.currentGame = action.payload;
             })
             .addCase(fetchGamesByIdThunk.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message;
-            })
-            .addCase(fetchGamesByIdThunk.pending, (state) => {
-                state.loading = true;
-                state.error = null;
+                state.error = action.payload;
             });
     }
 });
 
-export const { 
-    selectGame, 
-    clearSelectedGame, 
-    setSearch, 
-    delSearch, 
-    setPlatformFilter, 
-    resetPlatformFilter, 
-    setGenreFilter, 
-    resetGenreFilter, 
-    setYearFilter, 
-    resetYearFilter, 
-    setGames, 
+export const {
+    selectGame,
+    clearSelectedGame,
+    setSearch,
+    delSearch,
+    setPlatformFilter,
+    setGenreFilter,
+    setYearFilter,
+    setGames,
     setParentPlatformFilter,
-    resetParentPlatformFilter,
     resetFilters,
     setPage
 } = gamesSlice.actions;

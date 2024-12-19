@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './GamesList.css';
@@ -14,24 +14,36 @@ export const GamesList = () => {
     const dispatch = useDispatch();
     const { games, loading, error, filters } = useSelector((state) => state.games);
     const { currentPage } = useFilterHandlers();
-
+    const stableFilters = useMemo(() => filters, [filters]);
     useEffect(() => {
         // Fetch games only if the game list is empty
-        dispatch(fetchGamesThunk({ page: currentPage, filters }));
-    }, [dispatch, currentPage, filters]);
+        dispatch(fetchGamesThunk({ page: currentPage, filters: stableFilters }));
+    }, [dispatch, currentPage, stableFilters]);
 
-    if (loading) {
-        return (
-            <div>
+    {
+        loading && (
+            <div
+                aria-live="polite"
+                aria-busy="true"
+                role='status'
+                aria-label='Loading'
+                name='Loading'
+                title='Loading'
+            >
                 <Loading />
             </div>
-        );
+        )
     }
 
     if (error) {
         return (
             <div className='error'>
-                <div className='error-box'>
+                <div className='error-box'
+                    role='alert'
+                    aria-label='Error Alert'
+                    name='Error Alert'
+                    title='Error Alert'
+                >
                     <h1>Game Over</h1>
                     <h2>Error:</h2>
                     <h3>{error.status}</h3>
@@ -39,8 +51,10 @@ export const GamesList = () => {
                     <Link
                         className='reset-button error-reset'
                         to='/'
-                        onClick={() => window.location.reload()}
+                        onClick={() => dispatch(fetchGamesThunk({ page: currentPage, filters: stableFilters }))}
                         aria-label='Error Reset'
+                        name='Error Reset'
+                        title='Error Reset'
                     >
                         RESET
                     </Link>
@@ -54,7 +68,11 @@ export const GamesList = () => {
             {/* Filter Dropdowns */}
             <Filters />
             {/* Games List */}
-            <div className='games-list'>
+            <div className='games-list'
+                aria-label='Game List'
+                name='Game List'
+                title='Game List'
+            >
                 {games.length > 0 ? (
                     games.map(game => (
                         <Card key={game.id}>
@@ -62,10 +80,17 @@ export const GamesList = () => {
                         </Card>
                     ))
                 ) : (
-                        <div>
-                            <Loading />
-                        </div>
-                    )
+                    <div
+                        aria-live="polite"
+                        aria-busy="true"
+                        role='status'
+                        aria-label='Loading'
+                        name='Loading'
+                        title='Loading'
+                    >
+                        <Loading />
+                    </div>
+                )
                 }
             </div>
             {/* Pagination */}

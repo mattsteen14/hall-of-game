@@ -4,118 +4,92 @@ import { useNavigate } from "react-router-dom";
 
 import {
     setPlatformFilter,
-    resetPlatformFilter,
     setYearFilter,
-    resetYearFilter,
     setGenreFilter,
-    resetGenreFilter,
     setSearch,
+    delSearch,
     setGames,
     clearSelectedGame,
     setParentPlatformFilter,
-    resetParentPlatformFilter,
     resetFilters,
     setPage,
     selectCurrentPage,
     selectNextPage,
-    selectPreviousPage
+    selectPreviousPage,
 } from "../features/Games/gamesSlice";
 
 export const useFilterHandlers = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const currentPage = useSelector(selectCurrentPage);
-    const nextPage = useSelector(selectNextPage);
-    const previousPage = useSelector(selectPreviousPage);
-    const handlePlatformClick = (e, platform) => {
-        e.preventDefault();
-        dispatch(setPlatformFilter(platform));
+    const resetGameData = (dispatch, navigate) => {
         dispatch(setGames([]));
         dispatch(clearSelectedGame());
         navigate('/');
     };
-
-    const handlePlatformReset = (e) => {
+    const currentPage = useSelector(selectCurrentPage);
+    const nextPage = useSelector(selectNextPage);
+    const previousPage = useSelector(selectPreviousPage);
+    const changePage = newPage => {
+        dispatch(setPage(newPage));
+    }
+    const handlePlatformClick = (e, platform) => {
         e.preventDefault();
-        dispatch(resetPlatformFilter());
-        dispatch(resetParentPlatformFilter())
+        dispatch(setPlatformFilter(platform));
+        dispatch(resetGameData(dispatch, navigate));
     };
-
     const handleParentPlatformClick = (e, parentPlatform) => {
         e.preventDefault();
         dispatch(setParentPlatformFilter(parentPlatform));
     }
-    const handleParentPlatformReset = (e) => {
-        e.preventDefault();
-        dispatch(resetParentPlatformFilter());
-    }
     const handleYearClick = (e, year) => {
         e.preventDefault();
         dispatch(setYearFilter(year.toString()));
-        dispatch(setGames([]));
-        dispatch(clearSelectedGame());
-        navigate('/');
-    };
-
-    const handleYearReset = (e) => {
-        e.preventDefault();
-        dispatch(resetYearFilter());
+        dispatch(resetGameData(dispatch, navigate));
     };
 
     const handleGenreClick = (e, genre) => {
         e.preventDefault();
         dispatch(setGenreFilter(genre));
-        dispatch(setGames([]));
-        dispatch(clearSelectedGame());
-        navigate('/');
-    };
-
-    const handleGenreReset = (e) => {
-        e.preventDefault();
-        dispatch(resetGenreFilter());
+        dispatch(resetGameData(dispatch, navigate));
     };
 
     const handleSearch = (e) => {
         e.preventDefault();
-        dispatch(setSearch(searchTerm));
-        dispatch(clearSelectedGame());
-        navigate('/');
+        if(searchTerm) {
+            dispatch(setSearch(searchTerm));
+        } else {
+            dispatch(delSearch());
+        }
+        dispatch(resetGameData(dispatch, navigate));
     };
     const handleReset = (e) => {
         if (e) e.preventDefault();
         dispatch(resetFilters());
         setSearchTerm('');
-        dispatch(setSearch(''));
-        dispatch(clearSelectedGame());
-        navigate('/');
+        dispatch(delSearch());
+        dispatch(resetGameData(dispatch, navigate));
         dispatch(setPage(1));   
     };
     const handleNextPage = () => {
         if(nextPage) {
-            const newPage = currentPage + 1;
-            dispatch(setPage(newPage))
+            changePage(currentPage + 1);
         }
     };
     const handlePreviousPage = () => {
         if(previousPage && currentPage > 1) {
-            const newPage = currentPage - 1;
-            dispatch(setPage(newPage))
+            changePage(currentPage - 1);
         }
     };
     return {
         handlePlatformClick,
-        handlePlatformReset,
         handleYearClick,
-        handleYearReset,
         handleGenreClick,
-        handleGenreReset,
         handleSearch,
         handleReset,
         searchTerm,
         setSearchTerm,
         handleParentPlatformClick,
-        handleParentPlatformReset,
         handleNextPage,
         handlePreviousPage,
         currentPage,

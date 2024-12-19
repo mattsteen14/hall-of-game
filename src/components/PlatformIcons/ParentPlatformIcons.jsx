@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import './ParentPlatformIcons.css';
 import { useFilterHandlers } from '../../utils/handlers';
+import { clsx } from 'clsx'; // Optional for cleaner className logic
 
 import {
     SiSega,
@@ -12,7 +13,7 @@ import {
     SiLinux,
     SiAndroid,
     SiAtari,
-    SiCommodore
+    SiCommodore,
 } from "react-icons/si";
 
 import { TbSquareRoundedLetterN, TbSquareRoundedNumber3 } from "react-icons/tb";
@@ -20,55 +21,75 @@ import { GiRetroController } from "react-icons/gi";
 import { FaAppStoreIos } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 
+// Icon mapping outside the component to prevent re-creation on every render
+const platformIcons = {
+    playstation: SiPlaystation,
+    xbox: SiXbox,
+    nintendo: TbSquareRoundedLetterN || SiNintendo,
+    sega: SiSega,
+    pc: SiWindows,
+    mac: SiApple,
+    linux: SiLinux,
+    android: SiAndroid,
+    ios: FaAppStoreIos,
+    atari: SiAtari,
+    'commodore-amiga': SiCommodore,
+    web: TbWorldWww,
+    'neo-geo': GiRetroController,
+    '3do': TbSquareRoundedNumber3,
+};
+
 export const ParentPlatformIcons = ({ parentPlatforms }) => {
     const { handleParentPlatformClick } = useFilterHandlers();
-    const platformIcons = {
-        playstation: SiPlaystation,
-        xbox: SiXbox,
-        nintendo: TbSquareRoundedLetterN || SiNintendo,
-        sega: SiSega,
-        pc: SiWindows,
-        mac: SiApple,
-        linux: SiLinux,
-        android: SiAndroid,
-        ios: FaAppStoreIos,
-        atari: SiAtari,
-        'commodore-amiga': SiCommodore,
-        web: TbWorldWww,
-        'neo-geo': GiRetroController,
-        '3do': TbSquareRoundedNumber3,
-    }
 
     return (
         <div>
             {parentPlatforms.map((platform) => {
-                if (!platform || !platform.platform) return null;
-                const Icon = platformIcons[platform.platform.slug] || platformIcons['undefined'];
-                const isNintendo = platform.platform.slug === 'nintendo';
-                const is3do = platform.platform.slug === '3do';
+                if (!platform?.platform) return null;
+
+                const { slug, id, name } = platform.platform;
+                const Icon = platformIcons[slug] || null;
+
                 return (
                     <span
-                        key={platform.platform.id}
-                        className={`parent-platform-icon ${isNintendo ? 'nintendo-icon' : ''} ${is3do ? 'threedo-icon' : ''}`}
+                        key={id}
+                        className={clsx(
+                            'parent-platform-icon',
+                            slug === 'nintendo' && 'nintendo-icon',
+                            slug === '3do' && 'threedo-icon'
+                        )}
                     >
-                        <a
-                            onClick={(e) => handleParentPlatformClick(e, platform.platform.id)}
-                            role='link'
-                            aria-label={`${platform.platform.name} icon`}
-                        >
-                            <Icon />
-                        </a>
+                        {Icon && (
+                            <a
+                                onClick={(e) => handleParentPlatformClick(e, id)}
+                                role="filter"
+                                aria-label={`${name} icon`}
+                                title={`${name} icon`}
+                                name={`${name} icon`}
+                                className="platform-icon-link"
+                            >
+                                <Icon aria-hidden="true" />
+                            </a>
+                        )}
                     </span>
-                )
-            })
-            }
+                );
+            })}
         </div>
-    )
-}
+    );
+};
 
 ParentPlatformIcons.defaultProps = {
-    parentPlatforms: [] // default to an empty array
+    parentPlatforms: [],
 };
+
 ParentPlatformIcons.propTypes = {
-    parentPlatforms: PropTypes.arrayOf(PropTypes.object).isRequired
-}
+    parentPlatforms: PropTypes.arrayOf(
+        PropTypes.shape({
+            platform: PropTypes.shape({
+                slug: PropTypes.string.isRequired,
+                id: PropTypes.number.isRequired,
+                name: PropTypes.string.isRequired,
+            }).isRequired,
+        })
+    ).isRequired,
+};
