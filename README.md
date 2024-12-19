@@ -23,7 +23,7 @@
     <a href="https://github.com/mattsteen14/hall-of-game"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mattsteen14/hall-of-game">View Demo</a>
+    <a href="https://hall-of-game.netlify.app/">View Site</a>
     ·
     <a href="https://github.com/mattsteen14/hall-of-game/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -61,12 +61,17 @@
 
 This is the final open ended portfolio project on my Codecademy front end engineer path where I am required to build an application using everything I have learnt but it has to be built using React and Redux. Unlike previous projects, what I build is up to me.
 
-Hall of Game is a web application that leverages the [RAWG]('https://rawg.io') [API]('https://rawg.io/apidocs') to showcase the highest-rated video games based on their Metacritic scores. Users can search for games and filter results by genre, platform, or release year. Each game has a dedicated details page, offering an in-depth view of its key information.
+Hall of Game is a web application that leverages the [RAWG](https://rawg.io) [API](https://rawg.io/apidocs) to showcase the highest-rated video games based on their Metacritic scores. Users can search for games and filter results by genre, platform, or release year. Each game has a dedicated details page, offering an in-depth view of its key information.
+
+## Features
+- Search for video games by title.
+- Filter results by genre, platform, or release year.
+- View detailed information for each game, including Metacritic score and platforms.
 
 <details>
 <summary>Project Objectives</summary>
 
-- Integrate IGDB API into the application.
+- Integrate API into the application.
 
 - Create a responsive application that adapts to any device (desktop to mobile).
 
@@ -91,7 +96,9 @@ Hall of Game is a web application that leverages the [RAWG]('https://rawg.io') [
 </details>
 
 <details>
-<summary>Project Design</summary>
+<summary>Original Project Design</summary>
+
+NB - This project was originally intended for the [IGDB](https://www.igdb.com) API but during development I pivoted to RAWG.
 
 As you can see from the wireframe below, the header and nav components will remain constant. In the nav section the rows of filters will be horizontally scrollable and set to the width of the page/view window. The main section will change depending on what list filter the user has selected or if the user has clicked on or searched for a game. The game details view is similar to an IGDB game page but simplified to be single page and just to include the most pertinent information.
 
@@ -113,6 +120,10 @@ As you can see from the wireframe below, the header and nav components will rema
 - [Vite](https://vite.dev)
 - [Node.js](https://nodejs.org/en)
 - [Visual Studio Code](https://code.visualstudio.com)
+- [Axios](https://github.com/axios/axios)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [lazysizes](https://github.com/aFarkas/lazysizes)
+- [Postman](https://www.postman.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,9 +189,10 @@ Ensure you have the following software installed before proceeding:
 - [x] Add filters to games list.
 - [x] Add functionality to navigate between API result pages.
 - [x] Improve filtering functionality.
+- [x] Optimisation.
+- [x] Deploy and publish to the web.
 - [ ] Testing and dubugging.
-- [ ] Optimisation.
-- [ ] Deploy and publish to the web.
+- [ ] Further optimisation for mobiles.
 - [ ] Additional features.
 
 See the [open issues](https://github.com/mattsteen14/hall-of-game/issues) for a full list of proposed features (and known issues).
