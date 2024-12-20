@@ -75,11 +75,13 @@ export const useFilterHandlers = () => {
         if(nextPage) {
             changePage(currentPage + 1);
         }
+        window.scrollTo(0, 0);
     };
     const handlePreviousPage = () => {
         if(previousPage && currentPage > 1) {
             changePage(currentPage - 1);
         }
+        window.scrollTo(0, 0);
     };
     return {
         handlePlatformClick,
