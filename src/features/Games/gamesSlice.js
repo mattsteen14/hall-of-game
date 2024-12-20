@@ -6,7 +6,7 @@ export const fetchGamesThunk = createAsyncThunk(
     async ({ page, filters = {} }, { rejectWithValue }) => {
         try {
             const data = await fetchGames(page, filters);
-            const filterGames = data.results.filter(game => game.added > 1);
+            const filterGames = data.results.filter(game => game.added > 6 && game.background_image !== null);
             const uniqueGames = filterGames.filter((game, index, self) =>
                 index === self.findIndex((g) => g.id === game.id)
             )

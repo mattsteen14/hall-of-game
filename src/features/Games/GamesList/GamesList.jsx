@@ -70,8 +70,6 @@ export const GamesList = () => {
             {/* Games List */}
             <div className='games-list'
                 aria-label='Game List'
-                name='Game List'
-                title='Game List'
             >
                 {games.length > 0 ? (
                     games.map(game => (
