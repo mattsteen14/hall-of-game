@@ -7,6 +7,7 @@
     margin-top: 1rem;
     padding: 1rem;
     font-size: calc(0.5rem + 0.5vw);
+    color: #000;
 }
 
 .filters select {
@@ -19,6 +20,14 @@
 .filters select,
 .filters option {
     padding: 0.5rem;
+}
+
+.filters select:focus,
+.filters select:active,
+.filters select:visited,
+.filters option:focus,
+.filters option:active {
+    color: #000;
 }
 
 .reset-button {
