@@ -19,7 +19,7 @@ export const GameDetails = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         dispatch(fetchGamesByIdThunk(id));

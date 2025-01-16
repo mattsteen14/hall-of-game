@@ -4,6 +4,7 @@ import './Game.css'
 import 'lazysizes';
 import { SiMetacritic } from 'react-icons/si';
 import { useFilterHandlers } from '../../../utils/handlers';
+import { clearSelectedGame } from '../gamesSlice';
 import { ParentPlatformIcons } from '../../../components/PlatformIcons/ParentPlatformIcons';
 
 export const Game = ({ game }) => {
@@ -14,7 +15,10 @@ export const Game = ({ game }) => {
             <div
                 className='game-image-container'
             >
-                <Link to={`/games/${game.id}`}>
+                <Link 
+                to={`/games/${game.id}`}
+                onClick={clearSelectedGame}
+                >
                     <img
                         data-src={game.background_image}
                         alt={game.name}
@@ -31,6 +35,7 @@ export const Game = ({ game }) => {
             <div className='game-name'>
                 <Link 
                 to={`/games/${game.id}`}
+                onClick={clearSelectedGame}
                 role='link'
                 aria-label={`See more details for ${game.name}`}
                 name={`See more details for ${game.name}`}
