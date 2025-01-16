@@ -41,6 +41,7 @@ export const useFilterHandlers = () => {
     const handleParentPlatformClick = (e, parentPlatform) => {
         e.preventDefault();
         dispatch(setParentPlatformFilter(parentPlatform));
+        dispatch(resetGameData(dispatch, navigate));
     }
     const handleYearClick = (e, year) => {
         e.preventDefault();
