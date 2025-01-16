@@ -279,7 +279,7 @@ export const GameDetails = () => {
                     {game?.developers?.length > 0 ? (
                         game.developers.map((developer) => (
                             <div key={developer.id}>
-                                <h2>Other games by {developer.name}:</h2>
+                                <h4>Other games by {developer.name}:</h4>
                                 <div className="developer-games">
                                     {developerGames[developer.id]?.length > 0 ? (
                                         developerGames[developer.id].map((devGame) => (

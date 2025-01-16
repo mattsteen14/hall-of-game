@@ -25,7 +25,6 @@
 }
 
 .title {
-    font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     font-weight: 600;
     text-transform: uppercase;
@@ -79,15 +78,19 @@
 }
 
 .game-info-container,
-.game-description {
+.game-description, 
+.developer-games-container {
     padding: 1rem 4rem;
     font-size: calc(0.6rem + 0.6vw);
 }
 
 .game-info-container h4,
 .game-description h4,
-.game-info-container p {
+.game-info-container p,
+.developer-games-container h4
+{
     padding: 0;
+    margin: 0;
 }
 
 .game-info {
@@ -123,9 +126,9 @@
 .developer-games-container {
     width: 100%;
     height: 100%;
-    padding: 1rem 3.5rem;
     display: flex;
     flex-direction: column;
+    padding: 1rem 4rem;
 }
 
 .developer-games {
@@ -144,7 +147,7 @@
     }
 
     .game-info-container,
-    .game-description {
+    .game-description, .developer-games-container {
         padding: 1rem 2rem;
     }
 
@@ -153,7 +156,7 @@
 @media only screen and (max-width: 450px) {
 
     .game-info-container,
-    .game-description {
+    .game-description, .developer-games-container {
         padding: 1rem;
     }
 
