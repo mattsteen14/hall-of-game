@@ -18,6 +18,10 @@ export const GameDetails = () => {
     const [developerGames, setDeveloperGames] = useState({});
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         dispatch(fetchGamesByIdThunk(id));
     }, [id, dispatch]);
 
@@ -31,9 +35,15 @@ export const GameDetails = () => {
                 game.developers.map(async (developer) => {
                     try {
                         const response = await axios.get(
-                            `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&developers=${developer.id}&page_size=4`
+                            `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&developers=${developer.id}&page_size=6` // Increase to 6
                         );
-                        gamesByDeveloper[developer.id] = response.data.results || []; // ✅ Corrected access
+    
+                        // Remove the current game and ensure exactly 3 results
+                        const filteredGames = response.data.results
+                            .filter(devGame => devGame.id !== game.id) // Exclude current game
+                            .slice(0, 3); // Ensure exactly 3 games
+    
+                        gamesByDeveloper[developer.id] = filteredGames;
                     } catch (error) {
                         console.error(`Error fetching games for developer ${developer.id}:`, error);
                     }
@@ -265,12 +275,12 @@ export const GameDetails = () => {
                     <h4>Description:</h4>
                     <p>{game.description_raw || "No description available"}</p>
                 </section>
-                <section>
+                <section className="developer-games-container">
                     {game?.developers?.length > 0 ? (
                         game.developers.map((developer) => (
                             <div key={developer.id}>
                                 <h2>Other games by {developer.name}:</h2>
-                                <div>
+                                <div className="developer-games">
                                     {developerGames[developer.id]?.length > 0 ? (
                                         developerGames[developer.id].map((devGame) => (
                                             <Card key={devGame.id} >
