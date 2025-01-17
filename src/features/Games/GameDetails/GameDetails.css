@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     height: 12.5rem;
 }
 
@@ -80,7 +80,7 @@
 .game-info-container,
 .game-description, 
 .developer-games-container {
-    padding: 1rem 4rem;
+    padding: 2rem 4rem;
     font-size: calc(0.6rem + 0.6vw);
 }
 
@@ -116,7 +116,8 @@
 .game-description {
     width: 100%;
     text-align: start;
-    background-color: darkgray;
+    background-color: gainsboro;
+    border-bottom: 1px solid black;
 }
 
 .game-description p {
@@ -128,7 +129,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1rem 4rem;
+    background-color: darkgray;
 }
 
 .developer-games {
@@ -155,7 +156,7 @@
 
 @media only screen and (max-width: 450px) {
 
-    .game-info-container,
+    .game-banner, .game-info-container,
     .game-description, .developer-games-container {
         padding: 1rem;
     }
