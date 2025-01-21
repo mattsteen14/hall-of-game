@@ -37,6 +37,7 @@ export const Header = () => {
             aria-label="Super Metroid"
             name="Super Metroid"
             title="Super Metroid"
+            tabIndex={0}
             >
                 <GiMetroid />
             </a>
@@ -61,6 +62,7 @@ export const Header = () => {
                         title='Search button'
                         name='Search button'
                         role='button'
+                        tabIndex={0}
                         >
                         <HiOutlineSearch />
                     </button>

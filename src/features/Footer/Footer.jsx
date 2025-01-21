@@ -15,6 +15,7 @@ export const Footer = () => {
                 aria-label="RAWG website"
                 name="RAWG website"
                 title="RAWG website"
+                tabIndex={0}
             >
                 RAWG
             </a>
@@ -27,6 +28,7 @@ export const Footer = () => {
                 aria-label="Hall of Game GitHub repository"
                 name="Hall of Game GitHub repository"
                 title="Hall of Game GitHub repository"
+                tabIndex={0}
             >
                 <FaGithub />
             </a>
@@ -38,6 +40,7 @@ export const Footer = () => {
                     href='#'
                     aria-label="Back to top"
                     name="Back to top"
+                    tabIndex={0}
                 />
             </a>
         </footer>

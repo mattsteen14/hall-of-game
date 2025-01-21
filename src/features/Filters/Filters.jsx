@@ -35,7 +35,7 @@ export const Filters = () => {
     }, []);
 
     return (
-        <div 
+        <nav 
         className="filters"
         role='navigation'
         >
@@ -58,6 +58,7 @@ export const Filters = () => {
                     aria-selected={p.id === platform}
                     name={p.name}
                     title={p.name}
+                    role='option'
                     >
                         {p.name}
                         </option>
@@ -82,6 +83,7 @@ export const Filters = () => {
                     aria-selected={g.id === genre}
                     name={g.name}
                     title={g.name}
+                    role='option'
                     >
                         {g.name}
                     </option>
@@ -108,6 +110,7 @@ export const Filters = () => {
                     aria-selected={yr === year} 
                     name={yr} 
                     title={yr}
+                    role='option'
                     >
                         {yr}
                     </option>
@@ -118,9 +121,10 @@ export const Filters = () => {
                 to='/'
                 onClick={handleReset}
                 aria-label='Reset'
+                name='Reset'
             >
                 RESET
             </Link>
-        </div>
+        </nav>
     );
 };

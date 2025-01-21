@@ -50,10 +50,11 @@ export const Game = ({ game }) => {
                 <a
                     className='game-year'
                     onClick={(e) => handleYearClick(e, new Date(game.released).getFullYear())}
-                    role='button'
+                    role='link'
                     aria-label={`Filter by year ${new Date(game.released).getFullYear()}`}
                     name={`Filter by year ${new Date(game.released).getFullYear()}`}
                     title={`Filter by year ${new Date(game.released).getFullYear()}`}
+                    tabIndex={0}
                 >
                     {new Date(game.released).getFullYear()}
                 </a>
@@ -66,6 +67,7 @@ export const Game = ({ game }) => {
                     aria-label={`Metacritic rating for ${game.name}`}
                     name={`Metacritic rating for ${game.name}`}
                     title={`Metacritic rating for ${game.name}`}
+                    tabIndex={0}
                 >
                     <SiMetacritic /> {game.metacritic || "N/A"}
                 </a>

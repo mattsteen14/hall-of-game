@@ -93,6 +93,7 @@ export const GameDetails = () => {
                             aria-label={`Metacritic rating for ${game.name}`}
                             name={`Metacritic rating for ${game.name}`}
                             title={`Metacritic rating for ${game.name}`}
+                            tabIndex={0}
                         >
                             <SiMetacritic /> {game.metacritic || "N/A"}
                         </a>
@@ -106,6 +107,7 @@ export const GameDetails = () => {
                             aria-label={`${game.name} RAWG page`}
                             name={`${game.name} RAWG page`}
                             title={`${game.name} RAWG page`}
+                            tabIndex={0}
                         >
                             RAWG
                         </a>
@@ -118,6 +120,7 @@ export const GameDetails = () => {
                                 aria-label={`Website for ${game.name}`}
                                 name={`Website for ${game.name}`}
                                 title={`Website for ${game.name}`}
+                                tabIndex={0}
                             >
                                 <FaExternalLinkAlt />
                             </a>}
@@ -129,6 +132,7 @@ export const GameDetails = () => {
                             aria-label={`Reddit page for ${game.name}`}
                             name={`Reddit page for ${game.name}`}
                             title={`Reddit page for ${game.name}`}
+                            tabIndex={0}
                         >
                             <SiReddit />
                         </a>
@@ -222,6 +226,7 @@ export const GameDetails = () => {
                             aria-label={`Filter by release year: ${new Date(game.released).getFullYear()}`}
                             name={`Filter by release year: ${new Date(game.released).getFullYear()}`}
                             title={`Filter by release year: ${new Date(game.released).getFullYear()}`}
+                            tabIndex={0}
                         >
                             {new Date(game.released).toLocaleDateString()}
                         </a>
