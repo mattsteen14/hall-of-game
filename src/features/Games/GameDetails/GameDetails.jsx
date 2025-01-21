@@ -14,6 +14,7 @@ export const GameDetails = () => {
     const dispatch = useDispatch();
     const game = useSelector(selectCurrentGame);
     const [developerGames, setDeveloperGames] = useState({});
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -22,6 +23,12 @@ export const GameDetails = () => {
     useEffect(() => {
         dispatch(fetchGamesByIdThunk(id));
     }, [id, dispatch]);
+
+    const openImageModal = (image) => {
+        setSelectedImage(image);
+    }
+
+    const closeImageModal = () => setSelectedImage(null);
 
     const { handleYearClick,
         handlePlatformClick,
@@ -117,6 +124,8 @@ export const GameDetails = () => {
                         title={`Main image or box art for ${game.name}`}
                         className="game-box-art"
                         loading="lazy"
+                        onClick={() => openImageModal(game.background_image)}
+                        style={{ cursor: "pointer" }}
                     />
                     {game.background_image_additional && (
                         <img
@@ -128,9 +137,20 @@ export const GameDetails = () => {
                             name={`Screenshot for ${game.name}`}
                             title={`Screenshot for ${game.name}`}
                             loading="lazy"
+                            onClick={() => openImageModal(game.background_image_additional)}
+                            style={{ cursor: "pointer" }}
                         />
                     )}
                 </section>
+
+                {selectedImage && (
+                    <div className="image-modal" onClick={closeImageModal}>
+                        <div className="image-modal-content">
+                            <span className="close-modal" onClick={closeImageModal}>&times;</span>
+                            <img src={selectedImage} alt="Enlarged game image" />
+                        </div>
+                    </div>
+                )}
 
                 <section className="game-info-container">
                     <article className="game-info">
