@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
 import "./GameDetails.css";
 import { SiMetacritic, SiReddit } from "react-icons/si";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { selectCurrentGame, fetchGamesByIdThunk } from "../gamesSlice";
 import { useFilterHandlers } from "../../../utils/handlers";
 import { Loading } from "../../../components/Loading/Loading";
-import { Card } from "../../../components/Card/Card";
-import { Game } from "../Game/Game";
+import { DeveloperGames } from "../DeveloperGames/DeveloperGames";
 
 export const GameDetails = () => {
     const { id } = useParams();
@@ -24,37 +22,6 @@ export const GameDetails = () => {
     useEffect(() => {
         dispatch(fetchGamesByIdThunk(id));
     }, [id, dispatch]);
-
-    useEffect(() => {
-        const fetchDeveloperGames = async () => {
-            if (!game?.developers || game.developers.length === 0) return;
-    
-            const gamesByDeveloper = {};
-    
-            await Promise.all(
-                game.developers.map(async (developer) => {
-                    try {
-                        const response = await axios.get(
-                            `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&developers=${developer.id}&page_size=6` // Increase to 6
-                        );
-    
-                        // Remove the current game and ensure exactly 3 results
-                        const filteredGames = response.data.results
-                            .filter(devGame => devGame.id !== game.id) // Exclude current game
-                            .slice(0, 3); // Ensure exactly 3 games
-    
-                        gamesByDeveloper[developer.id] = filteredGames;
-                    } catch (error) {
-                        console.error(`Error fetching games for developer ${developer.id}:`, error);
-                    }
-                })
-            );
-    
-            setDeveloperGames((prev) => ({ ...prev, ...gamesByDeveloper }));
-        };
-    
-        fetchDeveloperGames();
-    }, [game]);
 
     const { handleYearClick,
         handlePlatformClick,
@@ -280,28 +247,11 @@ export const GameDetails = () => {
                     <h4>Description:</h4>
                     <p>{game.description_raw || "No description available"}</p>
                 </section>
-                <section className="developer-games-container">
-                    {game?.developers?.length > 0 ? (
-                        game.developers.map((developer) => (
-                            <div key={developer.id}>
-                                <h4>Other games by {developer.name}:</h4>
-                                <div className="developer-games">
-                                    {developerGames[developer.id]?.length > 0 ? (
-                                        developerGames[developer.id].map((devGame) => (
-                                            <Card key={devGame.id} >
-                                                <Game game={devGame} />
-                                            </Card>
-                                        ))
-                                    ) : (
-                                        <p>No other games by {developer.name} listed</p>
-                                    )}
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <p>No developers found for this game.</p>
-                    )}
-                </section>
+                <DeveloperGames 
+                game={game}
+                developerGames={developerGames}
+                setDeveloperGames={setDeveloperGames}
+                />
             </div>
         </div>
     );

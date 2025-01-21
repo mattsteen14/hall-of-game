@@ -124,23 +124,6 @@
     line-height: 1.5;
 }
 
-.developer-games-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: darkgray;
-}
-
-.developer-games {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 1rem;
-}
-
 @media only screen and (max-width: 800px) {
 
     .game-screenshot {
